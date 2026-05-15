@@ -146,19 +146,45 @@ class Product(SoftDeleteModel):
         return self.title
 
 
+def product_image_upload_to(instance, filename):
+    """
+    Upload images to:
+      media/products/<Category>/<Product_name>/preview/<filename>
+      media/products/<Category>/<Product_name>/images/<filename>
+    """
+    import re
+
+    product = instance.product
+    # Sanitize names for filesystem
+    product_name = re.sub(r'[^\w\s.-]', '', product.title).strip().replace(' ', '_')
+    category_name = "Uncategorized"
+    if product.category:
+        category_name = re.sub(r'[^\w\s.-]', '', product.category.title).strip().replace(' ', '_')
+
+    subfolder = "preview" if instance.is_preview else "images"
+    return f"products/{category_name}/{product_name}/{subfolder}/{filename}"
+
+
 class ProductImage(models.Model):
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="images", verbose_name="товар"
     )
-    src = models.ImageField(upload_to="products/", verbose_name="изображение")
+    src = models.ImageField(
+        upload_to=product_image_upload_to, verbose_name="изображение"
+    )
     alt = models.CharField(max_length=255, blank=True, verbose_name="alt-текст")
+    is_preview = models.BooleanField(
+        default=False, verbose_name="основное изображение (preview)"
+    )
 
     class Meta:
         verbose_name = "изображение товара"
         verbose_name_plural = "изображения товаров"
+        ordering = ["-is_preview", "pk"]
 
     def __str__(self):
-        return f"Image for {self.product.title}"
+        tag = " [preview]" if self.is_preview else ""
+        return f"Image for {self.product.title}{tag}"
 
 
 class Specification(models.Model):

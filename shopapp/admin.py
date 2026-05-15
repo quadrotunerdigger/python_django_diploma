@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.utils.html import format_html
 from .models import (
     Profile,
     Category,
@@ -20,6 +21,17 @@ from .models import (
 class ProductImageInline(admin.TabularInline):
     model = ProductImage
     extra = 1
+    fields = ("src", "alt", "is_preview", "image_thumbnail")
+    readonly_fields = ("image_thumbnail",)
+
+    @admin.display(description="Превью")
+    def image_thumbnail(self, obj):
+        if obj.src:
+            return format_html(
+                '<img src="{}" style="max-height:80px; max-width:120px;" />',
+                obj.src.url,
+            )
+        return "—"
 
 
 class SpecificationInline(admin.TabularInline):
@@ -72,6 +84,7 @@ class ProfileAdmin(admin.ModelAdmin):
 @admin.register(Category)
 class CategoryAdmin(SoftDeleteAdmin):
     list_display = ("title", "parent", "is_active", "sort_index", "is_deleted")
+    list_editable = ("is_active", "is_deleted", "sort_index")
     list_filter = ("is_active", "is_deleted", "parent")
     search_fields = ("title",)
 
@@ -93,10 +106,34 @@ class ProductAdmin(SoftDeleteAdmin):
         "limited_edition",
         "is_deleted",
     )
+    list_editable = ("limited_edition", "is_deleted")
     list_filter = ("category", "free_delivery", "limited_edition", "is_deleted")
     search_fields = ("title", "description")
     inlines = [ProductImageInline, SpecificationInline, ReviewInline]
     filter_horizontal = ("tags",)
+    fieldsets = (
+        ("Основное", {
+            "fields": ("title", "category", "price", "count", "tags"),
+        }),
+        ("Описание", {
+            "fields": ("description", "full_description"),
+            "classes": ("collapse",),
+        }),
+        ("Параметры", {
+            "fields": (
+                "sort_index",
+                "free_delivery",
+                "limited_edition",
+                "rating",
+                "purchases_count",
+            ),
+        }),
+        ("Мягкое удаление", {
+            "fields": ("is_deleted", "deleted_at"),
+            "classes": ("collapse",),
+        }),
+    )
+    readonly_fields = ("deleted_at",)
 
 
 @admin.register(Review)
