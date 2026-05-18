@@ -23,6 +23,7 @@ urlpatterns = [
     # Orders
     path("orders", views.OrdersView.as_view(), name="orders"),
     path("orders/<int:pk>", views.OrderDetailView.as_view(), name="order-detail"),
+    path("order/<int:pk>", views.OrderDetailView.as_view(), name="order-detail-alt"),
     # Payment
     path("payment/<int:pk>", views.PaymentView.as_view(), name="payment"),
     # Profile
