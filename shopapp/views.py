@@ -29,18 +29,38 @@ from .models import (
 # ═══════════════════════════════════════════════
 
 
+def _get_active_sale_price(product):
+    """Return sale price if there's an active sale, otherwise None."""
+    from django.utils import timezone
+
+    today = timezone.now().date()
+    sale = product.sales.filter(date_from__lte=today, date_to__gte=today).first()
+    if sale:
+        return float(sale.sale_price)
+    return None
+
+
 def _product_short(product):
     """Serialize product to short format (for catalog, popular, limited, basket)."""
-    images = list(product.images.all().values("src", "alt"))
+    # Preview first, then other images
+    images = list(
+        product.images.all()
+        .order_by("-is_preview", "pk")
+        .values("src", "alt")
+    )
     for img in images:
         if img["src"] and not img["src"].startswith("/"):
             img["src"] = "/media/" + img["src"]
     tags = list(product.tags.all().values("id", "name"))
     reviews_count = product.reviews.count()
+
+    price = float(product.price)
+    sale_price = _get_active_sale_price(product)
+
     return {
         "id": product.pk,
         "category": product.category_id,
-        "price": float(product.price),
+        "price": sale_price if sale_price else price,
         "count": product.count,
         "date": product.date.isoformat() if product.date else "",
         "title": product.title,
@@ -71,20 +91,14 @@ def _product_full(product):
 
 def _category_data(category):
     """Serialize category with subcategories."""
-    image = {"src": "", "alt": ""}
-    if category.image:
-        src = category.image.url if category.image else ""
-        image = {"src": src, "alt": category.title}
+    image = _category_icon(category)
     subcats = []
     for sub in Category.objects.filter(parent=category, is_active=True):
-        sub_image = {"src": "", "alt": ""}
-        if sub.image:
-            sub_image = {"src": sub.image.url, "alt": sub.title}
         subcats.append(
             {
                 "id": sub.pk,
                 "title": sub.title,
-                "image": sub_image,
+                "image": _category_icon(sub),
             }
         )
     return {
@@ -93,6 +107,47 @@ def _category_data(category):
         "image": image,
         "subcategories": subcats,
     }
+
+
+# Mapping category titles to department icon numbers (1.svg - 12.svg)
+_CATEGORY_ICON_MAP = {
+    # Parents
+    "Бытовая техника": 3,
+    "Электроника": 5,
+    "Компьютеры и комплектующие": 1,
+    # Бытовая техника children
+    "Стиральные машины": 3,
+    "Пылесосы": 4,
+    "Холодильники": 4,
+    "Электрические плиты и печи": 7,
+    "Печи СВЧ": 9,
+    "Миксеры и блендеры": 12,
+    "Настольные лампы": 11,
+    "Чайники": 10,
+    # Электроника children
+    "Смартфоны": 8,
+    "Наушники": 2,
+    "Колонки": 5,
+    "Фотоаппараты": 6,
+    # Компьютеры children
+    "Видеокарты": 4,
+    "Процессоры": 4,
+    "Мониторы": 1,
+    "Ноутбуки и планшеты": 4,
+}
+
+
+def _category_icon(category):
+    """Return icon for category: use uploaded image or fallback to static department icon."""
+    if category.image:
+        return {"src": category.image.url, "alt": category.title}
+    icon_num = _CATEGORY_ICON_MAP.get(category.title)
+    if icon_num:
+        return {
+            "src": f"/static/frontend/assets/img/icons/departments/{icon_num}.svg",
+            "alt": category.title,
+        }
+    return {"src": "", "alt": category.title}
 
 
 def _parse_json_body(request):
@@ -195,6 +250,9 @@ class CatalogView(View):
     def get(self, request):
         # Filters
         name = request.GET.get("filter[name]", "")
+        # Also check 'filter' param from header search bar
+        if not name:
+            name = request.GET.get("filter", "")
         min_price = request.GET.get("filter[minPrice]")
         max_price = request.GET.get("filter[maxPrice]")
         free_delivery = request.GET.get("filter[freeDelivery]", "false")
@@ -214,10 +272,24 @@ class CatalogView(View):
 
         # Apply filters
         if name:
-            qs = qs.filter(title__icontains=name)
-        if min_price:
+            # SQLite doesn't support case-insensitive search for Cyrillic
+            # Search in product title, category title, and parent category title
+            from django.db.models import Q
+            name_variants = [name, name.capitalize(), name.lower(), name.upper()]
+            q = Q()
+            for variant in name_variants:
+                q |= Q(title__contains=variant)
+                q |= Q(category__title__contains=variant)
+                q |= Q(category__parent__title__contains=variant)
+            # Also add icontains for Latin characters
+            q |= Q(title__icontains=name)
+            q |= Q(category__title__icontains=name)
+            q |= Q(category__parent__title__icontains=name)
+            qs = qs.filter(q).distinct()
+        if min_price and float(min_price) > 0:
             qs = qs.filter(price__gte=float(min_price))
-        if max_price:
+        if max_price and float(max_price) not in (50000, 50000.0):
+            # Skip filtering if max_price is the frontend default (50000)
             qs = qs.filter(price__lte=float(max_price))
         if free_delivery == "true":
             qs = qs.filter(free_delivery=True)
@@ -490,8 +562,8 @@ class OrdersView(View):
         order = Order.objects.create(
             user=request.user,
             full_name=profile.full_name if profile else request.user.username,
-            email=request.user.email,
-            phone=profile.phone if profile else "",
+            email=request.user.email or "",
+            phone=profile.phone if profile and profile.phone else "",
         )
         total = 0
         for item in basket_items:

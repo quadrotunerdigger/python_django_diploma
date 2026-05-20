@@ -19,8 +19,8 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$1200000$AaJwZ2JOZtzofzinXcfg8i$HSvKfcBH78Bew0X3o9DmPj3Ap2jJdC4DfVrfIqelwLE=",
-    "last_login": "2026-05-15T13:09:44.386Z",
+    "password": "pbkdf2_sha256$1200000$osTBI7jMzQLZUUZtcApUHj$y+dr9JOfcFWMpaU9GHZJZiKu5aTDxkNvbG2mAjcBAzo=",
+    "last_login": "2026-05-19T11:28:50.650Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
@@ -28,7 +28,7 @@
     "email": "admin@megano.ru",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2026-05-15T12:58:48.976Z",
+    "date_joined": "2026-05-19T11:28:25.556Z",
     "groups": [
       1
     ],
@@ -39,8 +39,8 @@
   "model": "auth.user",
   "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$1200000$IQUnLkaabi3EUObp90cacP$WEImUscAt0A9oaJ73K6HKUpiU7gwbb3iTNRn7VSseSk=",
-    "last_login": "2026-05-15T13:24:56.747Z",
+    "password": "pbkdf2_sha256$1200000$xGIuEK1pMwLYhKquA6rfuJ$E+olOzGIjkAbwEJNNTCOOQehbkqsqNaciyLzuEpZVxQ=",
+    "last_login": null,
     "is_superuser": false,
     "username": "buyer1",
     "first_name": "Покупатель 1",
@@ -48,7 +48,7 @@
     "email": "buyer1@test.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2026-05-15T12:59:41.062Z",
+    "date_joined": "2026-05-19T11:28:26.865Z",
     "groups": [
       2
     ],
@@ -59,7 +59,7 @@
   "model": "auth.user",
   "pk": 3,
   "fields": {
-    "password": "pbkdf2_sha256$1200000$aSNtvxjnnDqfJ4lKhtn6Bm$XXvp05R7bVMZNUZVzFtY7F0PTT8U0O+ihrO8Z25IQQQ=",
+    "password": "pbkdf2_sha256$1200000$0KZSLyVMHVPyd8LExxrjr7$uhTwfUhC08aXETdoFDF8ffKviWdfV2rKwzLCvL52BbY=",
     "last_login": null,
     "is_superuser": false,
     "username": "buyer2",
@@ -68,7 +68,7 @@
     "email": "buyer2@test.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2026-05-15T12:59:41.522Z",
+    "date_joined": "2026-05-19T11:28:27.306Z",
     "groups": [
       2
     ],
@@ -79,7 +79,7 @@
   "model": "auth.user",
   "pk": 4,
   "fields": {
-    "password": "pbkdf2_sha256$1200000$4JD4UIel15PtRqM3NLlTp0$Syg7qRma7UAMDrUu3zCWf49jahlZyXHuaK9ohFtj1Nc=",
+    "password": "pbkdf2_sha256$1200000$JZYn4peNoBwPs3J6toyLPN$80jyB89L3i0n054ulSezScsP/lu41AVzl75HtvG0pGM=",
     "last_login": null,
     "is_superuser": false,
     "username": "buyer3",
@@ -88,7 +88,7 @@
     "email": "buyer3@test.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2026-05-15T12:59:42.030Z",
+    "date_joined": "2026-05-19T11:28:27.711Z",
     "groups": [
       2
     ],
@@ -131,11 +131,11 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Электроника",
+    "title": "Бытовая техника",
     "image": "",
     "parent": null,
     "is_active": true,
-    "sort_index": 0
+    "sort_index": 1
   }
 },
 {
@@ -144,7 +144,7 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Смартфоны",
+    "title": "Стиральные машины",
     "image": "",
     "parent": 1,
     "is_active": true,
@@ -157,7 +157,7 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Ноутбуки",
+    "title": "Пылесосы",
     "image": "",
     "parent": 1,
     "is_active": true,
@@ -170,7 +170,7 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Планшеты",
+    "title": "Холодильники",
     "image": "",
     "parent": 1,
     "is_active": true,
@@ -183,9 +183,9 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Бытовая техника",
+    "title": "Электрические плиты и печи",
     "image": "",
-    "parent": null,
+    "parent": 1,
     "is_active": true,
     "sort_index": 0
   }
@@ -196,9 +196,9 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Холодильники",
+    "title": "Печи СВЧ",
     "image": "",
-    "parent": 5,
+    "parent": 1,
     "is_active": true,
     "sort_index": 0
   }
@@ -209,9 +209,9 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Стиральные машины",
+    "title": "Миксеры и блендеры",
     "image": "",
-    "parent": 5,
+    "parent": 1,
     "is_active": true,
     "sort_index": 0
   }
@@ -222,9 +222,9 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Пылесосы",
+    "title": "Настольные лампы",
     "image": "",
-    "parent": 5,
+    "parent": 1,
     "is_active": true,
     "sort_index": 0
   }
@@ -235,9 +235,9 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Компьютеры",
+    "title": "Чайники",
     "image": "",
-    "parent": null,
+    "parent": 1,
     "is_active": true,
     "sort_index": 0
   }
@@ -248,11 +248,11 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Видеокарты",
+    "title": "Электроника",
     "image": "",
-    "parent": 9,
+    "parent": null,
     "is_active": true,
-    "sort_index": 0
+    "sort_index": 2
   }
 },
 {
@@ -261,9 +261,9 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "title": "Процессоры",
+    "title": "Смартфоны",
     "image": "",
-    "parent": 9,
+    "parent": 10,
     "is_active": true,
     "sort_index": 0
   }
@@ -274,9 +274,100 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
+    "title": "Наушники",
+    "image": "",
+    "parent": 10,
+    "is_active": true,
+    "sort_index": 0
+  }
+},
+{
+  "model": "shopapp.category",
+  "pk": 13,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "title": "Колонки",
+    "image": "",
+    "parent": 10,
+    "is_active": true,
+    "sort_index": 0
+  }
+},
+{
+  "model": "shopapp.category",
+  "pk": 14,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "title": "Фотоаппараты",
+    "image": "",
+    "parent": 10,
+    "is_active": true,
+    "sort_index": 0
+  }
+},
+{
+  "model": "shopapp.category",
+  "pk": 15,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "title": "Компьютеры и комплектующие",
+    "image": "",
+    "parent": null,
+    "is_active": true,
+    "sort_index": 3
+  }
+},
+{
+  "model": "shopapp.category",
+  "pk": 16,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "title": "Видеокарты",
+    "image": "",
+    "parent": 15,
+    "is_active": true,
+    "sort_index": 0
+  }
+},
+{
+  "model": "shopapp.category",
+  "pk": 17,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "title": "Процессоры",
+    "image": "",
+    "parent": 15,
+    "is_active": true,
+    "sort_index": 0
+  }
+},
+{
+  "model": "shopapp.category",
+  "pk": 18,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
     "title": "Мониторы",
     "image": "",
-    "parent": 9,
+    "parent": 15,
+    "is_active": true,
+    "sort_index": 0
+  }
+},
+{
+  "model": "shopapp.category",
+  "pk": 19,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "title": "Ноутбуки и планшеты",
+    "image": "",
+    "parent": 15,
     "is_active": true,
     "sort_index": 0
   }
@@ -343,22 +434,22 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 3,
+    "category": 11,
     "title": "iPhone 15 Pro",
-    "description": "Смартфон Apple iPhone 15 Pro",
-    "full_description": "<p>Смартфон Apple iPhone 15 Pro. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "59644.00",
-    "count": 11,
-    "date": "2026-05-15T12:59:40.757Z",
-    "free_delivery": false,
-    "limited_edition": true,
+    "description": "Смартфон Apple iPhone 15 Pro 256GB",
+    "full_description": "<p>Смартфон Apple iPhone 15 Pro 256GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "89990.00",
+    "count": 78,
+    "date": "2026-05-19T11:28:26.491Z",
+    "free_delivery": true,
+    "limited_edition": false,
     "sort_index": 0,
-    "rating": "4.7",
-    "purchases_count": 404,
+    "rating": "3.9",
+    "purchases_count": 220,
     "tags": [
-      1,
-      2,
-      7
+      3,
+      4,
+      6
     ]
   }
 },
@@ -368,22 +459,22 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 2,
+    "category": 11,
     "title": "Samsung Galaxy S24",
-    "description": "Флагманский смартфон Samsung",
-    "full_description": "<p>Флагманский смартфон Samsung. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "80097.00",
-    "count": 69,
-    "date": "2026-05-15T12:59:40.770Z",
-    "free_delivery": false,
-    "limited_edition": true,
+    "description": "Флагманский смартфон Samsung Galaxy S24 128GB",
+    "full_description": "<p>Флагманский смартфон Samsung Galaxy S24 128GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "74990.00",
+    "count": 81,
+    "date": "2026-05-19T11:28:26.499Z",
+    "free_delivery": true,
+    "limited_edition": false,
     "sort_index": 1,
-    "rating": "4.1",
-    "purchases_count": 180,
+    "rating": "4.2",
+    "purchases_count": 73,
     "tags": [
       1,
-      3,
-      4
+      4,
+      6
     ]
   }
 },
@@ -393,22 +484,22 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 4,
-    "title": "MacBook Air M3",
-    "description": "Ноутбук Apple MacBook Air",
-    "full_description": "<p>Ноутбук Apple MacBook Air. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "162530.00",
-    "count": 64,
-    "date": "2026-05-15T12:59:40.782Z",
+    "category": 12,
+    "title": "Sony WH-1000XM5",
+    "description": "Беспроводные наушники с шумоподавлением",
+    "full_description": "<p>Беспроводные наушники с шумоподавлением.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "29990.00",
+    "count": 12,
+    "date": "2026-05-19T11:28:26.508Z",
     "free_delivery": false,
-    "limited_edition": true,
+    "limited_edition": false,
     "sort_index": 2,
-    "rating": "3.3",
-    "purchases_count": 493,
+    "rating": "4.8",
+    "purchases_count": 203,
     "tags": [
-      1,
-      3,
-      5
+      4,
+      7,
+      8
     ]
   }
 },
@@ -418,93 +509,18 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 4,
-    "title": "Lenovo ThinkPad X1",
-    "description": "Бизнес-ноутбук Lenovo",
-    "full_description": "<p>Бизнес-ноутбук Lenovo. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "133521.00",
-    "count": 93,
-    "date": "2026-05-15T12:59:40.793Z",
-    "free_delivery": true,
-    "limited_edition": true,
-    "sort_index": 3,
-    "rating": "4.9",
-    "purchases_count": 34,
-    "tags": [
-      2,
-      5,
-      8
-    ]
-  }
-},
-{
-  "model": "shopapp.product",
-  "pk": 5,
-  "fields": {
-    "is_deleted": false,
-    "deleted_at": null,
-    "category": 2,
-    "title": "iPad Pro 12.9",
-    "description": "Планшет Apple iPad Pro",
-    "full_description": "<p>Планшет Apple iPad Pro. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "157777.00",
-    "count": 8,
-    "date": "2026-05-15T12:59:40.807Z",
-    "free_delivery": true,
-    "limited_edition": true,
-    "sort_index": 4,
-    "rating": "4.4",
-    "purchases_count": 83,
-    "tags": [
-      1,
-      2,
-      8
-    ]
-  }
-},
-{
-  "model": "shopapp.product",
-  "pk": 6,
-  "fields": {
-    "is_deleted": false,
-    "deleted_at": null,
-    "category": 6,
-    "title": "Холодильник Samsung RF50",
-    "description": "Двухкамерный холодильник",
-    "full_description": "<p>Двухкамерный холодильник. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "19419.00",
-    "count": 17,
-    "date": "2026-05-15T12:59:40.819Z",
-    "free_delivery": true,
-    "limited_edition": false,
-    "sort_index": 5,
-    "rating": "3.3",
-    "purchases_count": 350,
-    "tags": [
-      1,
-      2,
-      5
-    ]
-  }
-},
-{
-  "model": "shopapp.product",
-  "pk": 7,
-  "fields": {
-    "is_deleted": false,
-    "deleted_at": null,
-    "category": 6,
-    "title": "Стиральная машина LG F2V5",
-    "description": "Стиральная машина с паром",
-    "full_description": "<p>Стиральная машина с паром. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "60027.00",
-    "count": 13,
-    "date": "2026-05-15T12:59:40.831Z",
+    "category": 13,
+    "title": "JBL Charge 5",
+    "description": "Портативная колонка JBL Charge 5 с защитой IP67",
+    "full_description": "<p>Портативная колонка JBL Charge 5 с защитой IP67.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "12990.00",
+    "count": 27,
+    "date": "2026-05-19T11:28:26.516Z",
     "free_delivery": false,
     "limited_edition": false,
-    "sort_index": 6,
-    "rating": "4.6",
-    "purchases_count": 165,
+    "sort_index": 3,
+    "rating": "4.7",
+    "purchases_count": 232,
     "tags": [
       2,
       4,
@@ -514,26 +530,101 @@
 },
 {
   "model": "shopapp.product",
+  "pk": 5,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 13,
+    "title": "Яндекс Станция Макс",
+    "description": "Умная колонка с Алисой и LED-дисплеем",
+    "full_description": "<p>Умная колонка с Алисой и LED-дисплеем.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "17990.00",
+    "count": 10,
+    "date": "2026-05-19T11:28:26.524Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 4,
+    "rating": "4.9",
+    "purchases_count": 298,
+    "tags": [
+      4,
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 6,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 14,
+    "title": "Canon EOS R6 Mark II",
+    "description": "Полнокадровая беззеркальная камера Canon",
+    "full_description": "<p>Полнокадровая беззеркальная камера Canon.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "189990.00",
+    "count": 57,
+    "date": "2026-05-19T11:28:26.532Z",
+    "free_delivery": true,
+    "limited_edition": true,
+    "sort_index": 5,
+    "rating": "4.8",
+    "purchases_count": 231,
+    "tags": [
+      3,
+      5,
+      7
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 7,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 14,
+    "title": "Sony Alpha A7 IV",
+    "description": "Беззеркальная камера Sony 33 Мп",
+    "full_description": "<p>Беззеркальная камера Sony 33 Мп.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "179990.00",
+    "count": 55,
+    "date": "2026-05-19T11:28:26.539Z",
+    "free_delivery": true,
+    "limited_edition": true,
+    "sort_index": 6,
+    "rating": "4.0",
+    "purchases_count": 404,
+    "tags": [
+      4,
+      7,
+      8
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
   "pk": 8,
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 7,
-    "title": "Dyson V15 Detect",
-    "description": "Беспроводной пылесос",
-    "full_description": "<p>Беспроводной пылесос. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "189156.00",
-    "count": 9,
-    "date": "2026-05-15T12:59:40.842Z",
+    "category": 4,
+    "title": "Холодильник Samsung RF50",
+    "description": "Двухкамерный холодильник Samsung RF50A5202S9",
+    "full_description": "<p>Двухкамерный холодильник Samsung RF50A5202S9.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "74990.00",
+    "count": 41,
+    "date": "2026-05-19T11:28:26.546Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 7,
-    "rating": "4.3",
-    "purchases_count": 177,
+    "rating": "4.2",
+    "purchases_count": 123,
     "tags": [
       1,
       2,
-      8
+      5
     ]
   }
 },
@@ -543,18 +634,18 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 10,
-    "title": "NVIDIA RTX 4090",
-    "description": "Видеокарта NVIDIA GeForce RTX 4090",
-    "full_description": "<p>Видеокарта NVIDIA GeForce RTX 4090. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "151380.00",
-    "count": 85,
-    "date": "2026-05-15T12:59:40.855Z",
-    "free_delivery": true,
+    "category": 2,
+    "title": "Стиральная машина LG F2V5",
+    "description": "Стиральная машина LG F2V5HS2S с паром",
+    "full_description": "<p>Стиральная машина LG F2V5HS2S с паром.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "44990.00",
+    "count": 10,
+    "date": "2026-05-19T11:28:26.553Z",
+    "free_delivery": false,
     "limited_edition": false,
     "sort_index": 8,
-    "rating": "3.1",
-    "purchases_count": 369,
+    "rating": "3.9",
+    "purchases_count": 363,
     "tags": [
       3,
       4,
@@ -568,22 +659,22 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 10,
-    "title": "AMD Ryzen 9 7950X",
-    "description": "Процессор AMD Ryzen 9",
-    "full_description": "<p>Процессор AMD Ryzen 9. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "28654.00",
-    "count": 69,
-    "date": "2026-05-15T12:59:40.865Z",
+    "category": 3,
+    "title": "Dyson V15 Detect",
+    "description": "Беспроводной пылесос Dyson V15 Detect Absolute",
+    "full_description": "<p>Беспроводной пылесос Dyson V15 Detect Absolute.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "59990.00",
+    "count": 11,
+    "date": "2026-05-19T11:28:26.560Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 9,
-    "rating": "3.8",
-    "purchases_count": 478,
+    "rating": "4.5",
+    "purchases_count": 429,
     "tags": [
-      5,
-      6,
-      7
+      1,
+      3,
+      6
     ]
   }
 },
@@ -593,22 +684,22 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 10,
-    "title": "ASUS ROG Swift PG32",
-    "description": "Игровой монитор 32 дюйма",
-    "full_description": "<p>Игровой монитор 32 дюйма. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "79727.00",
-    "count": 52,
-    "date": "2026-05-15T12:59:40.876Z",
+    "category": 3,
+    "title": "Робот-пылесос Roborock S8",
+    "description": "Умный робот-пылесос с лидаром",
+    "full_description": "<p>Умный робот-пылесос с лидаром.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "39990.00",
+    "count": 38,
+    "date": "2026-05-19T11:28:26.568Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 10,
-    "rating": "3.4",
-    "purchases_count": 363,
+    "rating": "4.3",
+    "purchases_count": 205,
     "tags": [
       2,
       3,
-      5
+      4
     ]
   }
 },
@@ -618,43 +709,18 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 11,
-    "title": "Intel Core i9-14900K",
-    "description": "Процессор Intel Core i9",
-    "full_description": "<p>Процессор Intel Core i9. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "148227.00",
-    "count": 58,
-    "date": "2026-05-15T12:59:40.890Z",
+    "category": 5,
+    "title": "Electrolux EKC954907X",
+    "description": "Электрическая плита Electrolux со стеклокерамикой",
+    "full_description": "<p>Электрическая плита Electrolux со стеклокерамикой.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "54990.00",
+    "count": 87,
+    "date": "2026-05-19T11:28:26.575Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 11,
-    "rating": "4.4",
-    "purchases_count": 477,
-    "tags": [
-      3,
-      6,
-      7
-    ]
-  }
-},
-{
-  "model": "shopapp.product",
-  "pk": 13,
-  "fields": {
-    "is_deleted": false,
-    "deleted_at": null,
-    "category": 4,
-    "title": "Dell XPS 15",
-    "description": "Ноутбук Dell XPS 15",
-    "full_description": "<p>Ноутбук Dell XPS 15. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "134670.00",
-    "count": 41,
-    "date": "2026-05-15T12:59:40.903Z",
-    "free_delivery": true,
-    "limited_edition": false,
-    "sort_index": 12,
-    "rating": "4.0",
-    "purchases_count": 241,
+    "rating": "4.7",
+    "purchases_count": 48,
     "tags": [
       1,
       7,
@@ -664,26 +730,51 @@
 },
 {
   "model": "shopapp.product",
+  "pk": 13,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 5,
+    "title": "Gorenje EC5241SG",
+    "description": "Электрическая плита Gorenje с грилем",
+    "full_description": "<p>Электрическая плита Gorenje с грилем.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "32990.00",
+    "count": 98,
+    "date": "2026-05-19T11:28:26.583Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 12,
+    "rating": "4.5",
+    "purchases_count": 398,
+    "tags": [
+      4,
+      5,
+      8
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
   "pk": 14,
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 4,
-    "title": "Sony WH-1000XM5",
-    "description": "Наушники с шумоподавлением",
-    "full_description": "<p>Наушники с шумоподавлением. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "56396.00",
-    "count": 100,
-    "date": "2026-05-15T12:59:40.920Z",
-    "free_delivery": true,
+    "category": 6,
+    "title": "Samsung ME88SUG",
+    "description": "Микроволновая печь Samsung 23л с грилем",
+    "full_description": "<p>Микроволновая печь Samsung 23л с грилем.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "11990.00",
+    "count": 22,
+    "date": "2026-05-19T11:28:26.591Z",
+    "free_delivery": false,
     "limited_edition": false,
     "sort_index": 13,
-    "rating": "3.4",
-    "purchases_count": 230,
+    "rating": "4.7",
+    "purchases_count": 344,
     "tags": [
-      3,
-      5,
-      6
+      2,
+      7,
+      8
     ]
   }
 },
@@ -693,20 +784,20 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 7,
-    "title": "Робот-пылесос Roborock S8",
-    "description": "Умный робот-пылесос",
-    "full_description": "<p>Умный робот-пылесос. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "136204.00",
-    "count": 54,
-    "date": "2026-05-15T12:59:40.934Z",
+    "category": 6,
+    "title": "LG MS2595CIS",
+    "description": "Микроволновая печь LG NeoChef 25л",
+    "full_description": "<p>Микроволновая печь LG NeoChef 25л.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "13990.00",
+    "count": 52,
+    "date": "2026-05-19T11:28:26.597Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 14,
-    "rating": "4.9",
-    "purchases_count": 464,
+    "rating": "4.2",
+    "purchases_count": 378,
     "tags": [
-      2,
+      5,
       6,
       8
     ]
@@ -718,22 +809,372 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "category": 11,
-    "title": "NVIDIA RTX 4070",
-    "description": "Видеокарта среднего класса",
-    "full_description": "<p>Видеокарта среднего класса. Подробное описание товара с характеристиками и преимуществами.</p><p>Высокое качество сборки, гарантия от производителя.</p>",
-    "price": "69309.00",
-    "count": 88,
-    "date": "2026-05-15T12:59:40.946Z",
+    "category": 7,
+    "title": "Bosch MSM67170",
+    "description": "Погружной блендер Bosch ErgoMixx 750Вт",
+    "full_description": "<p>Погружной блендер Bosch ErgoMixx 750Вт.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "5990.00",
+    "count": 14,
+    "date": "2026-05-19T11:28:26.604Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 15,
-    "rating": "4.4",
-    "purchases_count": 28,
+    "rating": "4.8",
+    "purchases_count": 94,
+    "tags": [
+      2,
+      6,
+      7
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 17,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 7,
+    "title": "KitchenAid 5KSM175PS",
+    "description": "Планетарный миксер KitchenAid Artisan 4.8л",
+    "full_description": "<p>Планетарный миксер KitchenAid Artisan 4.8л.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "49990.00",
+    "count": 80,
+    "date": "2026-05-19T11:28:26.610Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 16,
+    "rating": "4.7",
+    "purchases_count": 76,
     "tags": [
       1,
       2,
+      7
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 18,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 8,
+    "title": "Xiaomi Mi LED Desk Lamp 1S",
+    "description": "Настольная лампа Xiaomi с регулировкой яркости",
+    "full_description": "<p>Настольная лампа Xiaomi с регулировкой яркости.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "2990.00",
+    "count": 31,
+    "date": "2026-05-19T11:28:26.618Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 17,
+    "rating": "4.3",
+    "purchases_count": 414,
+    "tags": [
+      2,
+      3,
+      6
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 19,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 8,
+    "title": "Philips Hue Go",
+    "description": "Портативная настольная лампа Philips с RGB",
+    "full_description": "<p>Портативная настольная лампа Philips с RGB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "7990.00",
+    "count": 55,
+    "date": "2026-05-19T11:28:26.626Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 18,
+    "rating": "4.2",
+    "purchases_count": 66,
+    "tags": [
+      2,
+      4,
+      8
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 20,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 9,
+    "title": "Bosch TWK8611P",
+    "description": "Электрический чайник Bosch Styline 1.5л",
+    "full_description": "<p>Электрический чайник Bosch Styline 1.5л.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "5490.00",
+    "count": 15,
+    "date": "2026-05-19T11:28:26.634Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 19,
+    "rating": "3.8",
+    "purchases_count": 211,
+    "tags": [
+      1,
+      2,
+      4
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 21,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 9,
+    "title": "Xiaomi Mi Smart Kettle Pro",
+    "description": "Умный чайник Xiaomi с контролем температуры",
+    "full_description": "<p>Умный чайник Xiaomi с контролем температуры.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "3490.00",
+    "count": 61,
+    "date": "2026-05-19T11:28:26.641Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 20,
+    "rating": "4.6",
+    "purchases_count": 281,
+    "tags": [
+      2,
+      3,
       5
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 22,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 16,
+    "title": "NVIDIA RTX 4090",
+    "description": "Видеокарта NVIDIA GeForce RTX 4090 24GB",
+    "full_description": "<p>Видеокарта NVIDIA GeForce RTX 4090 24GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "149990.00",
+    "count": 10,
+    "date": "2026-05-19T11:28:26.649Z",
+    "free_delivery": true,
+    "limited_edition": true,
+    "sort_index": 21,
+    "rating": "4.3",
+    "purchases_count": 214,
+    "tags": [
+      2,
+      5,
+      7
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 23,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 16,
+    "title": "NVIDIA RTX 4070",
+    "description": "Видеокарта NVIDIA GeForce RTX 4070 12GB",
+    "full_description": "<p>Видеокарта NVIDIA GeForce RTX 4070 12GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "54990.00",
+    "count": 56,
+    "date": "2026-05-19T11:28:26.657Z",
+    "free_delivery": true,
+    "limited_edition": false,
+    "sort_index": 22,
+    "rating": "3.8",
+    "purchases_count": 177,
+    "tags": [
+      2,
+      4,
+      7
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 24,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 17,
+    "title": "AMD Ryzen 9 7950X",
+    "description": "Процессор AMD Ryzen 9 7950X 16 ядер",
+    "full_description": "<p>Процессор AMD Ryzen 9 7950X 16 ядер.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "44990.00",
+    "count": 17,
+    "date": "2026-05-19T11:28:26.665Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 23,
+    "rating": "4.5",
+    "purchases_count": 374,
+    "tags": [
+      1,
+      2,
+      8
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 25,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 17,
+    "title": "Intel Core i9-14900K",
+    "description": "Процессор Intel Core i9-14900K 24 ядра",
+    "full_description": "<p>Процессор Intel Core i9-14900K 24 ядра.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "49990.00",
+    "count": 98,
+    "date": "2026-05-19T11:28:26.673Z",
+    "free_delivery": false,
+    "limited_edition": false,
+    "sort_index": 24,
+    "rating": "4.1",
+    "purchases_count": 16,
+    "tags": [
+      2,
+      5,
+      8
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 26,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 18,
+    "title": "ASUS ROG Swift PG32",
+    "description": "Игровой монитор ASUS 32 дюйма 4K 144Hz",
+    "full_description": "<p>Игровой монитор ASUS 32 дюйма 4K 144Hz.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "89990.00",
+    "count": 82,
+    "date": "2026-05-19T11:28:26.680Z",
+    "free_delivery": true,
+    "limited_edition": false,
+    "sort_index": 25,
+    "rating": "4.7",
+    "purchases_count": 399,
+    "tags": [
+      1,
+      4,
+      6
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 27,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 19,
+    "title": "MacBook Air M3",
+    "description": "Ноутбук Apple MacBook Air 13 M3 8/256GB",
+    "full_description": "<p>Ноутбук Apple MacBook Air 13 M3 8/256GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "109990.00",
+    "count": 58,
+    "date": "2026-05-19T11:28:26.688Z",
+    "free_delivery": true,
+    "limited_edition": true,
+    "sort_index": 26,
+    "rating": "3.8",
+    "purchases_count": 157,
+    "tags": [
+      1,
+      2,
+      6
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 28,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 19,
+    "title": "Lenovo ThinkPad X1",
+    "description": "Бизнес-ноутбук Lenovo ThinkPad X1 Carbon Gen 11",
+    "full_description": "<p>Бизнес-ноутбук Lenovo ThinkPad X1 Carbon Gen 11.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "124990.00",
+    "count": 52,
+    "date": "2026-05-19T11:28:26.695Z",
+    "free_delivery": true,
+    "limited_edition": true,
+    "sort_index": 27,
+    "rating": "4.4",
+    "purchases_count": 218,
+    "tags": [
+      4,
+      5,
+      8
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 29,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 19,
+    "title": "iPad Pro 12.9",
+    "description": "Планшет Apple iPad Pro 12.9 M2 128GB Wi-Fi",
+    "full_description": "<p>Планшет Apple iPad Pro 12.9 M2 128GB Wi-Fi.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "99990.00",
+    "count": 51,
+    "date": "2026-05-19T11:28:26.703Z",
+    "free_delivery": true,
+    "limited_edition": true,
+    "sort_index": 28,
+    "rating": "4.0",
+    "purchases_count": 213,
+    "tags": [
+      4,
+      5,
+      8
+    ]
+  }
+},
+{
+  "model": "shopapp.product",
+  "pk": 30,
+  "fields": {
+    "is_deleted": false,
+    "deleted_at": null,
+    "category": 19,
+    "title": "Dell XPS 15",
+    "description": "Ноутбук Dell XPS 15 9530 i7/16GB/512GB",
+    "full_description": "<p>Ноутбук Dell XPS 15 9530 i7/16GB/512GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
+    "price": "134990.00",
+    "count": 96,
+    "date": "2026-05-19T11:28:26.711Z",
+    "free_delivery": true,
+    "limited_edition": false,
+    "sort_index": 29,
+    "rating": "4.8",
+    "purchases_count": 374,
+    "tags": [
+      2,
+      4,
+      7
     ]
   }
 },
@@ -741,9 +1182,9 @@
   "model": "shopapp.productimage",
   "pk": 1,
   "fields": {
-    "product": 7,
-    "src": "products/Washing machines/LG_F2V5/preview/LG_F2V5_1.png",
-    "alt": "Стиральная машина LG F2V5",
+    "product": 5,
+    "src": "products/Electronics/Audio speakers/Яндекс_Станция_Макс/preview/Яндекс_Станция_Макс_1.png",
+    "alt": "Яндекс Станция Макс",
     "is_preview": true
   }
 },
@@ -751,9 +1192,9 @@
   "model": "shopapp.productimage",
   "pk": 2,
   "fields": {
-    "product": 7,
-    "src": "products/Washing machines/LG_F2V5/images/LG_F2V5_2.png",
-    "alt": "Стиральная машина LG F2V5",
+    "product": 5,
+    "src": "products/Electronics/Audio speakers/Яндекс_Станция_Макс/images/Яндекс_Станция_Макс_2.png",
+    "alt": "Яндекс Станция Макс",
     "is_preview": false
   }
 },
@@ -761,9 +1202,9 @@
   "model": "shopapp.productimage",
   "pk": 3,
   "fields": {
-    "product": 7,
-    "src": "products/Washing machines/LG_F2V5/images/LG_F2V5_3.png",
-    "alt": "Стиральная машина LG F2V5",
+    "product": 5,
+    "src": "products/Electronics/Audio speakers/Яндекс_Станция_Макс/images/Яндекс_Станция_Макс_3.png",
+    "alt": "Яндекс Станция Макс",
     "is_preview": false
   }
 },
@@ -771,9 +1212,9 @@
   "model": "shopapp.productimage",
   "pk": 4,
   "fields": {
-    "product": 7,
-    "src": "products/Washing machines/LG_F2V5/images/LG_F2V5_4.png",
-    "alt": "Стиральная машина LG F2V5",
+    "product": 5,
+    "src": "products/Electronics/Audio speakers/Яндекс_Станция_Макс/images/Яндекс_Станция_Макс_4.png",
+    "alt": "Яндекс Станция Макс",
     "is_preview": false
   }
 },
@@ -781,9 +1222,9 @@
   "model": "shopapp.productimage",
   "pk": 5,
   "fields": {
-    "product": 6,
-    "src": "products/Refrigerators/Samsung_RF50/preview/Samsung_RF50_1.png",
-    "alt": "Холодильник Samsung RF50",
+    "product": 4,
+    "src": "products/Electronics/Audio speakers/JBL_Charge_5/preview/JBL_Charge_5_1.png",
+    "alt": "JBL Charge 5",
     "is_preview": true
   }
 },
@@ -791,9 +1232,9 @@
   "model": "shopapp.productimage",
   "pk": 6,
   "fields": {
-    "product": 6,
-    "src": "products/Refrigerators/Samsung_RF50/images/Samsung_RF50_2.png",
-    "alt": "Холодильник Samsung RF50",
+    "product": 4,
+    "src": "products/Electronics/Audio speakers/JBL_Charge_5/images/JBL_Charge_5_2.png",
+    "alt": "JBL Charge 5",
     "is_preview": false
   }
 },
@@ -801,9 +1242,9 @@
   "model": "shopapp.productimage",
   "pk": 7,
   "fields": {
-    "product": 6,
-    "src": "products/Refrigerators/Samsung_RF50/images/Samsung_RF50_3.png",
-    "alt": "Холодильник Samsung RF50",
+    "product": 4,
+    "src": "products/Electronics/Audio speakers/JBL_Charge_5/images/JBL_Charge_5_3.png",
+    "alt": "JBL Charge 5",
     "is_preview": false
   }
 },
@@ -811,9 +1252,9 @@
   "model": "shopapp.productimage",
   "pk": 8,
   "fields": {
-    "product": 6,
-    "src": "products/Refrigerators/Samsung_RF50/images/Samsung_RF50_4.png",
-    "alt": "Холодильник Samsung RF50",
+    "product": 4,
+    "src": "products/Electronics/Audio speakers/JBL_Charge_5/images/JBL_Charge_5_4.png",
+    "alt": "JBL Charge 5",
     "is_preview": false
   }
 },
@@ -822,7 +1263,7 @@
   "pk": 9,
   "fields": {
     "product": 2,
-    "src": "products/Smartphones/Samsung_Galaxy_S24/preview/Samsung_Galaxy_S24_1.png",
+    "src": "products/Electronics/Smartphones/Samsung_Galaxy_S24/preview/Samsung_Galaxy_S24_1.png",
     "alt": "Samsung Galaxy S24",
     "is_preview": true
   }
@@ -832,7 +1273,7 @@
   "pk": 10,
   "fields": {
     "product": 2,
-    "src": "products/Smartphones/Samsung_Galaxy_S24/images/Samsung_Galaxy_S24_2.png",
+    "src": "products/Electronics/Smartphones/Samsung_Galaxy_S24/images/Samsung_Galaxy_S24_2.png",
     "alt": "Samsung Galaxy S24",
     "is_preview": false
   }
@@ -842,7 +1283,7 @@
   "pk": 11,
   "fields": {
     "product": 2,
-    "src": "products/Smartphones/Samsung_Galaxy_S24/images/Samsung_Galaxy_S24_3.png",
+    "src": "products/Electronics/Smartphones/Samsung_Galaxy_S24/images/Samsung_Galaxy_S24_3.png",
     "alt": "Samsung Galaxy S24",
     "is_preview": false
   }
@@ -852,7 +1293,7 @@
   "pk": 12,
   "fields": {
     "product": 2,
-    "src": "products/Smartphones/Samsung_Galaxy_S24/images/Samsung_Galaxy_S24_4.png",
+    "src": "products/Electronics/Smartphones/Samsung_Galaxy_S24/images/Samsung_Galaxy_S24_4.png",
     "alt": "Samsung Galaxy S24",
     "is_preview": false
   }
@@ -862,7 +1303,7 @@
   "pk": 13,
   "fields": {
     "product": 1,
-    "src": "products/Smartphones/iPhone_15_Pro/preview/iPhone_15_Pro_1.png",
+    "src": "products/Electronics/Smartphones/iPhone_15_Pro/preview/iPhone_15_Pro_1.png",
     "alt": "iPhone 15 Pro",
     "is_preview": true
   }
@@ -872,7 +1313,7 @@
   "pk": 14,
   "fields": {
     "product": 1,
-    "src": "products/Smartphones/iPhone_15_Pro/images/iPhone_15_Pro_2.png",
+    "src": "products/Electronics/Smartphones/iPhone_15_Pro/images/iPhone_15_Pro_2.png",
     "alt": "iPhone 15 Pro",
     "is_preview": false
   }
@@ -882,7 +1323,7 @@
   "pk": 15,
   "fields": {
     "product": 1,
-    "src": "products/Smartphones/iPhone_15_Pro/images/iPhone_15_Pro_3.png",
+    "src": "products/Electronics/Smartphones/iPhone_15_Pro/images/iPhone_15_Pro_3.png",
     "alt": "iPhone 15 Pro",
     "is_preview": false
   }
@@ -892,7 +1333,7 @@
   "pk": 16,
   "fields": {
     "product": 1,
-    "src": "products/Smartphones/iPhone_15_Pro/images/iPhone_15_Pro_4.png",
+    "src": "products/Electronics/Smartphones/iPhone_15_Pro/images/iPhone_15_Pro_4.png",
     "alt": "iPhone 15 Pro",
     "is_preview": false
   }
@@ -901,9 +1342,9 @@
   "model": "shopapp.productimage",
   "pk": 17,
   "fields": {
-    "product": 9,
-    "src": "products/Video cards/NVIDIA_RTX_4090/preview/NVIDIA_RTX_4090_1.png",
-    "alt": "NVIDIA RTX 4090",
+    "product": 6,
+    "src": "products/Electronics/Cameras/Canon_EOS_R6_Mark_II/preview/Canon_EOS_R6_Mark_II_1.png",
+    "alt": "Canon EOS R6 Mark II",
     "is_preview": true
   }
 },
@@ -911,9 +1352,9 @@
   "model": "shopapp.productimage",
   "pk": 18,
   "fields": {
-    "product": 9,
-    "src": "products/Video cards/NVIDIA_RTX_4090/images/NVIDIA_RTX_4090_2.png",
-    "alt": "NVIDIA RTX 4090",
+    "product": 6,
+    "src": "products/Electronics/Cameras/Canon_EOS_R6_Mark_II/images/Canon_EOS_R6_Mark_II_2.png",
+    "alt": "Canon EOS R6 Mark II",
     "is_preview": false
   }
 },
@@ -921,9 +1362,9 @@
   "model": "shopapp.productimage",
   "pk": 19,
   "fields": {
-    "product": 9,
-    "src": "products/Video cards/NVIDIA_RTX_4090/images/NVIDIA_RTX_4090_3.png",
-    "alt": "NVIDIA RTX 4090",
+    "product": 6,
+    "src": "products/Electronics/Cameras/Canon_EOS_R6_Mark_II/images/Canon_EOS_R6_Mark_II_3.png",
+    "alt": "Canon EOS R6 Mark II",
     "is_preview": false
   }
 },
@@ -931,9 +1372,9 @@
   "model": "shopapp.productimage",
   "pk": 20,
   "fields": {
-    "product": 9,
-    "src": "products/Video cards/NVIDIA_RTX_4090/images/NVIDIA_RTX_4090_4.png",
-    "alt": "NVIDIA RTX 4090",
+    "product": 6,
+    "src": "products/Electronics/Cameras/Canon_EOS_R6_Mark_II/images/Canon_EOS_R6_Mark_II_4.png",
+    "alt": "Canon EOS R6 Mark II",
     "is_preview": false
   }
 },
@@ -941,9 +1382,9 @@
   "model": "shopapp.productimage",
   "pk": 21,
   "fields": {
-    "product": 16,
-    "src": "products/Video cards/NVIDIA_RTX_4070/preview/NVIDIA_RTX_4070_1.png",
-    "alt": "NVIDIA RTX 4070",
+    "product": 7,
+    "src": "products/Electronics/Cameras/Sony_Alpha_A7_IV/preview/Sony_Alpha_A7_IV_1.png",
+    "alt": "Sony Alpha A7 IV",
     "is_preview": true
   }
 },
@@ -951,9 +1392,9 @@
   "model": "shopapp.productimage",
   "pk": 22,
   "fields": {
-    "product": 16,
-    "src": "products/Video cards/NVIDIA_RTX_4070/images/NVIDIA_RTX_4070_2.png",
-    "alt": "NVIDIA RTX 4070",
+    "product": 7,
+    "src": "products/Electronics/Cameras/Sony_Alpha_A7_IV/images/Sony_Alpha_A7_IV_2.png",
+    "alt": "Sony Alpha A7 IV",
     "is_preview": false
   }
 },
@@ -961,9 +1402,9 @@
   "model": "shopapp.productimage",
   "pk": 23,
   "fields": {
-    "product": 16,
-    "src": "products/Video cards/NVIDIA_RTX_4070/images/NVIDIA_RTX_4070_3.png",
-    "alt": "NVIDIA RTX 4070",
+    "product": 7,
+    "src": "products/Electronics/Cameras/Sony_Alpha_A7_IV/images/Sony_Alpha_A7_IV_3.png",
+    "alt": "Sony Alpha A7 IV",
     "is_preview": false
   }
 },
@@ -971,9 +1412,9 @@
   "model": "shopapp.productimage",
   "pk": 24,
   "fields": {
-    "product": 16,
-    "src": "products/Video cards/NVIDIA_RTX_4070/images/NVIDIA_RTX_4070_4.png",
-    "alt": "NVIDIA RTX 4070",
+    "product": 7,
+    "src": "products/Electronics/Cameras/Sony_Alpha_A7_IV/images/Sony_Alpha_A7_IV_4.png",
+    "alt": "Sony Alpha A7 IV",
     "is_preview": false
   }
 },
@@ -982,8 +1423,8 @@
   "pk": 25,
   "fields": {
     "product": 3,
-    "src": "products/Notebooks/MacBook_Air_M3/preview/MacBook_Air_M3_1.png",
-    "alt": "MacBook Air M3",
+    "src": "products/Electronics/Headphones/Sony_WH-1000XM5/preview/Sony_WH-1000XM5_1.png",
+    "alt": "Sony WH-1000XM5",
     "is_preview": true
   }
 },
@@ -992,8 +1433,8 @@
   "pk": 26,
   "fields": {
     "product": 3,
-    "src": "products/Notebooks/MacBook_Air_M3/images/MacBook_Air_M3_2.png",
-    "alt": "MacBook Air M3",
+    "src": "products/Electronics/Headphones/Sony_WH-1000XM5/images/Sony_WH-1000XM5_2.png",
+    "alt": "Sony WH-1000XM5",
     "is_preview": false
   }
 },
@@ -1002,8 +1443,8 @@
   "pk": 27,
   "fields": {
     "product": 3,
-    "src": "products/Notebooks/MacBook_Air_M3/images/MacBook_Air_M3_3.png",
-    "alt": "MacBook Air M3",
+    "src": "products/Electronics/Headphones/Sony_WH-1000XM5/images/Sony_WH-1000XM5_3.png",
+    "alt": "Sony WH-1000XM5",
     "is_preview": false
   }
 },
@@ -1012,368 +1453,928 @@
   "pk": 28,
   "fields": {
     "product": 3,
-    "src": "products/Notebooks/MacBook_Air_M3/images/MacBook_Air_M3_4.png",
+    "src": "products/Electronics/Headphones/Sony_WH-1000XM5/images/Sony_WH-1000XM5_4.png",
+    "alt": "Sony WH-1000XM5",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 85,
+  "fields": {
+    "product": 22,
+    "src": "products/Computers and accessories/Video cards/NVIDIA_RTX_4090/preview/NVIDIA_RTX_4090_1.png",
+    "alt": "NVIDIA RTX 4090",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 86,
+  "fields": {
+    "product": 22,
+    "src": "products/Computers and accessories/Video cards/NVIDIA_RTX_4090/images/NVIDIA_RTX_4090_2.png",
+    "alt": "NVIDIA RTX 4090",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 87,
+  "fields": {
+    "product": 22,
+    "src": "products/Computers and accessories/Video cards/NVIDIA_RTX_4090/images/NVIDIA_RTX_4090_3.png",
+    "alt": "NVIDIA RTX 4090",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 88,
+  "fields": {
+    "product": 22,
+    "src": "products/Computers and accessories/Video cards/NVIDIA_RTX_4090/images/NVIDIA_RTX_4090_4.png",
+    "alt": "NVIDIA RTX 4090",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 89,
+  "fields": {
+    "product": 23,
+    "src": "products/Computers and accessories/Video cards/NVIDIA_RTX_4070/preview/NVIDIA_RTX_4070_1.png",
+    "alt": "NVIDIA RTX 4070",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 90,
+  "fields": {
+    "product": 23,
+    "src": "products/Computers and accessories/Video cards/NVIDIA_RTX_4070/images/NVIDIA_RTX_4070_2.png",
+    "alt": "NVIDIA RTX 4070",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 91,
+  "fields": {
+    "product": 23,
+    "src": "products/Computers and accessories/Video cards/NVIDIA_RTX_4070/images/NVIDIA_RTX_4070_3.png",
+    "alt": "NVIDIA RTX 4070",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 92,
+  "fields": {
+    "product": 23,
+    "src": "products/Computers and accessories/Video cards/NVIDIA_RTX_4070/images/NVIDIA_RTX_4070_4.png",
+    "alt": "NVIDIA RTX 4070",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 93,
+  "fields": {
+    "product": 26,
+    "src": "products/Computers and accessories/Monitors/ASUS_ROG_Swift_PG32/preview/ASUS_ROG_Swift_PG32_1.png",
+    "alt": "ASUS ROG Swift PG32",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 94,
+  "fields": {
+    "product": 26,
+    "src": "products/Computers and accessories/Monitors/ASUS_ROG_Swift_PG32/images/ASUS_ROG_Swift_PG32_2.png",
+    "alt": "ASUS ROG Swift PG32",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 95,
+  "fields": {
+    "product": 26,
+    "src": "products/Computers and accessories/Monitors/ASUS_ROG_Swift_PG32/images/ASUS_ROG_Swift_PG32_3.png",
+    "alt": "ASUS ROG Swift PG32",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 96,
+  "fields": {
+    "product": 26,
+    "src": "products/Computers and accessories/Monitors/ASUS_ROG_Swift_PG32/images/ASUS_ROG_Swift_PG32_4.png",
+    "alt": "ASUS ROG Swift PG32",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 97,
+  "fields": {
+    "product": 27,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/MacBook_Air_M3/preview/MacBook_Air_M3_1.png",
+    "alt": "MacBook Air M3",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 98,
+  "fields": {
+    "product": 27,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/MacBook_Air_M3/images/MacBook_Air_M3_2.png",
     "alt": "MacBook Air M3",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 29,
+  "pk": 99,
   "fields": {
-    "product": 5,
-    "src": "products/Notebooks/iPad_Pro_12.9/preview/iPad_Pro_12.9_1.png",
+    "product": 27,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/MacBook_Air_M3/images/MacBook_Air_M3_3.png",
+    "alt": "MacBook Air M3",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 100,
+  "fields": {
+    "product": 27,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/MacBook_Air_M3/images/MacBook_Air_M3_4.png",
+    "alt": "MacBook Air M3",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 101,
+  "fields": {
+    "product": 29,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/iPad_Pro_12.9/preview/iPad_Pro_12.9_1.png",
     "alt": "iPad Pro 12.9",
     "is_preview": true
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 30,
+  "pk": 102,
   "fields": {
-    "product": 5,
-    "src": "products/Notebooks/iPad_Pro_12.9/images/iPad_Pro_12.9_2.png",
+    "product": 29,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/iPad_Pro_12.9/images/iPad_Pro_12.9_2.png",
     "alt": "iPad Pro 12.9",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 31,
+  "pk": 103,
   "fields": {
-    "product": 5,
-    "src": "products/Notebooks/iPad_Pro_12.9/images/iPad_Pro_12.9_3.png",
+    "product": 29,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/iPad_Pro_12.9/images/iPad_Pro_12.9_3.png",
     "alt": "iPad Pro 12.9",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 32,
+  "pk": 104,
   "fields": {
-    "product": 5,
-    "src": "products/Notebooks/iPad_Pro_12.9/images/iPad_Pro_12.9_4.png",
+    "product": 29,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/iPad_Pro_12.9/images/iPad_Pro_12.9_4.png",
     "alt": "iPad Pro 12.9",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 33,
+  "pk": 105,
   "fields": {
-    "product": 4,
-    "src": "products/Notebooks/Lenovo_ThinkPad_X1/preview/Lenovo_ThinkPad_X1_1.png",
+    "product": 28,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/Lenovo_ThinkPad_X1/preview/Lenovo_ThinkPad_X1_1.png",
     "alt": "Lenovo ThinkPad X1",
     "is_preview": true
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 34,
+  "pk": 106,
   "fields": {
-    "product": 4,
-    "src": "products/Notebooks/Lenovo_ThinkPad_X1/images/Lenovo_ThinkPad_X1_2.png",
+    "product": 28,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/Lenovo_ThinkPad_X1/images/Lenovo_ThinkPad_X1_2.png",
     "alt": "Lenovo ThinkPad X1",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 35,
+  "pk": 107,
   "fields": {
-    "product": 4,
-    "src": "products/Notebooks/Lenovo_ThinkPad_X1/images/Lenovo_ThinkPad_X1_3.png",
+    "product": 28,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/Lenovo_ThinkPad_X1/images/Lenovo_ThinkPad_X1_3.png",
     "alt": "Lenovo ThinkPad X1",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 36,
+  "pk": 108,
   "fields": {
-    "product": 4,
-    "src": "products/Notebooks/Lenovo_ThinkPad_X1/images/Lenovo_ThinkPad_X1_4.png",
+    "product": 28,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/Lenovo_ThinkPad_X1/images/Lenovo_ThinkPad_X1_4.png",
     "alt": "Lenovo ThinkPad X1",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 37,
+  "pk": 109,
   "fields": {
-    "product": 13,
-    "src": "products/Notebooks/Dell_XPS_15/preview/Dell_XPS_15_1.png",
+    "product": 30,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/Dell_XPS_15/preview/Dell_XPS_15_1.png",
     "alt": "Dell XPS 15",
     "is_preview": true
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 38,
+  "pk": 110,
   "fields": {
-    "product": 13,
-    "src": "products/Notebooks/Dell_XPS_15/images/Dell_XPS_15_2.png",
+    "product": 30,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/Dell_XPS_15/images/Dell_XPS_15_2.png",
     "alt": "Dell XPS 15",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 39,
+  "pk": 111,
   "fields": {
-    "product": 13,
-    "src": "products/Notebooks/Dell_XPS_15/images/Dell_XPS_15_3.png",
+    "product": 30,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/Dell_XPS_15/images/Dell_XPS_15_3.png",
     "alt": "Dell XPS 15",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 40,
+  "pk": 112,
   "fields": {
-    "product": 13,
-    "src": "products/Notebooks/Dell_XPS_15/images/Dell_XPS_15_4.png",
+    "product": 30,
+    "src": "products/Computers and accessories/Laptops and tablets/Notebooks/Dell_XPS_15/images/Dell_XPS_15_4.png",
     "alt": "Dell XPS 15",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 41,
+  "pk": 113,
   "fields": {
-    "product": 11,
-    "src": "products/Monitors/ASUS_ROG_Swift_PG32/preview/ASUS_ROG_Swift_PG32_1.png",
-    "alt": "ASUS ROG Swift PG32",
-    "is_preview": true
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 42,
-  "fields": {
-    "product": 11,
-    "src": "products/Monitors/ASUS_ROG_Swift_PG32/images/ASUS_ROG_Swift_PG32_2.png",
-    "alt": "ASUS ROG Swift PG32",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 43,
-  "fields": {
-    "product": 11,
-    "src": "products/Monitors/ASUS_ROG_Swift_PG32/images/ASUS_ROG_Swift_PG32_3.png",
-    "alt": "ASUS ROG Swift PG32",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 44,
-  "fields": {
-    "product": 11,
-    "src": "products/Monitors/ASUS_ROG_Swift_PG32/images/ASUS_ROG_Swift_PG32_4.png",
-    "alt": "ASUS ROG Swift PG32",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 45,
-  "fields": {
-    "product": 14,
-    "src": "products/Headphones/Sony_WH-1000XM5/preview/Sony_WH-1000XM5_1.png",
-    "alt": "Sony WH-1000XM5",
-    "is_preview": true
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 46,
-  "fields": {
-    "product": 14,
-    "src": "products/Headphones/Sony_WH-1000XM5/images/Sony_WH-1000XM5_2.png",
-    "alt": "Sony WH-1000XM5",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 47,
-  "fields": {
-    "product": 14,
-    "src": "products/Headphones/Sony_WH-1000XM5/images/Sony_WH-1000XM5_3.png",
-    "alt": "Sony WH-1000XM5",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 48,
-  "fields": {
-    "product": 14,
-    "src": "products/Headphones/Sony_WH-1000XM5/images/Sony_WH-1000XM5_4.png",
-    "alt": "Sony WH-1000XM5",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 49,
-  "fields": {
-    "product": 8,
-    "src": "products/Vacuum cleaners/Dyson_V15_Detect/preview/Dyson_V15_Detect_1.png",
-    "alt": "Dyson V15 Detect",
-    "is_preview": true
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 50,
-  "fields": {
-    "product": 8,
-    "src": "products/Vacuum cleaners/Dyson_V15_Detect/images/Dyson_V15_Detect_2.png",
-    "alt": "Dyson V15 Detect",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 51,
-  "fields": {
-    "product": 8,
-    "src": "products/Vacuum cleaners/Dyson_V15_Detect/images/Dyson_V15_Detect_3.png",
-    "alt": "Dyson V15 Detect",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 52,
-  "fields": {
-    "product": 8,
-    "src": "products/Vacuum cleaners/Dyson_V15_Detect/images/Dyson_V15_Detect_4.png",
-    "alt": "Dyson V15 Detect",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 53,
-  "fields": {
-    "product": 15,
-    "src": "products/Vacuum cleaners/Roborock_S8/preview/Roborock_S8_1.png",
-    "alt": "Робот-пылесос Roborock S8",
-    "is_preview": true
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 54,
-  "fields": {
-    "product": 15,
-    "src": "products/Vacuum cleaners/Roborock_S8/images/Roborock_S8_2.png",
-    "alt": "Робот-пылесос Roborock S8",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 55,
-  "fields": {
-    "product": 15,
-    "src": "products/Vacuum cleaners/Roborock_S8/images/Roborock_S8_3.png",
-    "alt": "Робот-пылесос Roborock S8",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 56,
-  "fields": {
-    "product": 15,
-    "src": "products/Vacuum cleaners/Roborock_S8/images/Roborock_S8_4.png",
-    "alt": "Робот-пылесос Roborock S8",
-    "is_preview": false
-  }
-},
-{
-  "model": "shopapp.productimage",
-  "pk": 57,
-  "fields": {
-    "product": 10,
-    "src": "products/Processors/AMD_Ryzen_9_7950X/preview/AMD_Ryzen_9_7950X_1.png",
+    "product": 24,
+    "src": "products/Computers and accessories/Processors/AMD_Ryzen_9_7950X/preview/AMD_Ryzen_9_7950X_1.png",
     "alt": "AMD Ryzen 9 7950X",
     "is_preview": true
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 58,
+  "pk": 114,
   "fields": {
-    "product": 10,
-    "src": "products/Processors/AMD_Ryzen_9_7950X/images/AMD_Ryzen_9_7950X_2.png",
+    "product": 24,
+    "src": "products/Computers and accessories/Processors/AMD_Ryzen_9_7950X/images/AMD_Ryzen_9_7950X_2.png",
     "alt": "AMD Ryzen 9 7950X",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 59,
+  "pk": 115,
   "fields": {
-    "product": 10,
-    "src": "products/Processors/AMD_Ryzen_9_7950X/images/AMD_Ryzen_9_7950X_3.png",
+    "product": 24,
+    "src": "products/Computers and accessories/Processors/AMD_Ryzen_9_7950X/images/AMD_Ryzen_9_7950X_3.png",
     "alt": "AMD Ryzen 9 7950X",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 60,
+  "pk": 116,
   "fields": {
-    "product": 10,
-    "src": "products/Processors/AMD_Ryzen_9_7950X/images/AMD_Ryzen_9_7950X_4.png",
+    "product": 24,
+    "src": "products/Computers and accessories/Processors/AMD_Ryzen_9_7950X/images/AMD_Ryzen_9_7950X_4.png",
     "alt": "AMD Ryzen 9 7950X",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 61,
+  "pk": 117,
   "fields": {
-    "product": 12,
-    "src": "products/Processors/Intel_Core_i9-14900K/preview/Intel_Core_i9-14900K_1.png",
+    "product": 25,
+    "src": "products/Computers and accessories/Processors/Intel_Core_i9-14900K/preview/Intel_Core_i9-14900K_1.png",
     "alt": "Intel Core i9-14900K",
     "is_preview": true
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 62,
+  "pk": 118,
   "fields": {
-    "product": 12,
-    "src": "products/Processors/Intel_Core_i9-14900K/images/Intel_Core_i9-14900K_2.png",
+    "product": 25,
+    "src": "products/Computers and accessories/Processors/Intel_Core_i9-14900K/images/Intel_Core_i9-14900K_2.png",
     "alt": "Intel Core i9-14900K",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 63,
+  "pk": 119,
   "fields": {
-    "product": 12,
-    "src": "products/Processors/Intel_Core_i9-14900K/images/Intel_Core_i9-14900K_3.png",
+    "product": 25,
+    "src": "products/Computers and accessories/Processors/Intel_Core_i9-14900K/images/Intel_Core_i9-14900K_3.png",
     "alt": "Intel Core i9-14900K",
     "is_preview": false
   }
 },
 {
   "model": "shopapp.productimage",
-  "pk": 64,
+  "pk": 120,
+  "fields": {
+    "product": 25,
+    "src": "products/Computers and accessories/Processors/Intel_Core_i9-14900K/images/Intel_Core_i9-14900K_4.png",
+    "alt": "Intel Core i9-14900K",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 121,
+  "fields": {
+    "product": 9,
+    "src": "products/Home appliances/Washing machines/LG_F2V5/preview/LG_F2V5_1.png",
+    "alt": "Стиральная машина LG F2V5",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 122,
+  "fields": {
+    "product": 9,
+    "src": "products/Home appliances/Washing machines/LG_F2V5/images/LG_F2V5_2.png",
+    "alt": "Стиральная машина LG F2V5",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 123,
+  "fields": {
+    "product": 9,
+    "src": "products/Home appliances/Washing machines/LG_F2V5/images/LG_F2V5_3.png",
+    "alt": "Стиральная машина LG F2V5",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 124,
+  "fields": {
+    "product": 9,
+    "src": "products/Home appliances/Washing machines/LG_F2V5/images/LG_F2V5_4.png",
+    "alt": "Стиральная машина LG F2V5",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 125,
+  "fields": {
+    "product": 8,
+    "src": "products/Home appliances/Refrigerators/Samsung_RF50/preview/Samsung_RF50_1.png",
+    "alt": "Холодильник Samsung RF50",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 126,
+  "fields": {
+    "product": 8,
+    "src": "products/Home appliances/Refrigerators/Samsung_RF50/images/Samsung_RF50_2.png",
+    "alt": "Холодильник Samsung RF50",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 127,
+  "fields": {
+    "product": 8,
+    "src": "products/Home appliances/Refrigerators/Samsung_RF50/images/Samsung_RF50_3.png",
+    "alt": "Холодильник Samsung RF50",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 128,
+  "fields": {
+    "product": 8,
+    "src": "products/Home appliances/Refrigerators/Samsung_RF50/images/Samsung_RF50_4.png",
+    "alt": "Холодильник Samsung RF50",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 129,
   "fields": {
     "product": 12,
-    "src": "products/Processors/Intel_Core_i9-14900K/images/Intel_Core_i9-14900K_4.png",
-    "alt": "Intel Core i9-14900K",
+    "src": "products/Home appliances/Electric stoves and furnaces/Electrolux_EKC954907X/preview/Electrolux_EKC954907X_1.png",
+    "alt": "Electrolux EKC954907X",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 130,
+  "fields": {
+    "product": 12,
+    "src": "products/Home appliances/Electric stoves and furnaces/Electrolux_EKC954907X/images/Electrolux_EKC954907X_2.png",
+    "alt": "Electrolux EKC954907X",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 131,
+  "fields": {
+    "product": 12,
+    "src": "products/Home appliances/Electric stoves and furnaces/Electrolux_EKC954907X/images/Electrolux_EKC954907X_3.png",
+    "alt": "Electrolux EKC954907X",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 132,
+  "fields": {
+    "product": 12,
+    "src": "products/Home appliances/Electric stoves and furnaces/Electrolux_EKC954907X/images/Electrolux_EKC954907X_4.png",
+    "alt": "Electrolux EKC954907X",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 133,
+  "fields": {
+    "product": 13,
+    "src": "products/Home appliances/Electric stoves and furnaces/Gorenje_EC5241SG/preview/Gorenje_EC5241SG_1.png",
+    "alt": "Gorenje EC5241SG",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 134,
+  "fields": {
+    "product": 13,
+    "src": "products/Home appliances/Electric stoves and furnaces/Gorenje_EC5241SG/images/Gorenje_EC5241SG_2.png",
+    "alt": "Gorenje EC5241SG",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 135,
+  "fields": {
+    "product": 13,
+    "src": "products/Home appliances/Electric stoves and furnaces/Gorenje_EC5241SG/images/Gorenje_EC5241SG_3.png",
+    "alt": "Gorenje EC5241SG",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 136,
+  "fields": {
+    "product": 13,
+    "src": "products/Home appliances/Electric stoves and furnaces/Gorenje_EC5241SG/images/Gorenje_EC5241SG_4.png",
+    "alt": "Gorenje EC5241SG",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 137,
+  "fields": {
+    "product": 19,
+    "src": "products/Home appliances/Table lamps/Philips_Hue_Go/preview/Philips_Hue_Go_1.png",
+    "alt": "Philips Hue Go",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 138,
+  "fields": {
+    "product": 19,
+    "src": "products/Home appliances/Table lamps/Philips_Hue_Go/images/Philips_Hue_Go_2.png",
+    "alt": "Philips Hue Go",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 139,
+  "fields": {
+    "product": 19,
+    "src": "products/Home appliances/Table lamps/Philips_Hue_Go/images/Philips_Hue_Go_3.png",
+    "alt": "Philips Hue Go",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 140,
+  "fields": {
+    "product": 19,
+    "src": "products/Home appliances/Table lamps/Philips_Hue_Go/images/Philips_Hue_Go_4.png",
+    "alt": "Philips Hue Go",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 141,
+  "fields": {
+    "product": 18,
+    "src": "products/Home appliances/Table lamps/Xiaomi_Mi_LED_Desk_Lamp_1S/preview/Xiaomi_Mi_LED_Desk_Lamp_1S_1.png",
+    "alt": "Xiaomi Mi LED Desk Lamp 1S",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 142,
+  "fields": {
+    "product": 18,
+    "src": "products/Home appliances/Table lamps/Xiaomi_Mi_LED_Desk_Lamp_1S/images/Xiaomi_Mi_LED_Desk_Lamp_1S_2.png",
+    "alt": "Xiaomi Mi LED Desk Lamp 1S",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 143,
+  "fields": {
+    "product": 18,
+    "src": "products/Home appliances/Table lamps/Xiaomi_Mi_LED_Desk_Lamp_1S/images/Xiaomi_Mi_LED_Desk_Lamp_1S_3.png",
+    "alt": "Xiaomi Mi LED Desk Lamp 1S",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 144,
+  "fields": {
+    "product": 18,
+    "src": "products/Home appliances/Table lamps/Xiaomi_Mi_LED_Desk_Lamp_1S/images/Xiaomi_Mi_LED_Desk_Lamp_1S_4.png",
+    "alt": "Xiaomi Mi LED Desk Lamp 1S",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 145,
+  "fields": {
+    "product": 17,
+    "src": "products/Home appliances/Mixers and blenders/KitchenAid_5KSM175PS/preview/KitchenAid_5KSM175PS_1.png",
+    "alt": "KitchenAid 5KSM175PS",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 146,
+  "fields": {
+    "product": 17,
+    "src": "products/Home appliances/Mixers and blenders/KitchenAid_5KSM175PS/images/KitchenAid_5KSM175PS_2.png",
+    "alt": "KitchenAid 5KSM175PS",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 147,
+  "fields": {
+    "product": 17,
+    "src": "products/Home appliances/Mixers and blenders/KitchenAid_5KSM175PS/images/KitchenAid_5KSM175PS_3.png",
+    "alt": "KitchenAid 5KSM175PS",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 148,
+  "fields": {
+    "product": 17,
+    "src": "products/Home appliances/Mixers and blenders/KitchenAid_5KSM175PS/images/KitchenAid_5KSM175PS_4.png",
+    "alt": "KitchenAid 5KSM175PS",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 149,
+  "fields": {
+    "product": 16,
+    "src": "products/Home appliances/Mixers and blenders/Bosch_MSM67170/preview/Bosch_MSM67170_1.png",
+    "alt": "Bosch MSM67170",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 150,
+  "fields": {
+    "product": 16,
+    "src": "products/Home appliances/Mixers and blenders/Bosch_MSM67170/images/Bosch_MSM67170_2.png",
+    "alt": "Bosch MSM67170",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 151,
+  "fields": {
+    "product": 16,
+    "src": "products/Home appliances/Mixers and blenders/Bosch_MSM67170/images/Bosch_MSM67170_3.png",
+    "alt": "Bosch MSM67170",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 152,
+  "fields": {
+    "product": 16,
+    "src": "products/Home appliances/Mixers and blenders/Bosch_MSM67170/images/Bosch_MSM67170_4.png",
+    "alt": "Bosch MSM67170",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 153,
+  "fields": {
+    "product": 10,
+    "src": "products/Home appliances/Vacuum cleaners/Dyson_V15_Detect/preview/Dyson_V15_Detect_1.png",
+    "alt": "Dyson V15 Detect",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 154,
+  "fields": {
+    "product": 10,
+    "src": "products/Home appliances/Vacuum cleaners/Dyson_V15_Detect/images/Dyson_V15_Detect_2.png",
+    "alt": "Dyson V15 Detect",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 155,
+  "fields": {
+    "product": 10,
+    "src": "products/Home appliances/Vacuum cleaners/Dyson_V15_Detect/images/Dyson_V15_Detect_3.png",
+    "alt": "Dyson V15 Detect",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 156,
+  "fields": {
+    "product": 10,
+    "src": "products/Home appliances/Vacuum cleaners/Dyson_V15_Detect/images/Dyson_V15_Detect_4.png",
+    "alt": "Dyson V15 Detect",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 157,
+  "fields": {
+    "product": 11,
+    "src": "products/Home appliances/Vacuum cleaners/Roborock_S8/preview/Roborock_S8_1.png",
+    "alt": "Робот-пылесос Roborock S8",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 158,
+  "fields": {
+    "product": 11,
+    "src": "products/Home appliances/Vacuum cleaners/Roborock_S8/images/Roborock_S8_2.png",
+    "alt": "Робот-пылесос Roborock S8",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 159,
+  "fields": {
+    "product": 11,
+    "src": "products/Home appliances/Vacuum cleaners/Roborock_S8/images/Roborock_S8_3.png",
+    "alt": "Робот-пылесос Roborock S8",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 160,
+  "fields": {
+    "product": 11,
+    "src": "products/Home appliances/Vacuum cleaners/Roborock_S8/images/Roborock_S8_4.png",
+    "alt": "Робот-пылесос Roborock S8",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 161,
+  "fields": {
+    "product": 15,
+    "src": "products/Home appliances/Microwave ovens/LG_MS2595CIS/preview/LG_MS2595CIS_1.png",
+    "alt": "LG MS2595CIS",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 162,
+  "fields": {
+    "product": 15,
+    "src": "products/Home appliances/Microwave ovens/LG_MS2595CIS/images/LG_MS2595CIS_2.png",
+    "alt": "LG MS2595CIS",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 163,
+  "fields": {
+    "product": 15,
+    "src": "products/Home appliances/Microwave ovens/LG_MS2595CIS/images/LG_MS2595CIS_3.png",
+    "alt": "LG MS2595CIS",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 164,
+  "fields": {
+    "product": 15,
+    "src": "products/Home appliances/Microwave ovens/LG_MS2595CIS/images/LG_MS2595CIS_4.png",
+    "alt": "LG MS2595CIS",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 165,
+  "fields": {
+    "product": 14,
+    "src": "products/Home appliances/Microwave ovens/Samsung_ME88SUG/preview/Samsung_ME88SUG_1.png",
+    "alt": "Samsung ME88SUG",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 166,
+  "fields": {
+    "product": 14,
+    "src": "products/Home appliances/Microwave ovens/Samsung_ME88SUG/images/Samsung_ME88SUG_2.png",
+    "alt": "Samsung ME88SUG",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 167,
+  "fields": {
+    "product": 14,
+    "src": "products/Home appliances/Microwave ovens/Samsung_ME88SUG/images/Samsung_ME88SUG_3.png",
+    "alt": "Samsung ME88SUG",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 168,
+  "fields": {
+    "product": 14,
+    "src": "products/Home appliances/Microwave ovens/Samsung_ME88SUG/images/Samsung_ME88SUG_4.png",
+    "alt": "Samsung ME88SUG",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 169,
+  "fields": {
+    "product": 20,
+    "src": "products/Home appliances/Teapots/Bosch_TWK8611P/preview/Bosch_TWK8611P_1.png",
+    "alt": "Bosch TWK8611P",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 170,
+  "fields": {
+    "product": 20,
+    "src": "products/Home appliances/Teapots/Bosch_TWK8611P/images/Bosch_TWK8611P_2.png",
+    "alt": "Bosch TWK8611P",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 171,
+  "fields": {
+    "product": 20,
+    "src": "products/Home appliances/Teapots/Bosch_TWK8611P/images/Bosch_TWK8611P_3.png",
+    "alt": "Bosch TWK8611P",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 172,
+  "fields": {
+    "product": 20,
+    "src": "products/Home appliances/Teapots/Bosch_TWK8611P/images/Bosch_TWK8611P_4.png",
+    "alt": "Bosch TWK8611P",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 173,
+  "fields": {
+    "product": 21,
+    "src": "products/Home appliances/Teapots/Xiaomi_Mi_Smart_Kettle_Pro/preview/Xiaomi_Mi_Smart_Kettle_Pro_1.png",
+    "alt": "Xiaomi Mi Smart Kettle Pro",
+    "is_preview": true
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 174,
+  "fields": {
+    "product": 21,
+    "src": "products/Home appliances/Teapots/Xiaomi_Mi_Smart_Kettle_Pro/images/Xiaomi_Mi_Smart_Kettle_Pro_2.png",
+    "alt": "Xiaomi Mi Smart Kettle Pro",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 175,
+  "fields": {
+    "product": 21,
+    "src": "products/Home appliances/Teapots/Xiaomi_Mi_Smart_Kettle_Pro/images/Xiaomi_Mi_Smart_Kettle_Pro_3.png",
+    "alt": "Xiaomi Mi Smart Kettle Pro",
+    "is_preview": false
+  }
+},
+{
+  "model": "shopapp.productimage",
+  "pk": 176,
+  "fields": {
+    "product": 21,
+    "src": "products/Home appliances/Teapots/Xiaomi_Mi_Smart_Kettle_Pro/images/Xiaomi_Mi_Smart_Kettle_Pro_4.png",
+    "alt": "Xiaomi Mi Smart Kettle Pro",
     "is_preview": false
   }
 },
@@ -1399,15 +2400,6 @@
   "model": "shopapp.specification",
   "pk": 3,
   "fields": {
-    "product": 1,
-    "name": "Вес",
-    "value": "13.0 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 4,
-  "fields": {
     "product": 2,
     "name": "Производитель",
     "value": "Samsung"
@@ -1415,398 +2407,515 @@
 },
 {
   "model": "shopapp.specification",
+  "pk": 4,
+  "fields": {
+    "product": 2,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
   "pk": 5,
   "fields": {
-    "product": 2,
-    "name": "Гарантия",
-    "value": "12 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 6,
-  "fields": {
-    "product": 2,
-    "name": "Вес",
-    "value": "6.5 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 7,
-  "fields": {
     "product": 3,
-    "name": "Производитель",
-    "value": "MacBook"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 8,
-  "fields": {
-    "product": 3,
-    "name": "Гарантия",
-    "value": "12 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 9,
-  "fields": {
-    "product": 3,
-    "name": "Вес",
-    "value": "12.0 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 10,
-  "fields": {
-    "product": 4,
-    "name": "Производитель",
-    "value": "Lenovo"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 11,
-  "fields": {
-    "product": 4,
-    "name": "Гарантия",
-    "value": "36 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 12,
-  "fields": {
-    "product": 4,
-    "name": "Вес",
-    "value": "4.0 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 13,
-  "fields": {
-    "product": 5,
-    "name": "Производитель",
-    "value": "iPad"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 14,
-  "fields": {
-    "product": 5,
-    "name": "Гарантия",
-    "value": "24 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 15,
-  "fields": {
-    "product": 5,
-    "name": "Вес",
-    "value": "10.2 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 16,
-  "fields": {
-    "product": 6,
-    "name": "Производитель",
-    "value": "Холодильник"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 17,
-  "fields": {
-    "product": 6,
-    "name": "Гарантия",
-    "value": "12 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 18,
-  "fields": {
-    "product": 6,
-    "name": "Вес",
-    "value": "1.4 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 19,
-  "fields": {
-    "product": 7,
-    "name": "Производитель",
-    "value": "Стиральная"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 20,
-  "fields": {
-    "product": 7,
-    "name": "Гарантия",
-    "value": "36 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 21,
-  "fields": {
-    "product": 7,
-    "name": "Вес",
-    "value": "2.7 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 22,
-  "fields": {
-    "product": 8,
-    "name": "Производитель",
-    "value": "Dyson"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 23,
-  "fields": {
-    "product": 8,
-    "name": "Гарантия",
-    "value": "24 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 24,
-  "fields": {
-    "product": 8,
-    "name": "Вес",
-    "value": "11.2 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 25,
-  "fields": {
-    "product": 9,
-    "name": "Производитель",
-    "value": "NVIDIA"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 26,
-  "fields": {
-    "product": 9,
-    "name": "Гарантия",
-    "value": "36 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 27,
-  "fields": {
-    "product": 9,
-    "name": "Вес",
-    "value": "2.7 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 28,
-  "fields": {
-    "product": 10,
-    "name": "Производитель",
-    "value": "AMD"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 29,
-  "fields": {
-    "product": 10,
-    "name": "Гарантия",
-    "value": "12 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 30,
-  "fields": {
-    "product": 10,
-    "name": "Вес",
-    "value": "9.5 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 31,
-  "fields": {
-    "product": 11,
-    "name": "Производитель",
-    "value": "ASUS"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 32,
-  "fields": {
-    "product": 11,
-    "name": "Гарантия",
-    "value": "12 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 33,
-  "fields": {
-    "product": 11,
-    "name": "Вес",
-    "value": "0.2 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 34,
-  "fields": {
-    "product": 12,
-    "name": "Производитель",
-    "value": "Intel"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 35,
-  "fields": {
-    "product": 12,
-    "name": "Гарантия",
-    "value": "36 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 36,
-  "fields": {
-    "product": 12,
-    "name": "Вес",
-    "value": "1.4 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 37,
-  "fields": {
-    "product": 13,
-    "name": "Производитель",
-    "value": "Dell"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 38,
-  "fields": {
-    "product": 13,
-    "name": "Гарантия",
-    "value": "36 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 39,
-  "fields": {
-    "product": 13,
-    "name": "Вес",
-    "value": "13.7 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 40,
-  "fields": {
-    "product": 14,
     "name": "Производитель",
     "value": "Sony"
   }
 },
 {
   "model": "shopapp.specification",
-  "pk": 41,
+  "pk": 6,
   "fields": {
-    "product": 14,
+    "product": 3,
+    "name": "Гарантия",
+    "value": "12 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 7,
+  "fields": {
+    "product": 4,
+    "name": "Производитель",
+    "value": "JBL"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 8,
+  "fields": {
+    "product": 4,
     "name": "Гарантия",
     "value": "24 мес."
   }
 },
 {
   "model": "shopapp.specification",
-  "pk": 42,
+  "pk": 9,
   "fields": {
-    "product": 14,
-    "name": "Вес",
-    "value": "5.5 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 43,
-  "fields": {
-    "product": 15,
+    "product": 5,
     "name": "Производитель",
-    "value": "Робот-пылесос"
+    "value": "Яндекс"
   }
 },
 {
   "model": "shopapp.specification",
-  "pk": 44,
+  "pk": 10,
   "fields": {
-    "product": 15,
-    "name": "Гарантия",
-    "value": "24 мес."
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 45,
-  "fields": {
-    "product": 15,
-    "name": "Вес",
-    "value": "1.8 кг"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 46,
-  "fields": {
-    "product": 16,
-    "name": "Производитель",
-    "value": "NVIDIA"
-  }
-},
-{
-  "model": "shopapp.specification",
-  "pk": 47,
-  "fields": {
-    "product": 16,
+    "product": 5,
     "name": "Гарантия",
     "value": "36 мес."
   }
 },
 {
   "model": "shopapp.specification",
-  "pk": 48,
+  "pk": 11,
+  "fields": {
+    "product": 6,
+    "name": "Производитель",
+    "value": "Canon"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 12,
+  "fields": {
+    "product": 6,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 13,
+  "fields": {
+    "product": 7,
+    "name": "Производитель",
+    "value": "Sony"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 14,
+  "fields": {
+    "product": 7,
+    "name": "Гарантия",
+    "value": "12 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 15,
+  "fields": {
+    "product": 8,
+    "name": "Производитель",
+    "value": "Холодильник"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 16,
+  "fields": {
+    "product": 8,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 17,
+  "fields": {
+    "product": 9,
+    "name": "Производитель",
+    "value": "Стиральная"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 18,
+  "fields": {
+    "product": 9,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 19,
+  "fields": {
+    "product": 10,
+    "name": "Производитель",
+    "value": "Dyson"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 20,
+  "fields": {
+    "product": 10,
+    "name": "Гарантия",
+    "value": "12 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 21,
+  "fields": {
+    "product": 11,
+    "name": "Производитель",
+    "value": "Робот-пылесос"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 22,
+  "fields": {
+    "product": 11,
+    "name": "Гарантия",
+    "value": "12 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 23,
+  "fields": {
+    "product": 12,
+    "name": "Производитель",
+    "value": "Electrolux"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 24,
+  "fields": {
+    "product": 12,
+    "name": "Гарантия",
+    "value": "12 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 25,
+  "fields": {
+    "product": 13,
+    "name": "Производитель",
+    "value": "Gorenje"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 26,
+  "fields": {
+    "product": 13,
+    "name": "Гарантия",
+    "value": "36 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 27,
+  "fields": {
+    "product": 14,
+    "name": "Производитель",
+    "value": "Samsung"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 28,
+  "fields": {
+    "product": 14,
+    "name": "Гарантия",
+    "value": "12 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 29,
+  "fields": {
+    "product": 15,
+    "name": "Производитель",
+    "value": "LG"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 30,
+  "fields": {
+    "product": 15,
+    "name": "Гарантия",
+    "value": "36 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 31,
   "fields": {
     "product": 16,
-    "name": "Вес",
-    "value": "11.0 кг"
+    "name": "Производитель",
+    "value": "Bosch"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 32,
+  "fields": {
+    "product": 16,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 33,
+  "fields": {
+    "product": 17,
+    "name": "Производитель",
+    "value": "KitchenAid"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 34,
+  "fields": {
+    "product": 17,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 35,
+  "fields": {
+    "product": 18,
+    "name": "Производитель",
+    "value": "Xiaomi"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 36,
+  "fields": {
+    "product": 18,
+    "name": "Гарантия",
+    "value": "36 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 37,
+  "fields": {
+    "product": 19,
+    "name": "Производитель",
+    "value": "Philips"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 38,
+  "fields": {
+    "product": 19,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 39,
+  "fields": {
+    "product": 20,
+    "name": "Производитель",
+    "value": "Bosch"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 40,
+  "fields": {
+    "product": 20,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 41,
+  "fields": {
+    "product": 21,
+    "name": "Производитель",
+    "value": "Xiaomi"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 42,
+  "fields": {
+    "product": 21,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 43,
+  "fields": {
+    "product": 22,
+    "name": "Производитель",
+    "value": "NVIDIA"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 44,
+  "fields": {
+    "product": 22,
+    "name": "Гарантия",
+    "value": "36 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 45,
+  "fields": {
+    "product": 23,
+    "name": "Производитель",
+    "value": "NVIDIA"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 46,
+  "fields": {
+    "product": 23,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 47,
+  "fields": {
+    "product": 24,
+    "name": "Производитель",
+    "value": "AMD"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 48,
+  "fields": {
+    "product": 24,
+    "name": "Гарантия",
+    "value": "12 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 49,
+  "fields": {
+    "product": 25,
+    "name": "Производитель",
+    "value": "Intel"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 50,
+  "fields": {
+    "product": 25,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 51,
+  "fields": {
+    "product": 26,
+    "name": "Производитель",
+    "value": "ASUS"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 52,
+  "fields": {
+    "product": 26,
+    "name": "Гарантия",
+    "value": "36 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 53,
+  "fields": {
+    "product": 27,
+    "name": "Производитель",
+    "value": "MacBook"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 54,
+  "fields": {
+    "product": 27,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 55,
+  "fields": {
+    "product": 28,
+    "name": "Производитель",
+    "value": "Lenovo"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 56,
+  "fields": {
+    "product": 28,
+    "name": "Гарантия",
+    "value": "12 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 57,
+  "fields": {
+    "product": 29,
+    "name": "Производитель",
+    "value": "iPad"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 58,
+  "fields": {
+    "product": 29,
+    "name": "Гарантия",
+    "value": "24 мес."
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 59,
+  "fields": {
+    "product": 30,
+    "name": "Производитель",
+    "value": "Dell"
+  }
+},
+{
+  "model": "shopapp.specification",
+  "pk": 60,
+  "fields": {
+    "product": 30,
+    "name": "Гарантия",
+    "value": "12 мес."
   }
 },
 {
@@ -1814,11 +2923,11 @@
   "pk": 1,
   "fields": {
     "product": 1,
-    "author": "Алексей",
-    "email": "анна@test.ru",
-    "text": "Превосходное качество сборки.",
+    "author": "Анна",
+    "email": "дмитрий@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
     "rate": 4,
-    "date": "2026-05-15T12:59:40.959Z"
+    "date": "2026-05-19T11:28:26.718Z"
   }
 },
 {
@@ -1826,11 +2935,11 @@
   "pk": 2,
   "fields": {
     "product": 1,
-    "author": "Анна",
-    "email": "иван@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:40.961Z"
+    "author": "Мария",
+    "email": "анна@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.720Z"
   }
 },
 {
@@ -1839,10 +2948,10 @@
   "fields": {
     "product": 1,
     "author": "Дмитрий",
-    "email": "мария@test.ru",
-    "text": "Хорошее качество за свои деньги.",
+    "email": "ольга@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
     "rate": 5,
-    "date": "2026-05-15T12:59:40.963Z"
+    "date": "2026-05-19T11:28:26.721Z"
   }
 },
 {
@@ -1851,10 +2960,10 @@
   "fields": {
     "product": 1,
     "author": "Мария",
-    "email": "алексей@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:40.966Z"
+    "email": "дмитрий@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.723Z"
   }
 },
 {
@@ -1862,419 +2971,419 @@
   "pk": 5,
   "fields": {
     "product": 2,
-    "author": "Анна",
-    "email": "анна@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 3,
-    "date": "2026-05-15T12:59:40.970Z"
+    "author": "Алексей",
+    "email": "дмитрий@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.725Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 6,
   "fields": {
-    "product": 3,
+    "product": 2,
     "author": "Ольга",
-    "email": "алексей@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 4,
-    "date": "2026-05-15T12:59:40.972Z"
+    "email": "мария@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.726Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 7,
   "fields": {
-    "product": 3,
-    "author": "Алексей",
-    "email": "анна@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 3,
-    "date": "2026-05-15T12:59:40.974Z"
+    "product": 2,
+    "author": "Дмитрий",
+    "email": "алексей@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.728Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 8,
   "fields": {
-    "product": 3,
-    "author": "Анна",
-    "email": "алексей@test.ru",
+    "product": 2,
+    "author": "Мария",
+    "email": "анна@test.ru",
     "text": "Отличный товар, рекомендую!",
     "rate": 3,
-    "date": "2026-05-15T12:59:40.976Z"
+    "date": "2026-05-19T11:28:26.729Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 9,
   "fields": {
-    "product": 4,
-    "author": "Дмитрий",
-    "email": "ольга@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:40.979Z"
+    "product": 3,
+    "author": "Ольга",
+    "email": "анна@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.732Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 10,
   "fields": {
-    "product": 5,
-    "author": "Анна",
-    "email": "алексей@test.ru",
+    "product": 3,
+    "author": "Алексей",
+    "email": "мария@test.ru",
     "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:40.983Z"
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.734Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 11,
   "fields": {
-    "product": 5,
-    "author": "Анна",
-    "email": "дмитрий@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "product": 3,
+    "author": "Иван",
+    "email": "анна@test.ru",
+    "text": "Превосходное качество сборки.",
     "rate": 5,
-    "date": "2026-05-15T12:59:40.986Z"
+    "date": "2026-05-19T11:28:26.736Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 12,
   "fields": {
-    "product": 5,
-    "author": "Иван",
-    "email": "ольга@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:40.988Z"
+    "product": 3,
+    "author": "Дмитрий",
+    "email": "анна@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.737Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 13,
   "fields": {
-    "product": 6,
-    "author": "Дмитрий",
+    "product": 4,
+    "author": "Анна",
     "email": "дмитрий@test.ru",
-    "text": "Превосходное качество сборки.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:40.990Z"
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.739Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 14,
   "fields": {
-    "product": 6,
-    "author": "Дмитрий",
-    "email": "мария@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
+    "product": 4,
+    "author": "Мария",
+    "email": "дмитрий@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 3,
-    "date": "2026-05-15T12:59:40.992Z"
+    "date": "2026-05-19T11:28:26.741Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 15,
   "fields": {
-    "product": 6,
-    "author": "Анна",
-    "email": "анна@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "product": 4,
+    "author": "Иван",
+    "email": "мария@test.ru",
+    "text": "Хорошее качество за свои деньги.",
     "rate": 3,
-    "date": "2026-05-15T12:59:40.994Z"
+    "date": "2026-05-19T11:28:26.742Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 16,
   "fields": {
-    "product": 6,
-    "author": "Ольга",
-    "email": "алексей@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "product": 4,
+    "author": "Дмитрий",
+    "email": "ольга@test.ru",
+    "text": "Отличный товар, рекомендую!",
     "rate": 5,
-    "date": "2026-05-15T12:59:40.996Z"
+    "date": "2026-05-19T11:28:26.743Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 17,
   "fields": {
-    "product": 7,
-    "author": "Мария",
+    "product": 5,
+    "author": "Алексей",
     "email": "мария@test.ru",
-    "text": "Отличный товар, рекомендую!",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 5,
-    "date": "2026-05-15T12:59:40.998Z"
+    "date": "2026-05-19T11:28:26.745Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 18,
   "fields": {
-    "product": 7,
-    "author": "Иван",
-    "email": "ольга@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 3,
-    "date": "2026-05-15T12:59:41.001Z"
+    "product": 5,
+    "author": "Алексей",
+    "email": "алексей@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.747Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 19,
   "fields": {
-    "product": 8,
-    "author": "Ольга",
-    "email": "ольга@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:41.004Z"
+    "product": 5,
+    "author": "Иван",
+    "email": "анна@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.749Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 20,
   "fields": {
-    "product": 9,
-    "author": "Дмитрий",
-    "email": "мария@test.ru",
-    "text": "Превосходное качество сборки.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:41.007Z"
+    "product": 5,
+    "author": "Иван",
+    "email": "ольга@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.750Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 21,
   "fields": {
-    "product": 10,
-    "author": "Алексей",
-    "email": "алексей@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:41.010Z"
+    "product": 6,
+    "author": "Анна",
+    "email": "дмитрий@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.752Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 22,
   "fields": {
-    "product": 10,
-    "author": "Дмитрий",
-    "email": "ольга@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:41.012Z"
+    "product": 6,
+    "author": "Иван",
+    "email": "дмитрий@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.754Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 23,
   "fields": {
-    "product": 10,
-    "author": "Ольга",
-    "email": "алексей@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:41.014Z"
+    "product": 6,
+    "author": "Иван",
+    "email": "анна@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.756Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 24,
   "fields": {
-    "product": 11,
+    "product": 7,
     "author": "Алексей",
     "email": "ольга@test.ru",
-    "text": "Превосходное качество сборки.",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 3,
-    "date": "2026-05-15T12:59:41.016Z"
+    "date": "2026-05-19T11:28:26.758Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 25,
   "fields": {
-    "product": 11,
-    "author": "Мария",
-    "email": "ольга@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 3,
-    "date": "2026-05-15T12:59:41.018Z"
+    "product": 7,
+    "author": "Ольга",
+    "email": "дмитрий@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.759Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 26,
   "fields": {
-    "product": 11,
-    "author": "Ольга",
-    "email": "ольга@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:41.019Z"
+    "product": 8,
+    "author": "Анна",
+    "email": "мария@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.762Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 27,
   "fields": {
-    "product": 11,
-    "author": "Мария",
-    "email": "иван@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "product": 9,
+    "author": "Иван",
+    "email": "алексей@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
     "rate": 4,
-    "date": "2026-05-15T12:59:41.021Z"
+    "date": "2026-05-19T11:28:26.764Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 28,
   "fields": {
-    "product": 12,
-    "author": "Иван",
-    "email": "иван@test.ru",
-    "text": "Превосходное качество сборки.",
+    "product": 9,
+    "author": "Ольга",
+    "email": "ольга@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 3,
-    "date": "2026-05-15T12:59:41.023Z"
+    "date": "2026-05-19T11:28:26.766Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 29,
   "fields": {
-    "product": 12,
-    "author": "Ольга",
-    "email": "иван@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:41.024Z"
+    "product": 9,
+    "author": "Анна",
+    "email": "мария@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.768Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 30,
   "fields": {
-    "product": 12,
+    "product": 9,
     "author": "Иван",
-    "email": "иван@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:41.026Z"
+    "email": "ольга@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.770Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 31,
   "fields": {
-    "product": 13,
-    "author": "Мария",
-    "email": "мария@test.ru",
-    "text": "Превосходное качество сборки.",
+    "product": 10,
+    "author": "Анна",
+    "email": "дмитрий@test.ru",
+    "text": "Хорошее качество за свои деньги.",
     "rate": 3,
-    "date": "2026-05-15T12:59:41.029Z"
+    "date": "2026-05-19T11:28:26.772Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 32,
   "fields": {
-    "product": 14,
-    "author": "Ольга",
-    "email": "ольга@test.ru",
+    "product": 10,
+    "author": "Анна",
+    "email": "иван@test.ru",
     "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:41.032Z"
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.774Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 33,
   "fields": {
-    "product": 14,
-    "author": "Алексей",
-    "email": "ольга@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 4,
-    "date": "2026-05-15T12:59:41.035Z"
+    "product": 11,
+    "author": "Ольга",
+    "email": "иван@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.776Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 34,
   "fields": {
-    "product": 14,
-    "author": "Дмитрий",
+    "product": 12,
+    "author": "Мария",
     "email": "иван@test.ru",
-    "text": "Хорошее качество за свои деньги.",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 5,
-    "date": "2026-05-15T12:59:41.036Z"
+    "date": "2026-05-19T11:28:26.778Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 35,
   "fields": {
-    "product": 15,
-    "author": "Мария",
-    "email": "иван@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 3,
-    "date": "2026-05-15T12:59:41.038Z"
+    "product": 12,
+    "author": "Дмитрий",
+    "email": "мария@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.780Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 36,
   "fields": {
-    "product": 15,
-    "author": "Дмитрий",
-    "email": "дмитрий@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "product": 13,
+    "author": "Алексей",
+    "email": "ольга@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 4,
-    "date": "2026-05-15T12:59:41.040Z"
+    "date": "2026-05-19T11:28:26.782Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 37,
   "fields": {
-    "product": 16,
-    "author": "Мария",
-    "email": "алексей@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:41.042Z"
+    "product": 14,
+    "author": "Дмитрий",
+    "email": "анна@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.784Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 38,
   "fields": {
-    "product": 16,
-    "author": "Анна",
-    "email": "мария@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 3,
-    "date": "2026-05-15T12:59:41.044Z"
+    "product": 14,
+    "author": "Алексей",
+    "email": "алексей@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.786Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 39,
   "fields": {
-    "product": 16,
-    "author": "Ольга",
-    "email": "иван@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 5,
-    "date": "2026-05-15T12:59:41.045Z"
+    "product": 15,
+    "author": "Мария",
+    "email": "ольга@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.788Z"
   }
 },
 {
@@ -2282,81 +3391,417 @@
   "pk": 40,
   "fields": {
     "product": 16,
-    "author": "Иван",
-    "email": "анна@test.ru",
+    "author": "Мария",
+    "email": "алексей@test.ru",
     "text": "Превосходное качество сборки.",
     "rate": 4,
-    "date": "2026-05-15T12:59:41.047Z"
+    "date": "2026-05-19T11:28:26.791Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 41,
+  "fields": {
+    "product": 17,
+    "author": "Иван",
+    "email": "мария@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.793Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 42,
+  "fields": {
+    "product": 17,
+    "author": "Дмитрий",
+    "email": "иван@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.795Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 43,
+  "fields": {
+    "product": 18,
+    "author": "Иван",
+    "email": "дмитрий@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.798Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 44,
+  "fields": {
+    "product": 19,
+    "author": "Анна",
+    "email": "алексей@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.801Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 45,
+  "fields": {
+    "product": 19,
+    "author": "Мария",
+    "email": "ольга@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.803Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 46,
+  "fields": {
+    "product": 19,
+    "author": "Анна",
+    "email": "анна@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.805Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 47,
+  "fields": {
+    "product": 20,
+    "author": "Мария",
+    "email": "анна@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.807Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 48,
+  "fields": {
+    "product": 20,
+    "author": "Мария",
+    "email": "мария@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.808Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 49,
+  "fields": {
+    "product": 21,
+    "author": "Мария",
+    "email": "анна@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.810Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 50,
+  "fields": {
+    "product": 21,
+    "author": "Иван",
+    "email": "мария@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.812Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 51,
+  "fields": {
+    "product": 22,
+    "author": "Ольга",
+    "email": "анна@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.814Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 52,
+  "fields": {
+    "product": 23,
+    "author": "Иван",
+    "email": "мария@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.816Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 53,
+  "fields": {
+    "product": 23,
+    "author": "Дмитрий",
+    "email": "дмитрий@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.819Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 54,
+  "fields": {
+    "product": 23,
+    "author": "Алексей",
+    "email": "иван@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.820Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 55,
+  "fields": {
+    "product": 23,
+    "author": "Мария",
+    "email": "дмитрий@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.821Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 56,
+  "fields": {
+    "product": 24,
+    "author": "Ольга",
+    "email": "мария@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.824Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 57,
+  "fields": {
+    "product": 24,
+    "author": "Дмитрий",
+    "email": "дмитрий@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.825Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 58,
+  "fields": {
+    "product": 25,
+    "author": "Ольга",
+    "email": "иван@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.828Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 59,
+  "fields": {
+    "product": 25,
+    "author": "Мария",
+    "email": "иван@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.829Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 60,
+  "fields": {
+    "product": 25,
+    "author": "Дмитрий",
+    "email": "анна@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.831Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 61,
+  "fields": {
+    "product": 26,
+    "author": "Анна",
+    "email": "алексей@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.834Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 62,
+  "fields": {
+    "product": 27,
+    "author": "Дмитрий",
+    "email": "алексей@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.837Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 63,
+  "fields": {
+    "product": 28,
+    "author": "Иван",
+    "email": "дмитрий@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.840Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 64,
+  "fields": {
+    "product": 28,
+    "author": "Мария",
+    "email": "иван@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.842Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 65,
+  "fields": {
+    "product": 28,
+    "author": "Иван",
+    "email": "анна@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.843Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 66,
+  "fields": {
+    "product": 28,
+    "author": "Анна",
+    "email": "ольга@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 5,
+    "date": "2026-05-19T11:28:26.845Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 67,
+  "fields": {
+    "product": 29,
+    "author": "Ольга",
+    "email": "дмитрий@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 4,
+    "date": "2026-05-19T11:28:26.847Z"
+  }
+},
+{
+  "model": "shopapp.review",
+  "pk": 68,
+  "fields": {
+    "product": 30,
+    "author": "Дмитрий",
+    "email": "алексей@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 3,
+    "date": "2026-05-19T11:28:26.850Z"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 1,
   "fields": {
-    "product": 7,
-    "sale_price": "42018.90",
-    "date_from": "2026-05-10",
-    "date_to": "2026-06-09"
+    "product": 21,
+    "sale_price": "2443.00",
+    "date_from": "2026-05-14",
+    "date_to": "2026-06-13"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 2,
   "fields": {
-    "product": 8,
-    "sale_price": "132409.20",
-    "date_from": "2026-05-10",
-    "date_to": "2026-06-09"
+    "product": 6,
+    "sale_price": "132993.00",
+    "date_from": "2026-05-14",
+    "date_to": "2026-06-13"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 3,
   "fields": {
-    "product": 11,
-    "sale_price": "55808.90",
-    "date_from": "2026-05-10",
-    "date_to": "2026-06-09"
+    "product": 10,
+    "sale_price": "41993.00",
+    "date_from": "2026-05-14",
+    "date_to": "2026-06-13"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 4,
   "fields": {
-    "product": 5,
-    "sale_price": "110443.90",
-    "date_from": "2026-05-10",
-    "date_to": "2026-06-09"
+    "product": 24,
+    "sale_price": "31493.00",
+    "date_from": "2026-05-14",
+    "date_to": "2026-06-13"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 5,
   "fields": {
-    "product": 16,
-    "sale_price": "48516.30",
-    "date_from": "2026-05-10",
-    "date_to": "2026-06-09"
+    "product": 19,
+    "sale_price": "5593.00",
+    "date_from": "2026-05-14",
+    "date_to": "2026-06-13"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 6,
   "fields": {
-    "product": 9,
-    "sale_price": "105966.00",
-    "date_from": "2026-05-10",
-    "date_to": "2026-06-09"
+    "product": 28,
+    "sale_price": "87493.00",
+    "date_from": "2026-05-14",
+    "date_to": "2026-06-13"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 7,
   "fields": {
-    "product": 4,
-    "sale_price": "93464.70",
-    "date_from": "2026-05-10",
-    "date_to": "2026-06-09"
+    "product": 22,
+    "sale_price": "104993.00",
+    "date_from": "2026-05-14",
+    "date_to": "2026-06-13"
   }
 },
 {
@@ -2366,14 +3811,14 @@
     "is_deleted": false,
     "deleted_at": null,
     "user": 2,
-    "created_at": "2026-05-15T12:59:42.498Z",
+    "created_at": "2026-05-19T11:28:28.130Z",
     "full_name": "Покупатель Тестовый 1",
     "email": "buyer1@test.ru",
     "phone": "+79000000001",
     "delivery_type": "ordinary",
     "payment_type": "someone",
-    "total_cost": "910761.00",
-    "status": "paid",
+    "total_cost": "424960.00",
+    "status": "created",
     "city": "Москва",
     "address": "ул. Тестовая, д. 1",
     "comment": "",
@@ -2387,14 +3832,14 @@
     "is_deleted": false,
     "deleted_at": null,
     "user": 3,
-    "created_at": "2026-05-15T12:59:42.508Z",
+    "created_at": "2026-05-19T11:28:28.139Z",
     "full_name": "Покупатель Тестовый 2",
     "email": "buyer2@test.ru",
     "phone": "+79000000002",
     "delivery_type": "ordinary",
-    "payment_type": "someone",
-    "total_cost": "241976.00",
-    "status": "paid",
+    "payment_type": "online",
+    "total_cost": "288940.00",
+    "status": "accepted",
     "city": "Москва",
     "address": "ул. Тестовая, д. 1",
     "comment": "",
@@ -2408,14 +3853,14 @@
     "is_deleted": false,
     "deleted_at": null,
     "user": 4,
-    "created_at": "2026-05-15T12:59:42.517Z",
+    "created_at": "2026-05-19T11:28:28.148Z",
     "full_name": "Покупатель Тестовый 3",
     "email": "buyer3@test.ru",
     "phone": "+79000000003",
-    "delivery_type": "express",
+    "delivery_type": "ordinary",
     "payment_type": "someone",
-    "total_cost": "295096.00",
-    "status": "paid",
+    "total_cost": "554950.00",
+    "status": "accepted",
     "city": "Москва",
     "address": "ул. Тестовая, д. 1",
     "comment": "",
@@ -2428,59 +3873,17 @@
   "fields": {
     "is_deleted": false,
     "deleted_at": null,
-    "user": 2,
-    "created_at": "2026-05-15T13:25:41.450Z",
-    "full_name": "Покупатель Тестовый 1",
-    "email": "buyer1@test.ru",
-    "phone": "+79000000001",
+    "user": 1,
+    "created_at": "2026-05-20T06:53:41.695Z",
+    "full_name": "admin",
+    "email": "admin@megano.ru",
+    "phone": "+79163071193",
     "delivery_type": "ordinary",
     "payment_type": "online",
-    "total_cost": "60027.00",
-    "status": "created",
-    "city": "",
-    "address": "",
-    "comment": "",
-    "payment_error": null
-  }
-},
-{
-  "model": "shopapp.order",
-  "pk": 5,
-  "fields": {
-    "is_deleted": false,
-    "deleted_at": null,
-    "user": 2,
-    "created_at": "2026-05-15T13:34:02.929Z",
-    "full_name": "Покупатель Тестовый 1",
-    "email": "buyer1@test.ru",
-    "phone": "+79000000001",
-    "delivery_type": "ordinary",
-    "payment_type": "online",
-    "total_cost": "19419.00",
-    "status": "paid",
-    "city": "",
-    "address": "",
-    "comment": "",
-    "payment_error": null
-  }
-},
-{
-  "model": "shopapp.order",
-  "pk": 6,
-  "fields": {
-    "is_deleted": false,
-    "deleted_at": null,
-    "user": 2,
-    "created_at": "2026-05-18T08:18:56.544Z",
-    "full_name": "Покупатель Тестовый 1",
-    "email": "buyer1@test.ru",
-    "phone": "+79000000001",
-    "delivery_type": "ordinary",
-    "payment_type": "online",
-    "total_cost": "56396.00",
+    "total_cost": "14950.00",
     "status": "paid",
     "city": "Краснознаменск",
-    "address": "ул. Минская д.7",
+    "address": "",
     "comment": "",
     "payment_error": null
   }
@@ -2490,8 +3893,8 @@
   "pk": 1,
   "fields": {
     "order": 1,
-    "product": 9,
-    "price": "151380.00",
+    "product": 25,
+    "price": "49990.00",
     "count": 2
   }
 },
@@ -2500,8 +3903,8 @@
   "pk": 2,
   "fields": {
     "order": 1,
-    "product": 13,
-    "price": "134670.00",
+    "product": 6,
+    "price": "189990.00",
     "count": 1
   }
 },
@@ -2510,9 +3913,9 @@
   "pk": 3,
   "fields": {
     "order": 1,
-    "product": 5,
-    "price": "157777.00",
-    "count": 3
+    "product": 30,
+    "price": "134990.00",
+    "count": 1
   }
 },
 {
@@ -2520,9 +3923,9 @@
   "pk": 4,
   "fields": {
     "order": 2,
-    "product": 6,
-    "price": "19419.00",
-    "count": 1
+    "product": 13,
+    "price": "32990.00",
+    "count": 3
   }
 },
 {
@@ -2530,9 +3933,9 @@
   "pk": 5,
   "fields": {
     "order": 2,
-    "product": 3,
-    "price": "162530.00",
-    "count": 1
+    "product": 17,
+    "price": "49990.00",
+    "count": 2
   }
 },
 {
@@ -2540,8 +3943,8 @@
   "pk": 6,
   "fields": {
     "order": 2,
-    "product": 7,
-    "price": "60027.00",
+    "product": 1,
+    "price": "89990.00",
     "count": 1
   }
 },
@@ -2550,9 +3953,9 @@
   "pk": 7,
   "fields": {
     "order": 3,
-    "product": 7,
-    "price": "60027.00",
-    "count": 2
+    "product": 23,
+    "price": "54990.00",
+    "count": 1
   }
 },
 {
@@ -2560,8 +3963,8 @@
   "pk": 8,
   "fields": {
     "order": 3,
-    "product": 6,
-    "price": "19419.00",
+    "product": 22,
+    "price": "149990.00",
     "count": 2
   }
 },
@@ -2570,9 +3973,9 @@
   "pk": 9,
   "fields": {
     "order": 3,
-    "product": 15,
-    "price": "136204.00",
-    "count": 1
+    "product": 29,
+    "price": "99990.00",
+    "count": 2
   }
 },
 {
@@ -2580,29 +3983,9 @@
   "pk": 10,
   "fields": {
     "order": 4,
-    "product": 7,
-    "price": "60027.00",
-    "count": 1
-  }
-},
-{
-  "model": "shopapp.orderitem",
-  "pk": 11,
-  "fields": {
-    "order": 5,
-    "product": 6,
-    "price": "19419.00",
-    "count": 1
-  }
-},
-{
-  "model": "shopapp.orderitem",
-  "pk": 12,
-  "fields": {
-    "order": 6,
-    "product": 14,
-    "price": "56396.00",
-    "count": 1
+    "product": 18,
+    "price": "2990.00",
+    "count": 5
   }
 },
 {
