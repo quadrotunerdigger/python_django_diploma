@@ -6,7 +6,7 @@ from django.urls import include, path
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api/", include("shopapp.urls")),
-    path("", include("frontend.urls")),  # uncomment after installing frontend package
+    path("", include("frontend.urls")),
 ]
 
 if settings.DEBUG:

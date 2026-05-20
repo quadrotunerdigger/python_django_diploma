@@ -20,9 +20,8 @@ INSTALLED_APPS = [
     "django.contrib.sessions",
     "django.contrib.messages",
     "django.contrib.staticfiles",
-    # project apps
     "shopapp.apps.ShopappConfig",
-    "frontend",  # uncomment after: pip install diploma-frontend/dist/diploma-frontend-0.6.tar.gz
+    "frontend",
 ]
 
 MIDDLEWARE = [
