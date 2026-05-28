@@ -442,18 +442,51 @@ class ProductDetailView(View):
 @method_decorator(csrf_exempt, name="dispatch")
 class ProductReviewView(View):
     def post(self, request, pk):
+        # Only authenticated users can leave reviews
+        if not request.user.is_authenticated:
+            return JsonResponse(
+                {"error": "Необходимо авторизоваться для добавления отзыва"},
+                status=403,
+            )
+
         try:
             product = Product.objects.get(pk=pk)
         except Product.DoesNotExist:
             return JsonResponse({"error": "Not found"}, status=404)
 
         data = _parse_json_body(request)
+
+        author = data.get("author", "").strip()
+        email = data.get("email", "").strip()
+        text = data.get("text", "").strip()
+        rate = data.get("rate", 5)
+
+        # Validation
+        if not author:
+            return JsonResponse({"error": "Укажите имя"}, status=400)
+        if not text:
+            return JsonResponse({"error": "Напишите текст отзыва"}, status=400)
+
+        # Validate email
+        import re
+        if not email or not re.match(
+            r'^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$', email
+        ):
+            return JsonResponse({"error": "Введите корректный email-адрес"}, status=400)
+
+        try:
+            rate = int(rate)
+            if rate < 1 or rate > 5:
+                rate = 5
+        except (ValueError, TypeError):
+            rate = 5
+
         Review.objects.create(
             product=product,
-            author=data.get("author", "Anonymous"),
-            email=data.get("email", ""),
-            text=data.get("text", ""),
-            rate=int(data.get("rate", 5)),
+            author=author,
+            email=email,
+            text=text,
+            rate=rate,
         )
         # Recalculate rating
         reviews = product.reviews.all()
@@ -627,6 +660,7 @@ class OrderDetailView(View):
             return JsonResponse({"error": "Not found"}, status=404)
 
         data = _parse_json_body(request)
+
         order.full_name = data.get("fullName", order.full_name)
         order.email = data.get("email", order.email)
         order.phone = data.get("phone", order.phone)
@@ -672,28 +706,40 @@ class PaymentView(View):
         data = _parse_json_body(request)
         number = data.get("number", "").replace(" ", "")
 
-        # Validate: must be digits, max 8, even number
-        if not number.isdigit() or len(number) > 8:
-            return JsonResponse({"error": "Invalid card number"}, status=400)
+        # Validate format: must be exactly 8 digits
+        if not number.isdigit() or len(number) != 8:
+            return JsonResponse(
+                {"error": "Номер должен содержать ровно 8 цифр"},
+                status=200,
+            )
 
         card_number = int(number)
-        if card_number % 2 != 0:
-            return JsonResponse({"error": "Card number must be even"}, status=400)
 
-        # Fake payment logic:
-        # even and NOT ending in 0 -> success
-        # even and ending in 0 -> random error
+        if card_number % 2 != 0:
+            return JsonResponse(
+                {"error": "Номер должен быть чётным числом"},
+                status=200,
+            )
+
+        # Fake payment service logic (per TZ):
+        # - even and NOT ending in 0 -> payment confirmed
+        # - even and ending in 0 -> random payment error
         if card_number % 10 == 0:
             errors = [
                 "Недостаточно средств",
                 "Банк отклонил операцию",
                 "Превышен лимит",
                 "Ошибка обработки платежа",
+                "Карта заблокирована",
+                "Превышено количество попыток",
             ]
             order.status = Order.Status.PAYMENT_ERROR
             order.payment_error = random.choice(errors)
             order.save(update_fields=["status", "payment_error"])
-            return JsonResponse({"error": order.payment_error}, status=400)
+            return JsonResponse(
+                {"error": order.payment_error, "orderId": order.pk},
+                status=200,
+            )
         else:
             order.status = Order.Status.PAID
             order.payment_error = None

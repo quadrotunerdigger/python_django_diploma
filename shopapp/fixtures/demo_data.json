@@ -3,7 +3,7 @@
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$1200000$80KHCeLLKlggVaky5ecESU$w8jFIxjNW5llDQcFCdczCcUZEufkgvbDyqdgx190Pxg=",
+    "password": "pbkdf2_sha256$1200000$HfBhkah7JGbRLHuA5UcHHJ$Pvs3z2h6VxqQ9FlYyVi8IX8rHSdyg+AbX1MRXiWkh4A=",
     "last_login": null,
     "is_superuser": true,
     "username": "admin",
@@ -12,7 +12,7 @@
     "email": "admin@megano.ru",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2026-05-20T12:05:10.561Z",
+    "date_joined": "2026-05-27T11:29:04.044Z",
     "groups": [
       1
     ],
@@ -23,7 +23,7 @@
   "model": "auth.user",
   "pk": 2,
   "fields": {
-    "password": "pbkdf2_sha256$1200000$CiA9Oc9rs4yPezVnSzWJnu$i/G435PD8sN8ZqKlKPhWo6JOSP1HRYl3n6WjLLTaWE0=",
+    "password": "pbkdf2_sha256$1200000$FRfzq4k5OSsdNaYuzh5I1L$GgKQ5IvLTI68ABAx6zXQblN8Fvs6y5fdetWLGNSQaL4=",
     "last_login": null,
     "is_superuser": false,
     "username": "buyer1",
@@ -32,7 +32,7 @@
     "email": "buyer1@test.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2026-05-20T12:05:11.907Z",
+    "date_joined": "2026-05-27T11:29:05.360Z",
     "groups": [
       2
     ],
@@ -43,7 +43,7 @@
   "model": "auth.user",
   "pk": 3,
   "fields": {
-    "password": "pbkdf2_sha256$1200000$WsKo6a22UZjY58xuHNFKLj$7exBHdxH/oeiB71qfo0XtD9TP9VPQrKAG1ekIhqxb1Y=",
+    "password": "pbkdf2_sha256$1200000$MJl5MtdSED76w0jyNkQFEx$07myU3ych8HkrWhGElN3Ul9NR91CnOCDXZjbFhTzmSg=",
     "last_login": null,
     "is_superuser": false,
     "username": "buyer2",
@@ -52,7 +52,7 @@
     "email": "buyer2@test.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2026-05-20T12:05:12.339Z",
+    "date_joined": "2026-05-27T11:29:05.764Z",
     "groups": [
       2
     ],
@@ -63,7 +63,7 @@
   "model": "auth.user",
   "pk": 4,
   "fields": {
-    "password": "pbkdf2_sha256$1200000$h8vpG5Mk3z9XI7pgAhPHGS$23oGrfV/BMInBgknXDHIC7eLjs9XTHFyxU4q2L8t1hw=",
+    "password": "pbkdf2_sha256$1200000$NIlwsmjHkZP2eLY81bAymJ$ok+MiZttgKwYBseiwTN6X8Br2hvbZneoWaCG/X/aHWY=",
     "last_login": null,
     "is_superuser": false,
     "username": "buyer3",
@@ -72,7 +72,7 @@
     "email": "buyer3@test.ru",
     "is_staff": false,
     "is_active": true,
-    "date_joined": "2026-05-20T12:05:12.764Z",
+    "date_joined": "2026-05-27T11:29:06.179Z",
     "groups": [
       2
     ],
@@ -423,17 +423,17 @@
     "description": "Смартфон Apple iPhone 15 Pro 256GB",
     "full_description": "<p>Смартфон Apple iPhone 15 Pro 256GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "89990.00",
-    "count": 31,
-    "date": "2026-05-20T12:05:11.551Z",
+    "count": 48,
+    "date": "2026-05-27T11:29:04.971Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 0,
-    "rating": "3.6",
-    "purchases_count": 404,
+    "rating": "3.7",
+    "purchases_count": 31,
     "tags": [
-      1,
+      2,
       3,
-      5
+      6
     ]
   }
 },
@@ -448,17 +448,17 @@
     "description": "Флагманский смартфон Samsung Galaxy S24 128GB",
     "full_description": "<p>Флагманский смартфон Samsung Galaxy S24 128GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "74990.00",
-    "count": 13,
-    "date": "2026-05-20T12:05:11.560Z",
+    "count": 71,
+    "date": "2026-05-27T11:29:04.979Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 1,
-    "rating": "4.4",
-    "purchases_count": 116,
+    "rating": "4.1",
+    "purchases_count": 357,
     "tags": [
       2,
-      6,
-      8
+      4,
+      5
     ]
   }
 },
@@ -473,17 +473,17 @@
     "description": "Беспроводные наушники с шумоподавлением",
     "full_description": "<p>Беспроводные наушники с шумоподавлением.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "29990.00",
-    "count": 23,
-    "date": "2026-05-20T12:05:11.568Z",
+    "count": 24,
+    "date": "2026-05-27T11:29:04.985Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 2,
-    "rating": "4.5",
-    "purchases_count": 212,
+    "rating": "3.6",
+    "purchases_count": 275,
     "tags": [
       1,
       6,
-      7
+      8
     ]
   }
 },
@@ -498,17 +498,17 @@
     "description": "Портативная колонка JBL Charge 5 с защитой IP67",
     "full_description": "<p>Портативная колонка JBL Charge 5 с защитой IP67.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "12990.00",
-    "count": 27,
-    "date": "2026-05-20T12:05:11.576Z",
+    "count": 19,
+    "date": "2026-05-27T11:29:04.993Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 3,
-    "rating": "4.5",
-    "purchases_count": 420,
+    "rating": "4.9",
+    "purchases_count": 243,
     "tags": [
-      1,
-      7,
-      8
+      2,
+      4,
+      7
     ]
   }
 },
@@ -523,17 +523,17 @@
     "description": "Умная колонка с Алисой и LED-дисплеем",
     "full_description": "<p>Умная колонка с Алисой и LED-дисплеем.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "17990.00",
-    "count": 36,
-    "date": "2026-05-20T12:05:11.582Z",
+    "count": 98,
+    "date": "2026-05-27T11:29:05.002Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 4,
-    "rating": "4.6",
-    "purchases_count": 206,
+    "rating": "4.4",
+    "purchases_count": 426,
     "tags": [
-      5,
-      7,
-      8
+      4,
+      6,
+      7
     ]
   }
 },
@@ -548,16 +548,16 @@
     "description": "Полнокадровая беззеркальная камера Canon",
     "full_description": "<p>Полнокадровая беззеркальная камера Canon.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "189990.00",
-    "count": 94,
-    "date": "2026-05-20T12:05:11.588Z",
+    "count": 86,
+    "date": "2026-05-27T11:29:05.011Z",
     "free_delivery": true,
     "limited_edition": true,
     "sort_index": 5,
-    "rating": "3.7",
-    "purchases_count": 255,
+    "rating": "4.2",
+    "purchases_count": 193,
     "tags": [
-      1,
       2,
+      5,
       7
     ]
   }
@@ -573,15 +573,15 @@
     "description": "Беззеркальная камера Sony 33 Мп",
     "full_description": "<p>Беззеркальная камера Sony 33 Мп.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "179990.00",
-    "count": 85,
-    "date": "2026-05-20T12:05:11.595Z",
+    "count": 88,
+    "date": "2026-05-27T11:29:05.019Z",
     "free_delivery": true,
     "limited_edition": true,
     "sort_index": 6,
-    "rating": "3.5",
-    "purchases_count": 387,
+    "rating": "4.9",
+    "purchases_count": 187,
     "tags": [
-      5,
+      3,
       7,
       8
     ]
@@ -598,17 +598,17 @@
     "description": "Двухкамерный холодильник Samsung RF50A5202S9",
     "full_description": "<p>Двухкамерный холодильник Samsung RF50A5202S9.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "74990.00",
-    "count": 43,
-    "date": "2026-05-20T12:05:11.602Z",
+    "count": 27,
+    "date": "2026-05-27T11:29:05.027Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 7,
-    "rating": "4.3",
-    "purchases_count": 273,
+    "rating": "3.7",
+    "purchases_count": 78,
     "tags": [
-      1,
       2,
-      7
+      5,
+      8
     ]
   }
 },
@@ -623,16 +623,16 @@
     "description": "Стиральная машина LG F2V5HS2S с паром",
     "full_description": "<p>Стиральная машина LG F2V5HS2S с паром.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "44990.00",
-    "count": 74,
-    "date": "2026-05-20T12:05:11.610Z",
+    "count": 45,
+    "date": "2026-05-27T11:29:05.033Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 8,
-    "rating": "4.2",
-    "purchases_count": 113,
+    "rating": "4.0",
+    "purchases_count": 94,
     "tags": [
-      1,
       3,
+      5,
       7
     ]
   }
@@ -648,17 +648,17 @@
     "description": "Беспроводной пылесос Dyson V15 Detect Absolute",
     "full_description": "<p>Беспроводной пылесос Dyson V15 Detect Absolute.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "59990.00",
-    "count": 45,
-    "date": "2026-05-20T12:05:11.616Z",
+    "count": 77,
+    "date": "2026-05-27T11:29:05.041Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 9,
-    "rating": "4.6",
-    "purchases_count": 77,
+    "rating": "3.9",
+    "purchases_count": 452,
     "tags": [
-      5,
-      7,
-      8
+      3,
+      4,
+      6
     ]
   }
 },
@@ -673,17 +673,17 @@
     "description": "Умный робот-пылесос с лидаром",
     "full_description": "<p>Умный робот-пылесос с лидаром.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "39990.00",
-    "count": 7,
-    "date": "2026-05-20T12:05:11.624Z",
+    "count": 33,
+    "date": "2026-05-27T11:29:05.047Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 10,
-    "rating": "4.2",
-    "purchases_count": 114,
+    "rating": "4.5",
+    "purchases_count": 406,
     "tags": [
+      3,
       4,
-      5,
-      8
+      5
     ]
   }
 },
@@ -698,17 +698,17 @@
     "description": "Электрическая плита Electrolux со стеклокерамикой",
     "full_description": "<p>Электрическая плита Electrolux со стеклокерамикой.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "54990.00",
-    "count": 72,
-    "date": "2026-05-20T12:05:11.630Z",
+    "count": 37,
+    "date": "2026-05-27T11:29:05.054Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 11,
-    "rating": "4.7",
-    "purchases_count": 75,
+    "rating": "3.5",
+    "purchases_count": 466,
     "tags": [
       1,
-      4,
-      8
+      2,
+      4
     ]
   }
 },
@@ -723,17 +723,17 @@
     "description": "Электрическая плита Gorenje с грилем",
     "full_description": "<p>Электрическая плита Gorenje с грилем.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "32990.00",
-    "count": 21,
-    "date": "2026-05-20T12:05:11.637Z",
+    "count": 52,
+    "date": "2026-05-27T11:29:05.061Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 12,
-    "rating": "4.7",
-    "purchases_count": 15,
+    "rating": "4.9",
+    "purchases_count": 332,
     "tags": [
-      3,
+      1,
       6,
-      7
+      8
     ]
   }
 },
@@ -748,17 +748,17 @@
     "description": "Микроволновая печь Samsung 23л с грилем",
     "full_description": "<p>Микроволновая печь Samsung 23л с грилем.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "11990.00",
-    "count": 15,
-    "date": "2026-05-20T12:05:11.644Z",
+    "count": 89,
+    "date": "2026-05-27T11:29:05.067Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 13,
-    "rating": "4.7",
-    "purchases_count": 30,
+    "rating": "3.7",
+    "purchases_count": 239,
     "tags": [
+      1,
       2,
-      5,
-      6
+      4
     ]
   }
 },
@@ -773,17 +773,17 @@
     "description": "Микроволновая печь LG NeoChef 25л",
     "full_description": "<p>Микроволновая печь LG NeoChef 25л.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "13990.00",
-    "count": 18,
-    "date": "2026-05-20T12:05:11.651Z",
+    "count": 67,
+    "date": "2026-05-27T11:29:05.075Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 14,
-    "rating": "4.8",
-    "purchases_count": 365,
+    "rating": "4.1",
+    "purchases_count": 478,
     "tags": [
       2,
-      4,
-      6
+      3,
+      4
     ]
   }
 },
@@ -798,15 +798,15 @@
     "description": "Погружной блендер Bosch ErgoMixx 750Вт",
     "full_description": "<p>Погружной блендер Bosch ErgoMixx 750Вт.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "5990.00",
-    "count": 9,
-    "date": "2026-05-20T12:05:11.657Z",
+    "count": 90,
+    "date": "2026-05-27T11:29:05.083Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 15,
-    "rating": "4.0",
-    "purchases_count": 165,
+    "rating": "4.7",
+    "purchases_count": 379,
     "tags": [
-      1,
+      4,
       7,
       8
     ]
@@ -823,17 +823,17 @@
     "description": "Планетарный миксер KitchenAid Artisan 4.8л",
     "full_description": "<p>Планетарный миксер KitchenAid Artisan 4.8л.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "49990.00",
-    "count": 16,
-    "date": "2026-05-20T12:05:11.664Z",
+    "count": 86,
+    "date": "2026-05-27T11:29:05.092Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 16,
-    "rating": "3.7",
-    "purchases_count": 365,
+    "rating": "4.6",
+    "purchases_count": 374,
     "tags": [
-      4,
-      5,
-      8
+      1,
+      2,
+      4
     ]
   }
 },
@@ -848,17 +848,17 @@
     "description": "Настольная лампа Xiaomi с регулировкой яркости",
     "full_description": "<p>Настольная лампа Xiaomi с регулировкой яркости.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "2990.00",
-    "count": 36,
-    "date": "2026-05-20T12:05:11.671Z",
+    "count": 51,
+    "date": "2026-05-27T11:29:05.100Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 17,
-    "rating": "3.9",
-    "purchases_count": 69,
+    "rating": "4.3",
+    "purchases_count": 397,
     "tags": [
-      3,
+      1,
       4,
-      8
+      6
     ]
   }
 },
@@ -874,16 +874,16 @@
     "full_description": "<p>Портативная настольная лампа Philips с RGB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "7990.00",
     "count": 100,
-    "date": "2026-05-20T12:05:11.678Z",
+    "date": "2026-05-27T11:29:05.109Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 18,
-    "rating": "3.6",
-    "purchases_count": 304,
+    "rating": "4.3",
+    "purchases_count": 383,
     "tags": [
       1,
-      5,
-      8
+      2,
+      3
     ]
   }
 },
@@ -899,16 +899,16 @@
     "full_description": "<p>Электрический чайник Bosch Styline 1.5л.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "5490.00",
     "count": 43,
-    "date": "2026-05-20T12:05:11.686Z",
+    "date": "2026-05-27T11:29:05.118Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 19,
-    "rating": "4.6",
-    "purchases_count": 459,
+    "rating": "3.5",
+    "purchases_count": 487,
     "tags": [
-      3,
-      4,
-      5
+      1,
+      2,
+      4
     ]
   }
 },
@@ -923,15 +923,15 @@
     "description": "Умный чайник Xiaomi с контролем температуры",
     "full_description": "<p>Умный чайник Xiaomi с контролем температуры.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "3490.00",
-    "count": 54,
-    "date": "2026-05-20T12:05:11.694Z",
+    "count": 92,
+    "date": "2026-05-27T11:29:05.128Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 20,
-    "rating": "3.6",
-    "purchases_count": 429,
+    "rating": "4.0",
+    "purchases_count": 27,
     "tags": [
-      2,
+      4,
       5,
       7
     ]
@@ -948,17 +948,17 @@
     "description": "Видеокарта NVIDIA GeForce RTX 4090 24GB",
     "full_description": "<p>Видеокарта NVIDIA GeForce RTX 4090 24GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "149990.00",
-    "count": 21,
-    "date": "2026-05-20T12:05:11.702Z",
+    "count": 55,
+    "date": "2026-05-27T11:29:05.136Z",
     "free_delivery": true,
     "limited_edition": true,
     "sort_index": 21,
-    "rating": "4.8",
-    "purchases_count": 221,
+    "rating": "4.1",
+    "purchases_count": 122,
     "tags": [
-      4,
-      5,
-      6
+      1,
+      2,
+      5
     ]
   }
 },
@@ -973,17 +973,17 @@
     "description": "Видеокарта NVIDIA GeForce RTX 4070 12GB",
     "full_description": "<p>Видеокарта NVIDIA GeForce RTX 4070 12GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "54990.00",
-    "count": 44,
-    "date": "2026-05-20T12:05:11.710Z",
+    "count": 64,
+    "date": "2026-05-27T11:29:05.144Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 22,
-    "rating": "4.0",
-    "purchases_count": 74,
+    "rating": "3.8",
+    "purchases_count": 158,
     "tags": [
       1,
-      5,
-      7
+      6,
+      8
     ]
   }
 },
@@ -998,17 +998,17 @@
     "description": "Процессор AMD Ryzen 9 7950X 16 ядер",
     "full_description": "<p>Процессор AMD Ryzen 9 7950X 16 ядер.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "44990.00",
-    "count": 55,
-    "date": "2026-05-20T12:05:11.717Z",
+    "count": 66,
+    "date": "2026-05-27T11:29:05.152Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 23,
-    "rating": "4.9",
-    "purchases_count": 476,
+    "rating": "4.6",
+    "purchases_count": 370,
     "tags": [
-      1,
       2,
-      8
+      3,
+      6
     ]
   }
 },
@@ -1023,15 +1023,15 @@
     "description": "Процессор Intel Core i9-14900K 24 ядра",
     "full_description": "<p>Процессор Intel Core i9-14900K 24 ядра.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "49990.00",
-    "count": 55,
-    "date": "2026-05-20T12:05:11.725Z",
+    "count": 86,
+    "date": "2026-05-27T11:29:05.160Z",
     "free_delivery": false,
     "limited_edition": false,
     "sort_index": 24,
-    "rating": "4.4",
-    "purchases_count": 33,
+    "rating": "4.8",
+    "purchases_count": 212,
     "tags": [
-      2,
+      4,
       5,
       6
     ]
@@ -1048,17 +1048,17 @@
     "description": "Игровой монитор ASUS 32 дюйма 4K 144Hz",
     "full_description": "<p>Игровой монитор ASUS 32 дюйма 4K 144Hz.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "89990.00",
-    "count": 18,
-    "date": "2026-05-20T12:05:11.731Z",
+    "count": 5,
+    "date": "2026-05-27T11:29:05.167Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 25,
-    "rating": "4.3",
-    "purchases_count": 269,
+    "rating": "4.7",
+    "purchases_count": 108,
     "tags": [
-      1,
       2,
-      4
+      4,
+      6
     ]
   }
 },
@@ -1073,17 +1073,17 @@
     "description": "Ноутбук Apple MacBook Air 13 M3 8/256GB",
     "full_description": "<p>Ноутбук Apple MacBook Air 13 M3 8/256GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "109990.00",
-    "count": 69,
-    "date": "2026-05-20T12:05:11.738Z",
+    "count": 76,
+    "date": "2026-05-27T11:29:05.177Z",
     "free_delivery": true,
     "limited_edition": true,
     "sort_index": 26,
-    "rating": "4.3",
-    "purchases_count": 83,
+    "rating": "4.2",
+    "purchases_count": 147,
     "tags": [
-      3,
+      1,
       4,
-      8
+      6
     ]
   }
 },
@@ -1098,17 +1098,17 @@
     "description": "Бизнес-ноутбук Lenovo ThinkPad X1 Carbon Gen 11",
     "full_description": "<p>Бизнес-ноутбук Lenovo ThinkPad X1 Carbon Gen 11.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "124990.00",
-    "count": 82,
-    "date": "2026-05-20T12:05:11.746Z",
+    "count": 77,
+    "date": "2026-05-27T11:29:05.185Z",
     "free_delivery": true,
     "limited_edition": true,
     "sort_index": 27,
-    "rating": "3.5",
-    "purchases_count": 265,
+    "rating": "4.8",
+    "purchases_count": 485,
     "tags": [
-      3,
-      7,
-      8
+      2,
+      6,
+      7
     ]
   }
 },
@@ -1123,16 +1123,16 @@
     "description": "Планшет Apple iPad Pro 12.9 M2 128GB Wi-Fi",
     "full_description": "<p>Планшет Apple iPad Pro 12.9 M2 128GB Wi-Fi.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "99990.00",
-    "count": 18,
-    "date": "2026-05-20T12:05:11.754Z",
+    "count": 47,
+    "date": "2026-05-27T11:29:05.194Z",
     "free_delivery": true,
     "limited_edition": true,
     "sort_index": 28,
-    "rating": "4.6",
-    "purchases_count": 160,
+    "rating": "3.8",
+    "purchases_count": 472,
     "tags": [
-      4,
-      5,
+      1,
+      2,
       8
     ]
   }
@@ -1148,17 +1148,17 @@
     "description": "Ноутбук Dell XPS 15 9530 i7/16GB/512GB",
     "full_description": "<p>Ноутбук Dell XPS 15 9530 i7/16GB/512GB.</p><p>Высокое качество, гарантия от производителя. Доставка по всей России.</p>",
     "price": "134990.00",
-    "count": 49,
-    "date": "2026-05-20T12:05:11.761Z",
+    "count": 82,
+    "date": "2026-05-27T11:29:05.201Z",
     "free_delivery": true,
     "limited_edition": false,
     "sort_index": 29,
-    "rating": "4.5",
-    "purchases_count": 387,
+    "rating": "3.9",
+    "purchases_count": 447,
     "tags": [
-      1,
-      4,
-      5
+      2,
+      6,
+      7
     ]
   }
 },
@@ -2395,7 +2395,7 @@
   "fields": {
     "product": 2,
     "name": "Гарантия",
-    "value": "36 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2413,7 +2413,7 @@
   "fields": {
     "product": 3,
     "name": "Гарантия",
-    "value": "12 мес."
+    "value": "36 мес."
   }
 },
 {
@@ -2431,7 +2431,7 @@
   "fields": {
     "product": 4,
     "name": "Гарантия",
-    "value": "36 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2449,7 +2449,7 @@
   "fields": {
     "product": 5,
     "name": "Гарантия",
-    "value": "36 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2467,7 +2467,7 @@
   "fields": {
     "product": 6,
     "name": "Гарантия",
-    "value": "36 мес."
+    "value": "12 мес."
   }
 },
 {
@@ -2503,7 +2503,7 @@
   "fields": {
     "product": 8,
     "name": "Гарантия",
-    "value": "24 мес."
+    "value": "12 мес."
   }
 },
 {
@@ -2539,7 +2539,7 @@
   "fields": {
     "product": 10,
     "name": "Гарантия",
-    "value": "24 мес."
+    "value": "12 мес."
   }
 },
 {
@@ -2557,7 +2557,7 @@
   "fields": {
     "product": 11,
     "name": "Гарантия",
-    "value": "12 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2575,7 +2575,7 @@
   "fields": {
     "product": 12,
     "name": "Гарантия",
-    "value": "36 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2593,7 +2593,7 @@
   "fields": {
     "product": 13,
     "name": "Гарантия",
-    "value": "36 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2611,7 +2611,7 @@
   "fields": {
     "product": 14,
     "name": "Гарантия",
-    "value": "36 мес."
+    "value": "12 мес."
   }
 },
 {
@@ -2629,7 +2629,7 @@
   "fields": {
     "product": 15,
     "name": "Гарантия",
-    "value": "12 мес."
+    "value": "36 мес."
   }
 },
 {
@@ -2647,7 +2647,7 @@
   "fields": {
     "product": 16,
     "name": "Гарантия",
-    "value": "24 мес."
+    "value": "12 мес."
   }
 },
 {
@@ -2665,7 +2665,7 @@
   "fields": {
     "product": 17,
     "name": "Гарантия",
-    "value": "24 мес."
+    "value": "12 мес."
   }
 },
 {
@@ -2701,7 +2701,7 @@
   "fields": {
     "product": 19,
     "name": "Гарантия",
-    "value": "36 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2737,7 +2737,7 @@
   "fields": {
     "product": 21,
     "name": "Гарантия",
-    "value": "24 мес."
+    "value": "36 мес."
   }
 },
 {
@@ -2755,7 +2755,7 @@
   "fields": {
     "product": 22,
     "name": "Гарантия",
-    "value": "12 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2773,7 +2773,7 @@
   "fields": {
     "product": 23,
     "name": "Гарантия",
-    "value": "12 мес."
+    "value": "36 мес."
   }
 },
 {
@@ -2791,7 +2791,7 @@
   "fields": {
     "product": 24,
     "name": "Гарантия",
-    "value": "24 мес."
+    "value": "12 мес."
   }
 },
 {
@@ -2809,7 +2809,7 @@
   "fields": {
     "product": 25,
     "name": "Гарантия",
-    "value": "24 мес."
+    "value": "12 мес."
   }
 },
 {
@@ -2827,7 +2827,7 @@
   "fields": {
     "product": 26,
     "name": "Гарантия",
-    "value": "12 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2845,7 +2845,7 @@
   "fields": {
     "product": 27,
     "name": "Гарантия",
-    "value": "12 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2881,7 +2881,7 @@
   "fields": {
     "product": 29,
     "name": "Гарантия",
-    "value": "12 мес."
+    "value": "24 мес."
   }
 },
 {
@@ -2907,11 +2907,11 @@
   "pk": 1,
   "fields": {
     "product": 1,
-    "author": "Алексей",
-    "email": "иван@test.ru",
-    "text": "Отличный товар, рекомендую!",
+    "author": "Мария",
+    "email": "ольга@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.768Z"
+    "date": "2026-05-27T11:29:05.211Z"
   }
 },
 {
@@ -2919,11 +2919,11 @@
   "pk": 2,
   "fields": {
     "product": 1,
-    "author": "Ольга",
-    "email": "иван@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "author": "Анна",
+    "email": "ольга@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
     "rate": 3,
-    "date": "2026-05-20T12:05:11.770Z"
+    "date": "2026-05-27T11:29:05.213Z"
   }
 },
 {
@@ -2931,11 +2931,11 @@
   "pk": 3,
   "fields": {
     "product": 2,
-    "author": "Ольга",
-    "email": "мария@test.ru",
-    "text": "Отличный товар, рекомендую!",
+    "author": "Анна",
+    "email": "ольга@test.ru",
+    "text": "Превосходное качество сборки.",
     "rate": 3,
-    "date": "2026-05-20T12:05:11.771Z"
+    "date": "2026-05-27T11:29:05.215Z"
   }
 },
 {
@@ -2943,11 +2943,11 @@
   "pk": 4,
   "fields": {
     "product": 2,
-    "author": "Анна",
-    "email": "мария@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.773Z"
+    "author": "Иван",
+    "email": "ольга@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.216Z"
   }
 },
 {
@@ -2955,11 +2955,11 @@
   "pk": 5,
   "fields": {
     "product": 2,
-    "author": "Алексей",
+    "author": "Мария",
     "email": "иван@test.ru",
     "text": "Хорошее качество за свои деньги.",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.774Z"
+    "date": "2026-05-27T11:29:05.218Z"
   }
 },
 {
@@ -2967,11 +2967,11 @@
   "pk": 6,
   "fields": {
     "product": 2,
-    "author": "Алексей",
-    "email": "дмитрий@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.776Z"
+    "author": "Иван",
+    "email": "иван@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.219Z"
   }
 },
 {
@@ -2979,11 +2979,11 @@
   "pk": 7,
   "fields": {
     "product": 3,
-    "author": "Дмитрий",
-    "email": "ольга@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.778Z"
+    "author": "Мария",
+    "email": "дмитрий@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.222Z"
   }
 },
 {
@@ -2991,11 +2991,11 @@
   "pk": 8,
   "fields": {
     "product": 3,
-    "author": "Анна",
-    "email": "анна@test.ru",
+    "author": "Мария",
+    "email": "иван@test.ru",
     "text": "Превосходное качество сборки.",
     "rate": 3,
-    "date": "2026-05-20T12:05:11.780Z"
+    "date": "2026-05-27T11:29:05.224Z"
   }
 },
 {
@@ -3003,23 +3003,23 @@
   "pk": 9,
   "fields": {
     "product": 3,
-    "author": "Алексей",
-    "email": "ольга@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
+    "author": "Дмитрий",
+    "email": "анна@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.781Z"
+    "date": "2026-05-27T11:29:05.225Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 10,
   "fields": {
-    "product": 3,
-    "author": "Алексей",
-    "email": "анна@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.782Z"
+    "product": 4,
+    "author": "Анна",
+    "email": "дмитрий@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.228Z"
   }
 },
 {
@@ -3027,11 +3027,11 @@
   "pk": 11,
   "fields": {
     "product": 4,
-    "author": "Мария",
-    "email": "алексей@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.784Z"
+    "author": "Ольга",
+    "email": "анна@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.229Z"
   }
 },
 {
@@ -3039,35 +3039,35 @@
   "pk": 12,
   "fields": {
     "product": 4,
-    "author": "Иван",
-    "email": "алексей@test.ru",
-    "text": "Превосходное качество сборки.",
+    "author": "Алексей",
+    "email": "дмитрий@test.ru",
+    "text": "Отличный товар, рекомендую!",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.786Z"
+    "date": "2026-05-27T11:29:05.231Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 13,
   "fields": {
-    "product": 4,
-    "author": "Иван",
+    "product": 5,
+    "author": "Алексей",
     "email": "алексей@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.787Z"
+    "text": "Превосходное качество сборки.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.232Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 14,
   "fields": {
-    "product": 4,
-    "author": "Мария",
+    "product": 5,
+    "author": "Дмитрий",
     "email": "алексей@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.789Z"
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.234Z"
   }
 },
 {
@@ -3075,11 +3075,11 @@
   "pk": 15,
   "fields": {
     "product": 5,
-    "author": "Алексей",
+    "author": "Анна",
     "email": "иван@test.ru",
-    "text": "Превосходное качество сборки.",
+    "text": "Отличный товар, рекомендую!",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.790Z"
+    "date": "2026-05-27T11:29:05.235Z"
   }
 },
 {
@@ -3088,10 +3088,10 @@
   "fields": {
     "product": 6,
     "author": "Мария",
-    "email": "ольга@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.792Z"
+    "email": "иван@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.237Z"
   }
 },
 {
@@ -3099,11 +3099,11 @@
   "pk": 17,
   "fields": {
     "product": 6,
-    "author": "Дмитрий",
-    "email": "анна@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
+    "author": "Ольга",
+    "email": "мария@test.ru",
+    "text": "Отличный товар, рекомендую!",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.793Z"
+    "date": "2026-05-27T11:29:05.238Z"
   }
 },
 {
@@ -3111,11 +3111,11 @@
   "pk": 18,
   "fields": {
     "product": 6,
-    "author": "Ольга",
-    "email": "дмитрий@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.794Z"
+    "author": "Иван",
+    "email": "алексей@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.240Z"
   }
 },
 {
@@ -3123,11 +3123,11 @@
   "pk": 19,
   "fields": {
     "product": 6,
-    "author": "Алексей",
-    "email": "анна@test.ru",
+    "author": "Иван",
+    "email": "мария@test.ru",
     "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.795Z"
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.241Z"
   }
 },
 {
@@ -3135,23 +3135,23 @@
   "pk": 20,
   "fields": {
     "product": 7,
-    "author": "Дмитрий",
-    "email": "иван@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "author": "Иван",
+    "email": "анна@test.ru",
+    "text": "Превосходное качество сборки.",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.797Z"
+    "date": "2026-05-27T11:29:05.243Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 21,
   "fields": {
-    "product": 7,
-    "author": "Мария",
-    "email": "анна@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.798Z"
+    "product": 8,
+    "author": "Ольга",
+    "email": "дмитрий@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.245Z"
   }
 },
 {
@@ -3159,23 +3159,23 @@
   "pk": 22,
   "fields": {
     "product": 8,
-    "author": "Ольга",
+    "author": "Мария",
     "email": "анна@test.ru",
-    "text": "Превосходное качество сборки.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.801Z"
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.246Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 23,
   "fields": {
-    "product": 9,
+    "product": 8,
     "author": "Ольга",
-    "email": "анна@test.ru",
-    "text": "Хорошее качество за свои деньги.",
+    "email": "дмитрий@test.ru",
+    "text": "Отличный товар, рекомендую!",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.803Z"
+    "date": "2026-05-27T11:29:05.248Z"
   }
 },
 {
@@ -3183,23 +3183,23 @@
   "pk": 24,
   "fields": {
     "product": 9,
-    "author": "Алексей",
+    "author": "Ольга",
     "email": "иван@test.ru",
     "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.804Z"
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.250Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 25,
   "fields": {
-    "product": 9,
-    "author": "Ольга",
-    "email": "алексей@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
+    "product": 10,
+    "author": "Дмитрий",
+    "email": "ольга@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.805Z"
+    "date": "2026-05-27T11:29:05.252Z"
   }
 },
 {
@@ -3207,11 +3207,11 @@
   "pk": 26,
   "fields": {
     "product": 10,
-    "author": "Алексей",
-    "email": "ольга@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.807Z"
+    "author": "Ольга",
+    "email": "мария@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.254Z"
   }
 },
 {
@@ -3219,11 +3219,11 @@
   "pk": 27,
   "fields": {
     "product": 10,
-    "author": "Мария",
-    "email": "ольга@test.ru",
-    "text": "Хорошее качество за свои деньги.",
+    "author": "Иван",
+    "email": "алексей@test.ru",
+    "text": "Отличный товар, рекомендую!",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.808Z"
+    "date": "2026-05-27T11:29:05.256Z"
   }
 },
 {
@@ -3232,10 +3232,10 @@
   "fields": {
     "product": 10,
     "author": "Анна",
-    "email": "мария@test.ru",
+    "email": "алексей@test.ru",
     "text": "Хорошее качество за свои деньги.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.810Z"
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.258Z"
   }
 },
 {
@@ -3243,23 +3243,23 @@
   "pk": 29,
   "fields": {
     "product": 11,
-    "author": "Дмитрий",
-    "email": "дмитрий@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.811Z"
+    "author": "Мария",
+    "email": "анна@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.261Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 30,
   "fields": {
-    "product": 11,
-    "author": "Ольга",
-    "email": "анна@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.813Z"
+    "product": 12,
+    "author": "Дмитрий",
+    "email": "дмитрий@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.264Z"
   }
 },
 {
@@ -3267,23 +3267,23 @@
   "pk": 31,
   "fields": {
     "product": 12,
-    "author": "Иван",
-    "email": "мария@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
+    "author": "Анна",
+    "email": "иван@test.ru",
+    "text": "Превосходное качество сборки.",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.815Z"
+    "date": "2026-05-27T11:29:05.265Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 32,
   "fields": {
-    "product": 13,
-    "author": "Алексей",
-    "email": "анна@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.818Z"
+    "product": 12,
+    "author": "Анна",
+    "email": "мария@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.268Z"
   }
 },
 {
@@ -3291,11 +3291,11 @@
   "pk": 33,
   "fields": {
     "product": 13,
-    "author": "Алексей",
-    "email": "дмитрий@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.819Z"
+    "author": "Мария",
+    "email": "иван@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.271Z"
   }
 },
 {
@@ -3303,11 +3303,11 @@
   "pk": 34,
   "fields": {
     "product": 13,
-    "author": "Алексей",
-    "email": "дмитрий@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.821Z"
+    "author": "Ольга",
+    "email": "иван@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.273Z"
   }
 },
 {
@@ -3315,11 +3315,11 @@
   "pk": 35,
   "fields": {
     "product": 13,
-    "author": "Мария",
+    "author": "Алексей",
     "email": "анна@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.822Z"
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.274Z"
   }
 },
 {
@@ -3327,11 +3327,11 @@
   "pk": 36,
   "fields": {
     "product": 14,
-    "author": "Алексей",
-    "email": "анна@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.824Z"
+    "author": "Иван",
+    "email": "иван@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.276Z"
   }
 },
 {
@@ -3339,11 +3339,11 @@
   "pk": 37,
   "fields": {
     "product": 14,
-    "author": "Анна",
-    "email": "дмитрий@test.ru",
+    "author": "Ольга",
+    "email": "мария@test.ru",
     "text": "Превосходное качество сборки.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.825Z"
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.278Z"
   }
 },
 {
@@ -3351,11 +3351,11 @@
   "pk": 38,
   "fields": {
     "product": 14,
-    "author": "Мария",
-    "email": "иван@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.828Z"
+    "author": "Анна",
+    "email": "ольга@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.279Z"
   }
 },
 {
@@ -3363,11 +3363,11 @@
   "pk": 39,
   "fields": {
     "product": 14,
-    "author": "Иван",
-    "email": "иван@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
+    "author": "Анна",
+    "email": "мария@test.ru",
+    "text": "Превосходное качество сборки.",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.830Z"
+    "date": "2026-05-27T11:29:05.280Z"
   }
 },
 {
@@ -3375,431 +3375,431 @@
   "pk": 40,
   "fields": {
     "product": 15,
-    "author": "Анна",
-    "email": "дмитрий@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.832Z"
+    "author": "Алексей",
+    "email": "анна@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.282Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 41,
   "fields": {
-    "product": 15,
-    "author": "Анна",
-    "email": "иван@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.834Z"
+    "product": 16,
+    "author": "Алексей",
+    "email": "анна@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.284Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 42,
   "fields": {
-    "product": 15,
-    "author": "Ольга",
+    "product": 17,
+    "author": "Алексей",
     "email": "алексей@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.837Z"
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.286Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 43,
   "fields": {
-    "product": 16,
-    "author": "Ольга",
-    "email": "алексей@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.839Z"
+    "product": 17,
+    "author": "Алексей",
+    "email": "мария@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.288Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 44,
   "fields": {
-    "product": 16,
-    "author": "Иван",
-    "email": "дмитрий@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.841Z"
+    "product": 18,
+    "author": "Ольга",
+    "email": "иван@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.290Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 45,
   "fields": {
-    "product": 16,
-    "author": "Алексей",
-    "email": "алексей@test.ru",
+    "product": 18,
+    "author": "Дмитрий",
+    "email": "мария@test.ru",
     "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.842Z"
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.291Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 46,
   "fields": {
-    "product": 16,
+    "product": 18,
     "author": "Анна",
     "email": "дмитрий@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "text": "Отличный товар, рекомендую!",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.844Z"
+    "date": "2026-05-27T11:29:05.292Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 47,
   "fields": {
-    "product": 17,
-    "author": "Мария",
-    "email": "мария@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.845Z"
+    "product": 19,
+    "author": "Иван",
+    "email": "дмитрий@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.294Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 48,
   "fields": {
-    "product": 18,
-    "author": "Ольга",
-    "email": "алексей@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.847Z"
+    "product": 19,
+    "author": "Иван",
+    "email": "дмитрий@test.ru",
+    "text": "Превосходное качество сборки.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.295Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 49,
   "fields": {
-    "product": 18,
-    "author": "Дмитрий",
-    "email": "анна@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.850Z"
+    "product": 20,
+    "author": "Ольга",
+    "email": "мария@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.297Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 50,
   "fields": {
-    "product": 18,
+    "product": 21,
     "author": "Дмитрий",
-    "email": "анна@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.851Z"
+    "email": "иван@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.299Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 51,
   "fields": {
-    "product": 18,
-    "author": "Дмитрий",
-    "email": "иван@test.ru",
-    "text": "Отличный товар, рекомендую!",
+    "product": 21,
+    "author": "Ольга",
+    "email": "ольга@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.853Z"
+    "date": "2026-05-27T11:29:05.301Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 52,
   "fields": {
-    "product": 19,
+    "product": 22,
     "author": "Алексей",
-    "email": "алексей@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.855Z"
+    "email": "мария@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.303Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 53,
   "fields": {
-    "product": 19,
-    "author": "Ольга",
+    "product": 22,
+    "author": "Иван",
     "email": "дмитрий@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.856Z"
+    "text": "Отличный товар, рекомендую!",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.305Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 54,
   "fields": {
-    "product": 19,
+    "product": 23,
     "author": "Иван",
-    "email": "ольга@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "email": "иван@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 3,
-    "date": "2026-05-20T12:05:11.857Z"
+    "date": "2026-05-27T11:29:05.307Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 55,
   "fields": {
-    "product": 19,
-    "author": "Ольга",
-    "email": "дмитрий@test.ru",
-    "text": "Хорошее качество за свои деньги.",
+    "product": 23,
+    "author": "Дмитрий",
+    "email": "иван@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.858Z"
+    "date": "2026-05-27T11:29:05.309Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 56,
   "fields": {
-    "product": 20,
-    "author": "Мария",
+    "product": 23,
+    "author": "Иван",
     "email": "мария@test.ru",
-    "text": "Превосходное качество сборки.",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.860Z"
+    "date": "2026-05-27T11:29:05.311Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 57,
   "fields": {
-    "product": 21,
-    "author": "Иван",
-    "email": "иван@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.862Z"
+    "product": 23,
+    "author": "Дмитрий",
+    "email": "анна@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.312Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 58,
   "fields": {
-    "product": 21,
-    "author": "Мария",
-    "email": "ольга@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.864Z"
+    "product": 24,
+    "author": "Ольга",
+    "email": "алексей@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.314Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 59,
   "fields": {
-    "product": 22,
-    "author": "Иван",
-    "email": "иван@test.ru",
-    "text": "Превосходное качество сборки.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.866Z"
+    "product": 24,
+    "author": "Мария",
+    "email": "дмитрий@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.316Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 60,
   "fields": {
-    "product": 23,
-    "author": "Анна",
-    "email": "анна@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.868Z"
+    "product": 25,
+    "author": "Алексей",
+    "email": "мария@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.318Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 61,
   "fields": {
-    "product": 23,
-    "author": "Алексей",
-    "email": "алексей@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.869Z"
+    "product": 25,
+    "author": "Ольга",
+    "email": "мария@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.321Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 62,
   "fields": {
-    "product": 23,
-    "author": "Мария",
-    "email": "дмитрий@test.ru",
+    "product": 25,
+    "author": "Ольга",
+    "email": "мария@test.ru",
     "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.870Z"
+    "date": "2026-05-27T11:29:05.322Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 63,
   "fields": {
-    "product": 23,
+    "product": 26,
     "author": "Ольга",
-    "email": "анна@test.ru",
-    "text": "Превосходное качество сборки.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.872Z"
+    "email": "алексей@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.324Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 64,
   "fields": {
-    "product": 24,
-    "author": "Мария",
-    "email": "мария@test.ru",
-    "text": "Превосходное качество сборки.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.875Z"
+    "product": 26,
+    "author": "Иван",
+    "email": "ольга@test.ru",
+    "text": "Отличный товар, рекомендую!",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.325Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 65,
   "fields": {
-    "product": 25,
-    "author": "Мария",
-    "email": "мария@test.ru",
-    "text": "Хорошее качество за свои деньги.",
+    "product": 26,
+    "author": "Ольга",
+    "email": "иван@test.ru",
+    "text": "Доставка быстрая, товар соответствует описанию.",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.877Z"
+    "date": "2026-05-27T11:29:05.327Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 66,
   "fields": {
-    "product": 25,
-    "author": "Мария",
-    "email": "иван@test.ru",
-    "text": "Доставка быстрая, товар соответствует описанию.",
+    "product": 27,
+    "author": "Иван",
+    "email": "дмитрий@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
     "rate": 4,
-    "date": "2026-05-20T12:05:11.878Z"
+    "date": "2026-05-27T11:29:05.328Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 67,
   "fields": {
-    "product": 26,
-    "author": "Иван",
-    "email": "дмитрий@test.ru",
-    "text": "Превосходное качество сборки.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.879Z"
+    "product": 27,
+    "author": "Ольга",
+    "email": "иван@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.330Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 68,
   "fields": {
-    "product": 26,
-    "author": "Анна",
+    "product": 27,
+    "author": "Ольга",
     "email": "мария@test.ru",
     "text": "Пользуюсь уже месяц, всё отлично работает.",
     "rate": 3,
-    "date": "2026-05-20T12:05:11.880Z"
+    "date": "2026-05-27T11:29:05.331Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 69,
   "fields": {
-    "product": 26,
-    "author": "Алексей",
-    "email": "иван@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.882Z"
+    "product": 27,
+    "author": "Иван",
+    "email": "алексей@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 5,
+    "date": "2026-05-27T11:29:05.332Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 70,
   "fields": {
-    "product": 27,
-    "author": "Алексей",
-    "email": "иван@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.883Z"
+    "product": 28,
+    "author": "Дмитрий",
+    "email": "алексей@test.ru",
+    "text": "Пользуюсь уже месяц, всё отлично работает.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.334Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 71,
   "fields": {
-    "product": 27,
+    "product": 29,
     "author": "Иван",
-    "email": "алексей@test.ru",
-    "text": "Превосходное качество сборки.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.885Z"
+    "email": "дмитрий@test.ru",
+    "text": "Хорошее качество за свои деньги.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.335Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 72,
   "fields": {
-    "product": 28,
+    "product": 29,
     "author": "Анна",
-    "email": "мария@test.ru",
-    "text": "Отличный товар, рекомендую!",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.886Z"
+    "email": "ольга@test.ru",
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.337Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 73,
   "fields": {
-    "product": 28,
-    "author": "Ольга",
-    "email": "дмитрий@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "product": 30,
+    "author": "Анна",
+    "email": "алексей@test.ru",
+    "text": "Хорошее качество за свои деньги.",
     "rate": 3,
-    "date": "2026-05-20T12:05:11.888Z"
+    "date": "2026-05-27T11:29:05.338Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 74,
   "fields": {
-    "product": 29,
-    "author": "Анна",
+    "product": 30,
+    "author": "Дмитрий",
     "email": "ольга@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.889Z"
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 4,
+    "date": "2026-05-27T11:29:05.340Z"
   }
 },
 {
   "model": "shopapp.review",
   "pk": 75,
   "fields": {
-    "product": 29,
-    "author": "Иван",
+    "product": 30,
+    "author": "Мария",
     "email": "анна@test.ru",
-    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "text": "Превосходное качество сборки.",
     "rate": 5,
-    "date": "2026-05-20T12:05:11.890Z"
+    "date": "2026-05-27T11:29:05.341Z"
   }
 },
 {
@@ -3807,55 +3807,31 @@
   "pk": 76,
   "fields": {
     "product": 30,
-    "author": "Алексей",
-    "email": "мария@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 4,
-    "date": "2026-05-20T12:05:11.892Z"
-  }
-},
-{
-  "model": "shopapp.review",
-  "pk": 77,
-  "fields": {
-    "product": 30,
-    "author": "Мария",
-    "email": "анна@test.ru",
-    "text": "Пользуюсь уже месяц, всё отлично работает.",
-    "rate": 3,
-    "date": "2026-05-20T12:05:11.893Z"
-  }
-},
-{
-  "model": "shopapp.review",
-  "pk": 78,
-  "fields": {
-    "product": 30,
-    "author": "Иван",
+    "author": "Дмитрий",
     "email": "ольга@test.ru",
-    "text": "Хорошее качество за свои деньги.",
-    "rate": 5,
-    "date": "2026-05-20T12:05:11.894Z"
+    "text": "Есть небольшие недочёты, но в целом доволен.",
+    "rate": 3,
+    "date": "2026-05-27T11:29:05.342Z"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 1,
   "fields": {
-    "product": 11,
-    "sale_price": "27993.00",
-    "date_from": "2026-05-15",
-    "date_to": "2026-06-14"
+    "product": 19,
+    "sale_price": "5593.00",
+    "date_from": "2026-05-22",
+    "date_to": "2026-06-21"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 2,
   "fields": {
-    "product": 20,
-    "sale_price": "3843.00",
-    "date_from": "2026-05-15",
-    "date_to": "2026-06-14"
+    "product": 10,
+    "sale_price": "41993.00",
+    "date_from": "2026-05-22",
+    "date_to": "2026-06-21"
   }
 },
 {
@@ -3864,48 +3840,48 @@
   "fields": {
     "product": 5,
     "sale_price": "12593.00",
-    "date_from": "2026-05-15",
-    "date_to": "2026-06-14"
+    "date_from": "2026-05-22",
+    "date_to": "2026-06-21"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 4,
   "fields": {
-    "product": 16,
-    "sale_price": "4193.00",
-    "date_from": "2026-05-15",
-    "date_to": "2026-06-14"
+    "product": 13,
+    "sale_price": "23093.00",
+    "date_from": "2026-05-22",
+    "date_to": "2026-06-21"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 5,
   "fields": {
-    "product": 1,
-    "sale_price": "62993.00",
-    "date_from": "2026-05-15",
-    "date_to": "2026-06-14"
+    "product": 24,
+    "sale_price": "31493.00",
+    "date_from": "2026-05-22",
+    "date_to": "2026-06-21"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 6,
   "fields": {
-    "product": 22,
-    "sale_price": "104993.00",
-    "date_from": "2026-05-15",
-    "date_to": "2026-06-14"
+    "product": 27,
+    "sale_price": "76993.00",
+    "date_from": "2026-05-22",
+    "date_to": "2026-06-21"
   }
 },
 {
   "model": "shopapp.sale",
   "pk": 7,
   "fields": {
-    "product": 9,
-    "sale_price": "31493.00",
-    "date_from": "2026-05-15",
-    "date_to": "2026-06-14"
+    "product": 20,
+    "sale_price": "3843.00",
+    "date_from": "2026-05-22",
+    "date_to": "2026-06-21"
   }
 },
 {
@@ -3915,14 +3891,14 @@
     "is_deleted": false,
     "deleted_at": null,
     "user": 2,
-    "created_at": "2026-05-20T12:05:13.186Z",
+    "created_at": "2026-05-27T11:29:06.601Z",
     "full_name": "Покупатель Тестовый 1",
     "email": "buyer1@test.ru",
     "phone": "+79000000001",
-    "delivery_type": "express",
-    "payment_type": "someone",
-    "total_cost": "81460.00",
-    "status": "paid",
+    "delivery_type": "ordinary",
+    "payment_type": "online",
+    "total_cost": "51440.00",
+    "status": "accepted",
     "city": "Москва",
     "address": "ул. Тестовая, д. 1",
     "comment": "",
@@ -3936,13 +3912,13 @@
     "is_deleted": false,
     "deleted_at": null,
     "user": 3,
-    "created_at": "2026-05-20T12:05:13.195Z",
+    "created_at": "2026-05-27T11:29:06.609Z",
     "full_name": "Покупатель Тестовый 2",
     "email": "buyer2@test.ru",
     "phone": "+79000000002",
-    "delivery_type": "express",
-    "payment_type": "someone",
-    "total_cost": "97430.00",
+    "delivery_type": "ordinary",
+    "payment_type": "online",
+    "total_cost": "457930.00",
     "status": "accepted",
     "city": "Москва",
     "address": "ул. Тестовая, д. 1",
@@ -3957,14 +3933,14 @@
     "is_deleted": false,
     "deleted_at": null,
     "user": 4,
-    "created_at": "2026-05-20T12:05:13.202Z",
+    "created_at": "2026-05-27T11:29:06.617Z",
     "full_name": "Покупатель Тестовый 3",
     "email": "buyer3@test.ru",
     "phone": "+79000000003",
     "delivery_type": "ordinary",
     "payment_type": "someone",
-    "total_cost": "529940.00",
-    "status": "accepted",
+    "total_cost": "181950.00",
+    "status": "created",
     "city": "Москва",
     "address": "ул. Тестовая, д. 1",
     "comment": "",
@@ -3976,8 +3952,8 @@
   "pk": 1,
   "fields": {
     "order": 1,
-    "product": 19,
-    "price": "7990.00",
+    "product": 14,
+    "price": "11990.00",
     "count": 2
   }
 },
@@ -3986,9 +3962,9 @@
   "pk": 2,
   "fields": {
     "order": 1,
-    "product": 10,
-    "price": "59990.00",
-    "count": 1
+    "product": 19,
+    "price": "7990.00",
+    "count": 3
   }
 },
 {
@@ -3996,8 +3972,8 @@
   "pk": 3,
   "fields": {
     "order": 1,
-    "product": 20,
-    "price": "5490.00",
+    "product": 21,
+    "price": "3490.00",
     "count": 1
   }
 },
@@ -4006,9 +3982,9 @@
   "pk": 4,
   "fields": {
     "order": 2,
-    "product": 24,
-    "price": "44990.00",
-    "count": 1
+    "product": 15,
+    "price": "13990.00",
+    "count": 2
   }
 },
 {
@@ -4016,9 +3992,9 @@
   "pk": 5,
   "fields": {
     "order": 2,
-    "product": 14,
-    "price": "11990.00",
-    "count": 3
+    "product": 17,
+    "price": "49990.00",
+    "count": 2
   }
 },
 {
@@ -4026,8 +4002,8 @@
   "pk": 6,
   "fields": {
     "order": 2,
-    "product": 20,
-    "price": "5490.00",
+    "product": 27,
+    "price": "109990.00",
     "count": 3
   }
 },
@@ -4036,9 +4012,9 @@
   "pk": 7,
   "fields": {
     "order": 3,
-    "product": 2,
-    "price": "74990.00",
-    "count": 3
+    "product": 18,
+    "price": "2990.00",
+    "count": 1
   }
 },
 {
@@ -4046,9 +4022,9 @@
   "pk": 8,
   "fields": {
     "order": 3,
-    "product": 28,
-    "price": "124990.00",
-    "count": 2
+    "product": 15,
+    "price": "13990.00",
+    "count": 1
   }
 },
 {
@@ -4058,7 +4034,7 @@
     "order": 3,
     "product": 12,
     "price": "54990.00",
-    "count": 1
+    "count": 3
   }
 },
 {

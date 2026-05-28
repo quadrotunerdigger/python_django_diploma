@@ -25,8 +25,9 @@ python setup.py sdist
 pip install dist/diploma-frontend-0.6.tar.gz
 cd ..
 
-# 5. Применить патч поиска (исправляет поиск из шапки сайта)
-python patch_search.py
+# 5. Применить патчи фронтенда
+python patch_search.py     # поиск из шапки сайта
+python patch_payment.py    # обработка ошибок оплаты + кнопка генерации счёта
 
 # 6. Настроить переменные окружения
 cp .env.example .env
@@ -48,6 +49,9 @@ python manage.py link_images
 # 11. Запустить сервер
 python manage.py runserver 0.0.0.0:8000
 ```
+
+**Важно:** при переустановке фронтенд-пакета (`pip install diploma-frontend`)
+необходимо повторно применить оба патча (шаг 5).
 
 ## Альтернативный способ заполнения данных
 
@@ -101,7 +105,8 @@ python_django_diploma/
 │   └── management/commands/ # Команды: populate_demo, link_images
 ├── diploma-frontend/        # Фронтенд-пакет (Vue 3 + Django-шаблоны)
 ├── media/                   # Загруженные файлы (изображения товаров, аватары)
-├── patch_search.py          # Патч для поиска из шапки сайта
+├── patch_search.py          # Патч: поиск из шапки сайта
+├── patch_payment.py         # Патч: обработка ошибок оплаты + генерация счёта
 ├── manage.py
 ├── requirements.txt
 └── README.md
@@ -111,32 +116,33 @@ python_django_diploma/
 
 Полное описание API — в `diploma-frontend/swagger/swagger.yaml`.
 
-| Метод  | URL                        | Описание                              |
-|--------|----------------------------|---------------------------------------|
-| POST   | /api/sign-in               | Авторизация                           |
-| POST   | /api/sign-up               | Регистрация                           |
-| POST   | /api/sign-out              | Выход                                 |
-| GET    | /api/categories            | Список категорий с подкатегориями     |
-| GET    | /api/catalog               | Каталог с фильтрами и пагинацией     |
-| GET    | /api/products/popular      | Топ-8 популярных товаров              |
-| GET    | /api/products/limited      | До 16 товаров ограниченного тиража    |
-| GET    | /api/sales                 | Скидки с пагинацией                   |
-| GET    | /api/banners               | Баннеры для главной страницы          |
-| GET    | /api/product/{id}          | Детальная информация о товаре         |
-| POST   | /api/product/{id}/review   | Добавить отзыв                        |
-| GET    | /api/tags                  | Теги (с фильтром по категории)        |
-| GET    | /api/basket                | Содержимое корзины                    |
-| POST   | /api/basket                | Добавить товар в корзину              |
-| DELETE | /api/basket                | Удалить товар из корзины              |
-| GET    | /api/orders                | История заказов                       |
-| POST   | /api/orders                | Создать заказ                         |
-| GET    | /api/order/{id}            | Детали заказа                         |
-| POST   | /api/order/{id}            | Подтвердить заказ                     |
-| POST   | /api/payment/{id}          | Оплата заказа                         |
-| GET    | /api/profile               | Профиль пользователя                  |
-| POST   | /api/profile               | Обновить профиль                      |
-| POST   | /api/profile/password      | Сменить пароль                        |
-| POST   | /api/profile/avatar        | Загрузить аватар                      |
+| Метод  | URL                         | Описание                              |
+|--------|-----------------------------|---------------------------------------|
+| POST   | /api/sign-in                | Авторизация                           |
+| POST   | /api/sign-up                | Регистрация                           |
+| POST   | /api/sign-out               | Выход                                 |
+| GET    | /api/categories             | Список категорий с подкатегориями     |
+| GET    | /api/catalog                | Каталог с фильтрами и пагинацией     |
+| GET    | /api/products/popular       | Топ-8 популярных товаров              |
+| GET    | /api/products/limited       | До 16 товаров ограниченного тиража    |
+| GET    | /api/sales                  | Скидки с пагинацией                   |
+| GET    | /api/banners                | Баннеры для главной страницы          |
+| GET    | /api/product/{id}           | Детальная информация о товаре         |
+| POST   | /api/product/{id}/review    | Добавить отзыв                        |
+| POST   | /api/product/{id}/reviews   | Добавить отзыв (альтернативный URL)   |
+| GET    | /api/tags                   | Теги (с фильтром по категории)        |
+| GET    | /api/basket                 | Содержимое корзины                    |
+| POST   | /api/basket                 | Добавить товар в корзину              |
+| DELETE | /api/basket                 | Удалить товар из корзины              |
+| GET    | /api/orders                 | История заказов                       |
+| POST   | /api/orders                 | Создать заказ                         |
+| GET    | /api/order/{id}             | Детали заказа                         |
+| POST   | /api/order/{id}             | Подтвердить заказ                     |
+| POST   | /api/payment/{id}           | Оплата заказа                         |
+| GET    | /api/profile                | Профиль пользователя                  |
+| POST   | /api/profile                | Обновить профиль                      |
+| POST   | /api/profile/password       | Сменить пароль                        |
+| POST   | /api/profile/avatar         | Загрузить аватар                      |
 
 ## Поиск
 
@@ -160,10 +166,12 @@ python_django_diploma/
 ## Фиктивная оплата
 
 Логика оплаты (по ТЗ):
-- Номер карты/счёта: максимум 8 цифр, должен быть чётным
+- Номер карты/счёта: ровно 8 цифр
 - Чётный номер, не заканчивающийся на 0 → оплата успешна
 - Чётный номер, заканчивающийся на 0 → случайная ошибка оплаты
-- Статус оплаты и текст ошибки отображаются в истории заказов
+- Нечётный номер → ошибка валидации
+- При выборе «Онлайн со случайного чужого счёта» отображается кнопка «Сгенерировать случайный счёт» (генерирует валидный 8-значный номер)
+- Статус оплаты и текст ошибки отображаются на странице заказа
 
 ## Технологии
 

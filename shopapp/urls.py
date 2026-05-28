@@ -16,6 +16,7 @@ urlpatterns = [
     # Product detail
     path("product/<int:pk>", views.ProductDetailView.as_view(), name="product-detail"),
     path("product/<int:pk>/review", views.ProductReviewView.as_view(), name="product-review"),
+    path("product/<int:pk>/reviews", views.ProductReviewView.as_view(), name="product-reviews"),
     # Tags
     path("tags", views.TagsView.as_view(), name="tags"),
     # Basket
