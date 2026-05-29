@@ -77,7 +77,7 @@ tpl_path = os.path.join(
     'templates/frontend/payment.html'
 )
 
-with open(tpl_path) as f:
+with open(tpl_path, encoding="utf-8") as f:
     tpl = f.read()
 
 if 'generateBtn' not in tpl:

@@ -1,61 +1,110 @@
 """
-Management command to populate the database with demo data.
-Usage: python manage.py populate_demo
+Management-команда для наполнения БД демонстрационными данными.
+
+Создаёт полный набор тестовых данных для работы магазина Megano:
+    - Теги (8 шт.): Gaming, Office, Budget, Premium и др.
+    - Категории (3 корневых + 16 подкатегорий): Бытовая техника,
+      Электроника, Компьютеры и комплектующие.
+    - Товары (30 шт.) с характеристиками и случайными тегами.
+    - Отзывы (1–4 случайных отзыва на каждый товар).
+    - Скидки (7 случайных товаров с 30%-ной скидкой).
+    - Покупатели (buyer1, buyer2, buyer3 с паролем 123456).
+    - Демо-заказы (по одному заказу на каждого покупателя).
+
+Использование::
+
+    python manage.py populate_demo
 """
+
 import random
 from datetime import timedelta
 from decimal import Decimal
 
-from django.contrib.auth.models import User, Group
+from django.contrib.auth.models import Group, User
 from django.core.management.base import BaseCommand
 from django.utils import timezone
-
 from shopapp.models import (
     Category,
-    Product,
-    ProductImage,
-    Specification,
-    Tag,
-    Review,
-    Sale,
-    Profile,
     Order,
     OrderItem,
+    Product,
+    Profile,
+    Review,
+    Sale,
+    Specification,
+    Tag,
 )
 
 
 class Command(BaseCommand):
-    help = "Populate the database with demo data for testing"
+    """
+    Django management-команда для создания демонстрационных данных.
 
-    def handle(self, *args, **options):
+    Идемпотентна: при повторном запуске не дублирует существующие записи
+    (использует ``get_or_create`` для основных сущностей).
+
+    Attributes:
+        help: Краткое описание команды для ``python manage.py help``.
+    """
+
+    help: str = "Populate the database with demo data for testing"
+
+    def handle(self, *args, **options) -> None:
+        """
+        Основная логика команды: последовательно создаёт все демо-данные.
+
+        Порядок создания:
+            1. Теги.
+            2. Категории (корневые -> подкатегории; деактивация устаревших).
+            3. Товары с характеристиками.
+            4. Отзывы.
+            5. Скидки.
+            6. Покупатели с профилями.
+            7. Демо-заказы с позициями.
+
+        Args:
+            args: Позиционные аргументы (не используются).
+            options: Именованные аргументы из командной строки (не используются).
+        """
         self.stdout.write("Creating demo data...")
 
-        # ── Tags ──────────────────────────────────
+        # -- Теги --
         tag_names = [
-            "Gaming", "Office", "Budget", "Premium", "Новинка",
-            "Хит продаж", "Акция", "Рекомендуем",
+            "Gaming",
+            "Office",
+            "Budget",
+            "Premium",
+            "Новинка",
+            "Хит продаж",
+            "Акция",
+            "Рекомендуем",
         ]
         tags = []
         for name in tag_names:
             tag, _ = Tag.objects.get_or_create(name=name)
             tags.append(tag)
 
-        # ── Categories ────────────────────────────
+        # -- Категории --
 
-        # Бытовая техника (icon 3)
+        # Бытовая техника
         bt, _ = Category.objects.get_or_create(
             title="Бытовая техника", defaults={"is_active": True, "sort_index": 1}
         )
         for name in [
-            "Стиральные машины", "Пылесосы", "Холодильники",
-            "Электрические плиты и печи", "Печи СВЧ",
-            "Миксеры и блендеры", "Настольные лампы", "Чайники",
+            "Стиральные машины",
+            "Пылесосы",
+            "Холодильники",
+            "Электрические плиты и печи",
+            "Печи СВЧ",
+            "Миксеры и блендеры",
+            "Настольные лампы",
+            "Чайники",
         ]:
             Category.objects.get_or_create(
                 title=name, defaults={"parent": bt, "is_active": True, "sort_index": 0}
             )
 
-        # Электроника (icon 5)
+        # Электроника
         el, _ = Category.objects.get_or_create(
             title="Электроника", defaults={"is_active": True, "sort_index": 2}
         )
@@ -64,7 +113,7 @@ class Command(BaseCommand):
                 title=name, defaults={"parent": el, "is_active": True, "sort_index": 0}
             )
 
-        # Компьютеры и комплектующие (icon 1)
+        # Компьютеры и комплектующие
         comp, _ = Category.objects.get_or_create(
             title="Компьютеры и комплектующие",
             defaults={"is_active": True, "sort_index": 3},
@@ -74,58 +123,215 @@ class Command(BaseCommand):
                 title=name, defaults={"parent": comp, "is_active": True, "sort_index": 0}
             )
 
-        # Deactivate old categories
+        # Деактивация устаревших категорий
         for old in ["Компьютеры", "Ноутбуки", "Планшеты"]:
             Category.objects.filter(title=old).update(is_active=False)
 
-        # ── Products ──────────────────────────────
+        # -- Товары --
+        # Формат: (название, описание, подкатегория, цена, ограниченный_тираж)
         product_data = [
             # Электроника -> Смартфоны
             ("iPhone 15 Pro", "Смартфон Apple iPhone 15 Pro 256GB", "Смартфоны", 89990, False),
-            ("Samsung Galaxy S24", "Флагманский смартфон Samsung Galaxy S24 128GB", "Смартфоны", 74990, False),
+            (
+                "Samsung Galaxy S24",
+                "Флагманский смартфон Samsung Galaxy S24 128GB",
+                "Смартфоны",
+                74990,
+                False,
+            ),
             # Электроника -> Наушники
-            ("Sony WH-1000XM5", "Беспроводные наушники с шумоподавлением", "Наушники", 29990, False),
+            (
+                "Sony WH-1000XM5",
+                "Беспроводные наушники с шумоподавлением",
+                "Наушники",
+                29990,
+                False,
+            ),
             # Электроника -> Колонки
-            ("JBL Charge 5", "Портативная колонка JBL Charge 5 с защитой IP67", "Колонки", 12990, False),
-            ("Яндекс Станция Макс", "Умная колонка с Алисой и LED-дисплеем", "Колонки", 17990, False),
+            (
+                "JBL Charge 5",
+                "Портативная колонка JBL Charge 5 с защитой IP67",
+                "Колонки",
+                12990,
+                False,
+            ),
+            (
+                "Яндекс Станция Макс",
+                "Умная колонка с Алисой и LED-дисплеем",
+                "Колонки",
+                17990,
+                False,
+            ),
             # Электроника -> Фотоаппараты
-            ("Canon EOS R6 Mark II", "Полнокадровая беззеркальная камера Canon", "Фотоаппараты", 189990, True),
+            (
+                "Canon EOS R6 Mark II",
+                "Полнокадровая беззеркальная камера Canon",
+                "Фотоаппараты",
+                189990,
+                True,
+            ),
             ("Sony Alpha A7 IV", "Беззеркальная камера Sony 33 Мп", "Фотоаппараты", 179990, True),
             # Бытовая техника -> Холодильники
-            ("Холодильник Samsung RF50", "Двухкамерный холодильник Samsung RF50A5202S9", "Холодильники", 74990, False),
+            (
+                "Холодильник Samsung RF50",
+                "Двухкамерный холодильник Samsung RF50A5202S9",
+                "Холодильники",
+                74990,
+                False,
+            ),
             # Бытовая техника -> Стиральные машины
-            ("Стиральная машина LG F2V5", "Стиральная машина LG F2V5HS2S с паром", "Стиральные машины", 44990, False),
+            (
+                "Стиральная машина LG F2V5",
+                "Стиральная машина LG F2V5HS2S с паром",
+                "Стиральные машины",
+                44990,
+                False,
+            ),
             # Бытовая техника -> Пылесосы
-            ("Dyson V15 Detect", "Беспроводной пылесос Dyson V15 Detect Absolute", "Пылесосы", 59990, False),
-            ("Робот-пылесос Roborock S8", "Умный робот-пылесос с лидаром", "Пылесосы", 39990, False),
+            (
+                "Dyson V15 Detect",
+                "Беспроводной пылесос Dyson V15 Detect Absolute",
+                "Пылесосы",
+                59990,
+                False,
+            ),
+            (
+                "Робот-пылесос Roborock S8",
+                "Умный робот-пылесос с лидаром",
+                "Пылесосы",
+                39990,
+                False,
+            ),
             # Бытовая техника -> Электрические плиты и печи
-            ("Electrolux EKC954907X", "Электрическая плита Electrolux со стеклокерамикой", "Электрические плиты и печи", 54990, False),
-            ("Gorenje EC5241SG", "Электрическая плита Gorenje с грилем", "Электрические плиты и печи", 32990, False),
+            (
+                "Electrolux EKC954907X",
+                "Электрическая плита Electrolux со стеклокерамикой",
+                "Электрические плиты и печи",
+                54990,
+                False,
+            ),
+            (
+                "Gorenje EC5241SG",
+                "Электрическая плита Gorenje с грилем",
+                "Электрические плиты и печи",
+                32990,
+                False,
+            ),
             # Бытовая техника -> Печи СВЧ
-            ("Samsung ME88SUG", "Микроволновая печь Samsung 23л с грилем", "Печи СВЧ", 11990, False),
+            (
+                "Samsung ME88SUG",
+                "Микроволновая печь Samsung 23л с грилем",
+                "Печи СВЧ",
+                11990,
+                False,
+            ),
             ("LG MS2595CIS", "Микроволновая печь LG NeoChef 25л", "Печи СВЧ", 13990, False),
             # Бытовая техника -> Миксеры и блендеры
-            ("Bosch MSM67170", "Погружной блендер Bosch ErgoMixx 750Вт", "Миксеры и блендеры", 5990, False),
-            ("KitchenAid 5KSM175PS", "Планетарный миксер KitchenAid Artisan 4.8л", "Миксеры и блендеры", 49990, False),
+            (
+                "Bosch MSM67170",
+                "Погружной блендер Bosch ErgoMixx 750Вт",
+                "Миксеры и блендеры",
+                5990,
+                False,
+            ),
+            (
+                "KitchenAid 5KSM175PS",
+                "Планетарный миксер KitchenAid Artisan 4.8л",
+                "Миксеры и блендеры",
+                49990,
+                False,
+            ),
             # Бытовая техника -> Настольные лампы
-            ("Xiaomi Mi LED Desk Lamp 1S", "Настольная лампа Xiaomi с регулировкой яркости", "Настольные лампы", 2990, False),
-            ("Philips Hue Go", "Портативная настольная лампа Philips с RGB", "Настольные лампы", 7990, False),
+            (
+                "Xiaomi Mi LED Desk Lamp 1S",
+                "Настольная лампа Xiaomi с регулировкой яркости",
+                "Настольные лампы",
+                2990,
+                False,
+            ),
+            (
+                "Philips Hue Go",
+                "Портативная настольная лампа Philips с RGB",
+                "Настольные лампы",
+                7990,
+                False,
+            ),
             # Бытовая техника -> Чайники
             ("Bosch TWK8611P", "Электрический чайник Bosch Styline 1.5л", "Чайники", 5490, False),
-            ("Xiaomi Mi Smart Kettle Pro", "Умный чайник Xiaomi с контролем температуры", "Чайники", 3490, False),
+            (
+                "Xiaomi Mi Smart Kettle Pro",
+                "Умный чайник Xiaomi с контролем температуры",
+                "Чайники",
+                3490,
+                False,
+            ),
             # Компьютеры -> Видеокарты
-            ("NVIDIA RTX 4090", "Видеокарта NVIDIA GeForce RTX 4090 24GB", "Видеокарты", 149990, True),
-            ("NVIDIA RTX 4070", "Видеокарта NVIDIA GeForce RTX 4070 12GB", "Видеокарты", 54990, False),
+            (
+                "NVIDIA RTX 4090",
+                "Видеокарта NVIDIA GeForce RTX 4090 24GB",
+                "Видеокарты",
+                149990,
+                True,
+            ),
+            (
+                "NVIDIA RTX 4070",
+                "Видеокарта NVIDIA GeForce RTX 4070 12GB",
+                "Видеокарты",
+                54990,
+                False,
+            ),
             # Компьютеры -> Процессоры
-            ("AMD Ryzen 9 7950X", "Процессор AMD Ryzen 9 7950X 16 ядер", "Процессоры", 44990, False),
-            ("Intel Core i9-14900K", "Процессор Intel Core i9-14900K 24 ядра", "Процессоры", 49990, False),
+            (
+                "AMD Ryzen 9 7950X",
+                "Процессор AMD Ryzen 9 7950X 16 ядер",
+                "Процессоры",
+                44990,
+                False,
+            ),
+            (
+                "Intel Core i9-14900K",
+                "Процессор Intel Core i9-14900K 24 ядра",
+                "Процессоры",
+                49990,
+                False,
+            ),
             # Компьютеры -> Мониторы
-            ("ASUS ROG Swift PG32", "Игровой монитор ASUS 32 дюйма 4K 144Hz", "Мониторы", 89990, False),
+            (
+                "ASUS ROG Swift PG32",
+                "Игровой монитор ASUS 32 дюйма 4K 144Hz",
+                "Мониторы",
+                89990,
+                False,
+            ),
             # Компьютеры -> Ноутбуки и планшеты
-            ("MacBook Air M3", "Ноутбук Apple MacBook Air 13 M3 8/256GB", "Ноутбуки и планшеты", 109990, True),
-            ("Lenovo ThinkPad X1", "Бизнес-ноутбук Lenovo ThinkPad X1 Carbon Gen 11", "Ноутбуки и планшеты", 124990, True),
-            ("iPad Pro 12.9", "Планшет Apple iPad Pro 12.9 M2 128GB Wi-Fi", "Ноутбуки и планшеты", 99990, True),
-            ("Dell XPS 15", "Ноутбук Dell XPS 15 9530 i7/16GB/512GB", "Ноутбуки и планшеты", 134990, False),
+            (
+                "MacBook Air M3",
+                "Ноутбук Apple MacBook Air 13 M3 8/256GB",
+                "Ноутбуки и планшеты",
+                109990,
+                True,
+            ),
+            (
+                "Lenovo ThinkPad X1",
+                "Бизнес-ноутбук Lenovo ThinkPad X1 Carbon Gen 11",
+                "Ноутбуки и планшеты",
+                124990,
+                True,
+            ),
+            (
+                "iPad Pro 12.9",
+                "Планшет Apple iPad Pro 12.9 M2 128GB Wi-Fi",
+                "Ноутбуки и планшеты",
+                99990,
+                True,
+            ),
+            (
+                "Dell XPS 15",
+                "Ноутбук Dell XPS 15 9530 i7/16GB/512GB",
+                "Ноутбуки и планшеты",
+                134990,
+                False,
+            ),
         ]
 
         products = []
@@ -165,7 +371,7 @@ class Command(BaseCommand):
                     Specification.objects.create(product=product, name=sn, value=sv)
             products.append(product)
 
-        # ── Reviews ───────────────────────────────
+        # -- Отзывы --
         authors = ["Иван", "Мария", "Алексей", "Ольга", "Дмитрий", "Анна"]
         texts = [
             "Отличный товар, рекомендую!",
@@ -186,7 +392,7 @@ class Command(BaseCommand):
                         rate=random.randint(3, 5),
                     )
 
-        # ── Sales ─────────────────────────────────
+        # -- Скидки --
         now = timezone.now().date()
         for product in random.sample(products, min(7, len(products))):
             if not Sale.objects.filter(product=product).exists():
@@ -197,14 +403,16 @@ class Command(BaseCommand):
                     date_to=now + timedelta(days=25),
                 )
 
-        # ── Demo buyers ───────────────────────────
+        # -- Демо-покупатели --
         buyer_group, _ = Group.objects.get_or_create(name="Покупатель")
         for i in range(1, 4):
             username = f"buyer{i}"
             if not User.objects.filter(username=username).exists():
                 user = User.objects.create_user(
-                    username=username, password="123456",
-                    email=f"buyer{i}@test.ru", first_name=f"Покупатель {i}",
+                    username=username,
+                    password="123456",
+                    email=f"buyer{i}@test.ru",
+                    first_name=f"Покупатель {i}",
                 )
                 user.groups.add(buyer_group)
                 Profile.objects.get_or_create(
@@ -212,7 +420,7 @@ class Command(BaseCommand):
                     defaults={"full_name": f"Покупатель Тестовый {i}", "phone": f"+7900000000{i}"},
                 )
 
-        # ── Demo orders ───────────────────────────
+        # -- Демо-заказы --
         for buyer in User.objects.filter(groups__name="Покупатель"):
             if not Order.objects.filter(user=buyer).exists():
                 prof = getattr(buyer, "profile", None)
@@ -224,7 +432,8 @@ class Command(BaseCommand):
                     delivery_type=random.choice(["ordinary", "express"]),
                     payment_type=random.choice(["online", "someone"]),
                     status=random.choice(["paid", "accepted", "created"]),
-                    city="Москва", address="ул. Тестовая, д. 1",
+                    city="Москва",
+                    address="ул. Тестовая, д. 1",
                 )
                 total = Decimal("0")
                 for p in random.sample(products, min(3, len(products))):
@@ -234,10 +443,12 @@ class Command(BaseCommand):
                 order.total_cost = total
                 order.save(update_fields=["total_cost"])
 
-        self.stdout.write(self.style.SUCCESS(
-            f"Done! {len(products)} products, "
-            f"{Category.objects.filter(is_active=True).count()} categories, "
-            f"{Review.objects.count()} reviews, "
-            f"{Sale.objects.count()} sales, "
-            f"{Order.objects.count()} orders."
-        ))
+        self.stdout.write(
+            self.style.SUCCESS(
+                f"Done! {len(products)} products, "
+                f"{Category.objects.filter(is_active=True).count()} categories, "
+                f"{Review.objects.count()} reviews, "
+                f"{Sale.objects.count()} sales, "
+                f"{Order.objects.count()} orders."
+            )
+        )

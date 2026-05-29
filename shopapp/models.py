@@ -1,19 +1,46 @@
-from django.db import models
+"""
+Модели приложения shopapp.
+
+Содержит модели данных интернет-магазина Megano:
+профили пользователей, категории, товары, изображения,
+характеристики, отзывы, скидки, заказы и настройки сайта.
+Реализовано мягкое удаление (soft delete) через абстрактную модель.
+"""
+
 from django.contrib.auth.models import User
+from django.db import models
 
 
 class SoftDeleteManager(models.Manager):
-    """Manager that filters out soft-deleted objects."""
+    """
+    Менеджер, исключающий из выборки мягко удалённые объекты.
 
-    def get_queryset(self):
+    Переопределяет стандартный QuerySet, добавляя фильтр ``is_deleted=False``.
+    Используется как ``objects`` в моделях, наследующих :class:`SoftDeleteModel`.
+    Для доступа ко всем записям (включая удалённые) используется ``all_objects``.
+    """
+
+    def get_queryset(self) -> models.QuerySet:
+        """Вернуть QuerySet без мягко удалённых записей."""
         return super().get_queryset().filter(is_deleted=False)
 
 
 class SoftDeleteModel(models.Model):
-    """Abstract model with soft delete support."""
+    """
+    Абстрактная модель с поддержкой мягкого удаления.
+
+    Вместо физического удаления записи из базы данных устанавливает
+    флаг ``is_deleted=True`` и сохраняет дату удаления в ``deleted_at``.
+    Предоставляет два менеджера:
+
+    - ``objects`` — :class:`SoftDeleteManager`, возвращает только активные записи.
+    - ``all_objects`` — стандартный ``Manager``, возвращает все записи.
+
+    Методы :meth:`soft_delete` и :meth:`restore` управляют состоянием удаления.
+    """
 
     is_deleted = models.BooleanField(default=False, verbose_name="удалён")
-    deleted_at = models.DateTimeField(null=True, blank=True, verbose_name="дата удаления")
+    deleted_at = models.DateTimeField(null=True, blank=True, verbose_name="дата удаления")  # type: ignore[misc]
 
     objects = SoftDeleteManager()
     all_objects = models.Manager()
@@ -21,14 +48,24 @@ class SoftDeleteModel(models.Model):
     class Meta:
         abstract = True
 
-    def soft_delete(self):
+    def soft_delete(self) -> None:
+        """
+        Выполнить мягкое удаление записи.
+
+        Устанавливает ``is_deleted=True`` и фиксирует текущее время в ``deleted_at``.
+        """
         from django.utils import timezone
 
         self.is_deleted = True
         self.deleted_at = timezone.now()
         self.save(update_fields=["is_deleted", "deleted_at"])
 
-    def restore(self):
+    def restore(self) -> None:
+        """
+        Восстановить мягко удалённую запись.
+
+        Сбрасывает ``is_deleted=False`` и очищает ``deleted_at``.
+        """
         self.is_deleted = False
         self.deleted_at = None
         self.save(update_fields=["is_deleted", "deleted_at"])
@@ -40,20 +77,32 @@ class SoftDeleteModel(models.Model):
 
 
 class Profile(models.Model):
+    """
+    Расширенный профиль пользователя.
+
+    Связан с моделью ``User`` отношением один-к-одному.
+    Хранит дополнительные данные: ФИО, телефон и аватар.
+    Телефон уникален (``unique=True``) для предотвращения дублирования.
+
+    Пример использования::
+
+        profile = request.user.profile
+        print(profile.full_name, profile.phone)
+    """
+
     user = models.OneToOneField(User, on_delete=models.CASCADE, related_name="profile")
     full_name = models.CharField(max_length=255, blank=True, verbose_name="ФИО")
-    phone = models.CharField(
+    phone = models.CharField(  # type: ignore[misc]
         max_length=20, blank=True, unique=True, null=True, verbose_name="телефон"
     )
-    avatar = models.ImageField(
-        upload_to="avatars/", blank=True, null=True, verbose_name="аватар"
-    )
+    avatar = models.ImageField(upload_to="avatars/", blank=True, null=True, verbose_name="аватар")
 
     class Meta:
         verbose_name = "профиль"
         verbose_name_plural = "профили"
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть ФИО профиля или username пользователя."""
         return self.full_name or self.user.username
 
 
@@ -63,11 +112,30 @@ class Profile(models.Model):
 
 
 class Category(SoftDeleteModel):
+    """
+    Категория товаров с поддержкой двухуровневой вложенности.
+
+    Родительские категории имеют ``parent=None``, подкатегории ссылаются
+    на родителя через внешний ключ ``parent``. Поддерживается мягкое удаление.
+
+    Примеры структуры::
+
+        Электроника (parent=None)
+        ├── Смартфоны (parent=Электроника)
+        ├── Наушники (parent=Электроника)
+        └── Колонки (parent=Электроника)
+
+    Атрибуты:
+        title: Название категории.
+        image: Иконка категории (загружается в ``media/categories/``).
+        parent: Ссылка на родительскую категорию (``None`` для корневых).
+        is_active: Флаг активности (неактивные не отображаются на сайте).
+        sort_index: Индекс сортировки для управления порядком вывода.
+    """
+
     title = models.CharField(max_length=255, verbose_name="название")
-    image = models.ImageField(
-        upload_to="categories/", blank=True, null=True, verbose_name="иконка"
-    )
-    parent = models.ForeignKey(
+    image = models.ImageField(upload_to="categories/", blank=True, null=True, verbose_name="иконка")
+    parent = models.ForeignKey(  # type: ignore[misc]
         "self",
         on_delete=models.CASCADE,
         null=True,
@@ -83,7 +151,8 @@ class Category(SoftDeleteModel):
         verbose_name_plural = "категории"
         ordering = ["sort_index", "title"]
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть название категории."""
         return self.title
 
 
@@ -93,13 +162,21 @@ class Category(SoftDeleteModel):
 
 
 class Tag(models.Model):
+    """
+    Тег для фильтрации товаров в каталоге.
+
+    Теги связаны с товарами через ``ManyToManyField``.
+    Используются для быстрой фильтрации: Gaming, Office, Budget и т.д.
+    """
+
     name = models.CharField(max_length=100, verbose_name="название")
 
     class Meta:
         verbose_name = "тег"
         verbose_name_plural = "теги"
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть название тега."""
         return self.name
 
 
@@ -109,7 +186,34 @@ class Tag(models.Model):
 
 
 class Product(SoftDeleteModel):
-    category = models.ForeignKey(
+    """
+    Товар интернет-магазина.
+
+    Центральная модель приложения. Содержит всю информацию о товаре:
+    название, описание, цену, количество на складе, рейтинг и др.
+    Поддерживает мягкое удаление через :class:`SoftDeleteModel`.
+
+    Связи:
+        - ``category`` → :class:`Category` (FK, может быть ``NULL`` при удалении категории).
+        - ``tags`` → :class:`Tag` (M2M, для фильтрации в каталоге).
+        - ``images`` → :class:`ProductImage` (обратная связь, изображения товара).
+        - ``specifications`` → :class:`Specification` (обратная связь, характеристики).
+        - ``reviews`` → :class:`Review` (обратная связь, отзывы покупателей).
+        - ``sales`` → :class:`Sale` (обратная связь, скидки).
+
+    Атрибуты:
+        title: Название товара.
+        description: Краткое описание (отображается в каталоге).
+        full_description: Полное описание в HTML (отображается на детальной странице).
+        price: Базовая цена товара (скидочная цена — в модели :class:`Sale`).
+        count: Количество на складе (0 = нет в наличии).
+        free_delivery: Флаг бесплатной доставки.
+        limited_edition: Флаг ограниченного тиража (для блока Limited Edition).
+        rating: Средний рейтинг (пересчитывается при добавлении отзыва).
+        purchases_count: Счётчик покупок (увеличивается при оплате заказа).
+    """
+
+    category = models.ForeignKey(  # type: ignore[misc]
         Category,
         on_delete=models.SET_NULL,
         null=True,
@@ -123,71 +227,91 @@ class Product(SoftDeleteModel):
     count = models.PositiveIntegerField(default=0, verbose_name="количество на складе")
     date = models.DateTimeField(auto_now_add=True, verbose_name="дата создания")
     free_delivery = models.BooleanField(default=False, verbose_name="бесплатная доставка")
-    limited_edition = models.BooleanField(
-        default=False, verbose_name="ограниченный тираж"
-    )
+    limited_edition = models.BooleanField(default=False, verbose_name="ограниченный тираж")
     sort_index = models.PositiveIntegerField(default=0, verbose_name="индекс сортировки")
-    rating = models.DecimalField(
-        max_digits=3, decimal_places=1, default=0, verbose_name="рейтинг"
-    )
-    purchases_count = models.PositiveIntegerField(
-        default=0, verbose_name="количество покупок"
-    )
-    tags = models.ManyToManyField(
-        Tag, blank=True, related_name="products", verbose_name="теги"
-    )
+    rating = models.DecimalField(max_digits=3, decimal_places=1, default=0, verbose_name="рейтинг")
+    purchases_count = models.PositiveIntegerField(default=0, verbose_name="количество покупок")
+    tags = models.ManyToManyField(Tag, blank=True, related_name="products", verbose_name="теги")
 
     class Meta:
         verbose_name = "товар"
         verbose_name_plural = "товары"
         ordering = ["sort_index", "-purchases_count"]
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть название товара."""
         return self.title
 
 
-def product_image_upload_to(instance, filename):
+def product_image_upload_to(instance: "ProductImage", filename: str) -> str:
     """
-    Upload images to:
-      media/products/<Category>/<Product_name>/preview/<filename>
-      media/products/<Category>/<Product_name>/images/<filename>
+    Определить путь загрузки изображения товара.
+
+    Формирует путь вида::
+
+        media/products/<Категория>/<Название_товара>/preview/<filename>
+        media/products/<Категория>/<Название_товара>/images/<filename>
+
+    Названия категории и товара очищаются от спецсимволов,
+    пробелы заменяются на подчёркивания.
+
+    Args:
+        instance: Экземпляр :class:`ProductImage`.
+        filename: Оригинальное имя загружаемого файла.
+
+    Returns:
+        Относительный путь для сохранения файла в ``MEDIA_ROOT``.
     """
     import re
 
     product = instance.product
-    # Sanitize names for filesystem
-    product_name = re.sub(r'[^\w\s.-]', '', product.title).strip().replace(' ', '_')
+    product_name = re.sub(r"[^\w\s.-]", "", product.title).strip().replace(" ", "_")
     category_name = "Uncategorized"
     if product.category:
-        category_name = re.sub(r'[^\w\s.-]', '', product.category.title).strip().replace(' ', '_')
+        category_name = re.sub(r"[^\w\s.-]", "", product.category.title).strip().replace(" ", "_")
 
     subfolder = "preview" if instance.is_preview else "images"
     return f"products/{category_name}/{product_name}/{subfolder}/{filename}"
 
 
 class ProductImage(models.Model):
+    """
+    Изображение товара.
+
+    Каждый товар может иметь несколько изображений. Одно из них помечается
+    как превью (``is_preview=True``) — оно отображается в каталоге и списках.
+    Остальные показываются в галерее на детальной странице товара.
+
+    Путь загрузки определяется функцией :func:`product_image_upload_to`.
+    Сортировка: превью-изображения идут первыми, затем по ``pk``.
+    """
+
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="images", verbose_name="товар"
     )
-    src = models.ImageField(
-        upload_to=product_image_upload_to, verbose_name="изображение"
-    )
+    src = models.ImageField(upload_to=product_image_upload_to, verbose_name="изображение")
     alt = models.CharField(max_length=255, blank=True, verbose_name="alt-текст")
-    is_preview = models.BooleanField(
-        default=False, verbose_name="основное изображение (preview)"
-    )
+    is_preview = models.BooleanField(default=False, verbose_name="основное изображение (preview)")
 
     class Meta:
         verbose_name = "изображение товара"
         verbose_name_plural = "изображения товаров"
         ordering = ["-is_preview", "pk"]
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть строковое представление с пометкой [preview] для превью."""
         tag = " [preview]" if self.is_preview else ""
         return f"Image for {self.product.title}{tag}"
 
 
 class Specification(models.Model):
+    """
+    Характеристика товара (пара «название — значение»).
+
+    Отображается на детальной странице товара во вкладке «Описание».
+    Примеры: «Производитель: Apple», «Гарантия: 24 мес.».
+    """
+
     product = models.ForeignKey(
         Product,
         on_delete=models.CASCADE,
@@ -201,7 +325,8 @@ class Specification(models.Model):
         verbose_name = "характеристика"
         verbose_name_plural = "характеристики"
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть характеристику в формате 'название: значение'."""
         return f"{self.name}: {self.value}"
 
 
@@ -211,6 +336,16 @@ class Specification(models.Model):
 
 
 class Review(models.Model):
+    """
+    Отзыв покупателя о товаре.
+
+    Содержит имя автора, email, текст отзыва и оценку (1–5).
+    Добавлять отзывы могут только авторизованные пользователи (проверка во view).
+    При добавлении отзыва пересчитывается средний рейтинг товара.
+
+    Сортировка по умолчанию: сначала новые отзывы (``-date``).
+    """
+
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="reviews", verbose_name="товар"
     )
@@ -225,7 +360,8 @@ class Review(models.Model):
         verbose_name_plural = "отзывы"
         ordering = ["-date"]
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть строку вида 'Отзыв от <автор> на <товар>'."""
         return f"Отзыв от {self.author} на {self.product.title}"
 
 
@@ -235,6 +371,17 @@ class Review(models.Model):
 
 
 class Sale(models.Model):
+    """
+    Скидка (распродажа) на товар с ограничением по датам.
+
+    Активная скидка определяется условием:
+    ``date_from <= сегодня <= date_to``.
+    Если скидка активна, в каталоге и на странице товара
+    отображается ``sale_price`` вместо базовой цены.
+
+    Отображается на странице ``/sale/`` с пагинацией.
+    """
+
     product = models.ForeignKey(
         Product, on_delete=models.CASCADE, related_name="sales", verbose_name="товар"
     )
@@ -248,7 +395,8 @@ class Sale(models.Model):
         verbose_name = "скидка"
         verbose_name_plural = "скидки"
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть строку вида 'Скидка на <товар>'."""
         return f"Скидка на {self.product.title}"
 
 
@@ -258,15 +406,47 @@ class Sale(models.Model):
 
 
 class Order(SoftDeleteModel):
+    """
+    Заказ покупателя.
+
+    Жизненный цикл заказа::
+
+        created → accepted (подтверждён) → paid (оплачен)
+                                         → payment_error (ошибка оплаты)
+
+    Поддерживает мягкое удаление через :class:`SoftDeleteModel`.
+
+    Вложенные классы ``DeliveryType``, ``PaymentType``, ``Status``
+    определяют допустимые значения для соответствующих полей
+    через ``TextChoices``.
+
+    Связи:
+        - ``user`` → ``User`` (покупатель, создавший заказ).
+        - ``items`` → :class:`OrderItem` (обратная связь, позиции заказа).
+
+    Атрибуты:
+        delivery_type: Способ доставки (обычная / экспресс).
+        payment_type: Способ оплаты (онлайн картой / со случайного счёта).
+        total_cost: Итоговая стоимость с учётом доставки.
+        status: Текущий статус заказа.
+        payment_error: Текст ошибки оплаты (``None`` при успешной оплате).
+    """
+
     class DeliveryType(models.TextChoices):
+        """Варианты способа доставки."""
+
         ORDINARY = "ordinary", "Обычная доставка"
         EXPRESS = "express", "Экспресс-доставка"
 
     class PaymentType(models.TextChoices):
+        """Варианты способа оплаты."""
+
         ONLINE = "online", "Онлайн картой"
         SOMEONE = "someone", "Онлайн со случайного чужого счёта"
 
     class Status(models.TextChoices):
+        """Статусы заказа."""
+
         CREATED = "created", "Создан"
         ACCEPTED = "accepted", "Принят"
         PAID = "paid", "Оплачен"
@@ -303,7 +483,7 @@ class Order(SoftDeleteModel):
     city = models.CharField(max_length=255, blank=True, verbose_name="город")
     address = models.TextField(blank=True, verbose_name="адрес")
     comment = models.TextField(blank=True, verbose_name="комментарий")
-    payment_error = models.CharField(
+    payment_error = models.CharField(  # type: ignore[misc]
         max_length=255, blank=True, null=True, verbose_name="ошибка оплаты"
     )
 
@@ -312,17 +492,24 @@ class Order(SoftDeleteModel):
         verbose_name_plural = "заказы"
         ordering = ["-created_at"]
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть строку вида 'Заказ #<id> от <ФИО>'."""
         return f"Заказ #{self.pk} от {self.full_name}"
 
 
 class OrderItem(models.Model):
+    """
+    Позиция (строка) заказа.
+
+    Связывает заказ с конкретным товаром, фиксируя цену на момент покупки
+    и количество единиц. Цена сохраняется отдельно от текущей цены товара,
+    чтобы изменение цен не влияло на уже оформленные заказы.
+    """
+
     order = models.ForeignKey(
         Order, on_delete=models.CASCADE, related_name="items", verbose_name="заказ"
     )
-    product = models.ForeignKey(
-        Product, on_delete=models.CASCADE, verbose_name="товар"
-    )
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, verbose_name="товар")
     price = models.DecimalField(
         max_digits=10, decimal_places=2, verbose_name="цена на момент покупки"
     )
@@ -332,7 +519,8 @@ class OrderItem(models.Model):
         verbose_name = "позиция заказа"
         verbose_name_plural = "позиции заказа"
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть строку вида '<товар> x<количество>'."""
         return f"{self.product.title} x{self.count}"
 
 
@@ -342,6 +530,25 @@ class OrderItem(models.Model):
 
 
 class SiteSettings(models.Model):
+    """
+    Глобальные настройки интернет-магазина (паттерн Singleton).
+
+    Гарантируется единственная запись в базе (``pk=1``).
+    Метод :meth:`save` принудительно устанавливает ``pk=1``,
+    метод :meth:`load` создаёт или возвращает существующую запись.
+
+    Настройки:
+        express_delivery_cost: Стоимость экспресс-доставки (по умолчанию 500₽).
+        ordinary_delivery_cost: Стоимость обычной доставки (по умолчанию 200₽).
+        free_delivery_threshold: Порог бесплатной доставки (по умолчанию 2000₽).
+
+    Пример использования::
+
+        settings = SiteSettings.load()
+        if total >= settings.free_delivery_threshold:
+            delivery_cost = 0
+    """
+
     express_delivery_cost = models.DecimalField(
         max_digits=10,
         decimal_places=2,
@@ -365,14 +572,24 @@ class SiteSettings(models.Model):
         verbose_name = "настройки сайта"
         verbose_name_plural = "настройки сайта"
 
-    def save(self, *args, **kwargs):
+    def save(self, *args, **kwargs) -> None:
+        """Сохранить настройки, принудительно устанавливая ``pk=1`` (Singleton)."""
         self.pk = 1
         super().save(*args, **kwargs)
 
     @classmethod
-    def load(cls):
+    def load(cls) -> "SiteSettings":
+        """
+        Загрузить единственный экземпляр настроек.
+
+        Если запись не существует, создаёт её с значениями по умолчанию.
+
+        Returns:
+            Экземпляр :class:`SiteSettings`.
+        """
         obj, _ = cls.objects.get_or_create(pk=1)
         return obj
 
-    def __str__(self):
+    def __str__(self) -> str:
+        """Вернуть строку 'Настройки сайта'."""
         return "Настройки сайта"
